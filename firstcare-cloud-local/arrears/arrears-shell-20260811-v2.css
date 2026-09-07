@@ -1,0 +1,102 @@
+/* 欠费分析独立页壳层对齐 APH 2.0：50px 顶栏、60px 侧栏、46px 页签。 */
+:root { --topbar: 50px; --tabs: 46px; --rail: 60px; }
+
+.aph-shell-header {
+  grid-template-columns: 140px 48px minmax(0, 1fr) auto;
+  height: var(--topbar);
+  padding: 0;
+  z-index: 50;
+}
+.aph-brand { height: 50px; padding-left: 24px; }
+.aph-brand img { width: 78px; height: 32px; }
+.aph-menu-toggle {
+  width: 48px;
+  height: 50px;
+  display: grid;
+  place-content: center;
+  gap: 4px;
+  padding: 0;
+  border: 0;
+  border-left: 1px solid #252525;
+  border-right: 1px solid #252525;
+  background: #050505;
+  cursor: pointer;
+}
+.aph-menu-toggle:hover, .aph-menu-toggle[aria-expanded="true"] { background: #242424; }
+.aph-menu-toggle i { display: block; width: 16px; height: 2px; background: #e0e2e5; }
+.aph-shell-status { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; }
+.aph-shell-actions { height: 50px; padding-right: 20px; }
+
+.aph-icon-rail {
+  top: var(--topbar);
+  z-index: 45;
+  width: var(--rail);
+  overflow: hidden auto;
+  transition: width .18s cubic-bezier(.4, 0, .2, 1), box-shadow .18s ease;
+}
+.aph-icon-rail:hover, .aph-icon-rail.is-expanded { width: 140px; box-shadow: 2px 0 8px rgba(25, 34, 45, .08); }
+.aph-icon-rail nav { align-items: stretch; padding: 0; }
+.aph-icon-rail a {
+  position: relative;
+  display: block;
+  width: 140px;
+  height: 48px;
+  padding: 14px 18px 13px 53px;
+  overflow: hidden;
+  border: 0;
+  color: #4d5259;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 21px;
+  white-space: nowrap;
+}
+.aph-icon-rail a img { position: absolute; left: 21px; top: 14px; width: 20px; height: 20px; }
+.aph-icon-rail a:first-child img { left: 23px; top: 16px; width: 16px; height: 16px; }
+.aph-icon-rail a span { display: block; opacity: 0; visibility: hidden; transform: translateX(-3px); transition: opacity .06s linear, transform .12s ease, visibility 0s linear .06s; }
+.aph-icon-rail:hover a span, .aph-icon-rail.is-expanded a span { opacity: 1; visibility: visible; transform: translateX(0); transition: opacity .08s linear .05s, transform .14s ease .04s, visibility 0s; }
+.aph-icon-rail a:hover { color: #cf001b; background: #f7f7f7; }
+.aph-icon-rail a.active { color: #fff; background: #cf001b; }
+
+.aph-page-tabs {
+  left: var(--rail);
+  top: var(--topbar);
+  z-index: 40;
+  height: var(--tabs);
+  gap: 0;
+  padding: 0 14px;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  font-size: 14px;
+}
+.aph-page-tabs .aph-tab-prev { width: 36px; height: 46px; display: grid; place-items: center; }
+.aph-page-tabs .aph-tab-prev img { width: 16px; height: 16px; object-fit: contain; opacity: .72; }
+.aph-page-tabs a { height: 46px; padding: 0 14px; font-size: 14px; }
+.aph-page-tabs a.active::after { left: 10px; right: 10px; }
+
+main { margin-left: var(--rail); padding: 108px 14px 52px; }
+.page-heading { min-width: 0; padding: 14px 18px 16px; }
+.page-heading > div:first-child { min-width: 0; }
+.page-heading h1 { font-size: 25px; line-height: 1.25; }
+.heading-actions { min-width: 0; }
+
+@media (max-width: 800px) {
+  .aph-shell-header { grid-template-columns: 112px 48px minmax(0, 1fr) auto; }
+  .aph-brand { padding-left: 16px; }
+  .aph-brand img { width: 72px; }
+  .aph-shell-actions { padding-right: 12px; }
+}
+
+@media (max-width: 680px) {
+  :root { --rail: 0px; }
+  .aph-shell-header { grid-template-columns: 112px 1fr; padding: 0; }
+  .aph-shell-status { display: none; }
+  .aph-shell-actions { grid-column: 2; justify-self: end; }
+  .aph-menu-toggle, .aph-icon-rail { display: none; }
+  .aph-page-tabs { left: 0; height: var(--tabs); padding: 0 8px; }
+  .aph-page-tabs a { height: var(--tabs); }
+  main { margin-left: 0; padding: 104px 8px 34px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aph-icon-rail, .aph-icon-rail a span { transition: none; }
+}

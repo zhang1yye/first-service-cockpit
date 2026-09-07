@@ -1,0 +1,64 @@
+/*
+ * R22 首页核心指标卡平衡层。
+ * 只调整标题、主数值和完成率标签的空间关系，不改变指标、接口或跳转。
+ */
+@media (min-width: 1024px) {
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-core > .card-soft {
+    gap: 14px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-core > .card-soft > :first-child {
+    align-items: flex-start !important;
+    gap: 16px;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-core > .card-soft > :first-child > :first-child {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    justify-content: start;
+    align-items: center;
+    column-gap: 18px;
+    row-gap: 8px;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-core > .card-soft > :first-child > :first-child > :first-child {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    margin: 0 !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-core > .card-soft > :first-child > :first-child > :nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
+    line-height: 1 !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-core > .card-soft > :first-child > :first-child > :nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+    margin: 0 !important;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-core > .card-soft > :first-child > :first-child {
+    column-gap: 12px;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-core > .card-soft > :first-child > :first-child > :nth-child(2) {
+    font-size: clamp(2.15rem, 4.2vw, 2.8rem) !important;
+  }
+}

@@ -1,0 +1,262 @@
+/* R34：frontend-skill 全量审计修复层。只调整表现、语义和路由滚动，不触碰业务数据。 */
+
+body[data-r34-release] {
+  --r34-red: #cf001b;
+  --r34-text: #343c47;
+  --r34-muted: #66717e;
+  --r34-line: #dfe3e8;
+  --r34-surface: #f4f5f8;
+}
+
+/* 桌面导航保持 60px 内容轨道，140px 展开层覆盖正文。 */
+@media (min-width: 641px) {
+  body[data-r34-route="home"] main#main-content .aph-home-reflow {
+    padding-top: 108px !important;
+  }
+
+  body[data-r34-release] .aph-exact-sidebar,
+  body[data-r34-release] .aph-exact-sidebar:hover,
+  body[data-r34-release] .aph-exact-sidebar.is-hovered,
+  body[data-r34-release] .aph-exact-sidebar.is-expanded {
+    flex: 0 0 60px !important;
+    width: 60px !important;
+    min-width: 60px !important;
+    max-width: 60px !important;
+    will-change: auto !important;
+    transition: none !important;
+  }
+
+  body[data-r34-release] .aph-exact-sidebar-panel {
+    width: 60px;
+    transition: width .16s cubic-bezier(.2, .7, .2, 1), box-shadow .16s ease !important;
+  }
+
+  body[data-r34-release] .aph-exact-sidebar:hover .aph-exact-sidebar-panel,
+  body[data-r34-release] .aph-exact-sidebar.is-hovered .aph-exact-sidebar-panel,
+  body[data-r34-release] .aph-exact-sidebar.is-expanded .aph-exact-sidebar-panel {
+    width: 140px;
+  }
+
+  body[data-r34-release] .aph-page-tabs,
+  body[data-r34-release] #root > div:has(> .aph-exact-sidebar:hover) .aph-page-tabs,
+  body[data-r34-release] #root > div:has(> .aph-exact-sidebar.is-hovered) .aph-page-tabs,
+  body[data-r34-release] #root > div:has(> .aph-exact-sidebar.is-expanded) .aph-page-tabs {
+    left: 60px !important;
+  }
+
+  body[data-r34-release].aph-admin-page > #root > div,
+  body[data-r34-release].aph-admin-page > #root > div:has(> .aph-exact-sidebar:hover),
+  body[data-r34-release].aph-admin-page > #root > div:has(> .aph-exact-sidebar.is-hovered),
+  body[data-r34-release].aph-admin-page > #root > div:has(> .aph-exact-sidebar.is-expanded) {
+    padding-left: 60px !important;
+  }
+}
+
+/* 首页回到经营工作台：品牌是识别带，指标与风险是首屏主角。 */
+body[data-r34-route="home"] .aph-business-banner {
+  min-height: 150px !important;
+  height: 150px !important;
+  padding: 16px 24px !important;
+  overflow: hidden;
+}
+
+body[data-r34-route="home"] .aph-business-banner::before {
+  font-size: 108px !important;
+  bottom: -22px !important;
+}
+
+body[data-r34-route="home"] .aph-home-kpi-grid .card-soft {
+  box-shadow: none !important;
+  border-color: var(--r34-line) !important;
+}
+
+body[data-r34-route="home"] .aph-home-kpi-grid .card-soft:hover,
+body[data-r34-route="home"] .aph-home-kpi-grid .card-soft:focus-within {
+  transform: none !important;
+  border-color: #c9cfd7 !important;
+  box-shadow: inset 0 2px var(--r34-red) !important;
+}
+
+/* 真实性门禁只保留一个状态区，不再堆叠多个未知指标卡。 */
+.aph-r34-truth-summary {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(220px, .42fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  min-height: 76px;
+  padding: 16px 18px;
+  border: 1px solid #e7c77f;
+  border-left: 3px solid #c77a00;
+  background: #fffaf0;
+  color: var(--r34-text);
+}
+
+.aph-r34-truth-summary strong { font-size: 15px; }
+.aph-r34-truth-summary p { margin: 0; color: var(--r34-muted); font-size: 13px; line-height: 1.6; }
+[data-r34-collapsed-truth-card="1"] { display: none !important; }
+
+.aph-r34-tasks-notice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 auto 12px;
+  padding: 10px 14px;
+  border-left: 3px solid var(--r34-red);
+  background: #fff;
+  color: var(--r34-text);
+  font-size: 13px;
+}
+
+.aph-r34-tasks-notice span { color: var(--r34-muted); }
+
+/* 静态卡片和表格不使用装饰性动画，保留页面、侧栏和抽屉三类反馈。 */
+body[data-r34-release] main :where(.card-soft, article, th, td, [data-aph-truth-state]) {
+  animation: none !important;
+  transition: none !important;
+}
+
+@keyframes aph-r34-enter {
+  from { opacity: .72; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+body[data-r34-release] #main-content.aph-r34-route-enter {
+  animation: aph-r34-enter .18s ease-out both !important;
+}
+
+@keyframes aph-r34-drawer {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+body[data-r34-release] .aph-mobile-more-drawer:not([hidden]) {
+  animation: aph-r34-drawer .16s ease-out both;
+}
+
+@media (max-width: 640px) {
+  /* 自定义移动主导航启用后，原应用的第二条横向导航必须退出布局。 */
+  body[data-r34-release].aph-mobile-nav-ready #root .sticky.top-\[72px\].lg\:hidden {
+    display: none !important;
+  }
+
+  body[data-r34-release] .aph-header-menu,
+  body[data-r34-release] header button[aria-label="账号菜单"] {
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+
+  body[data-r34-release]:not([data-aph-unified-view]) main#main-content {
+    padding-top: 20px !important;
+  }
+
+  body[data-r34-route="home"] .aph-business-banner {
+    min-height: 124px !important;
+    height: 124px !important;
+    padding: 16px !important;
+  }
+
+  body[data-r34-route="home"] main#main-content .aph-home-reflow {
+    padding-top: 64px !important;
+  }
+
+  body[data-r34-route="home"] .aph-business-banner::before {
+    font-size: 74px !important;
+    bottom: -16px !important;
+  }
+
+  body[data-r34-route="home"] .aph-business-banner .aph-banner-copy h1 {
+    font-size: 20px !important;
+  }
+
+  body[data-r34-route="home"] .aph-home-kpi-grid {
+    gap: 10px !important;
+  }
+
+  body[data-r34-route="review"] .aph-review-workbench-switch,
+  body[data-r34-route="review"] .review-workbench-shell,
+  body[data-r34-route="review"] .review-native-root {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  body[data-r34-route="review"] .review-workbench-shell:has(> .aph-review-hero-compact:only-child),
+  body[data-r34-route="review"] .aph-review-hero-compact {
+    display: none !important;
+  }
+
+  .aph-r34-truth-summary {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    min-height: 0;
+    padding: 14px;
+  }
+
+  .aph-r34-tasks-notice {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  /* 后台表格改为字段名 + 值的摘要行，避免桌面列被硬压进窄屏。 */
+  body[data-r34-route="admin"] table[data-r34-responsive-table="1"] {
+    width: 100% !important;
+    min-width: 0 !important;
+    display: block !important;
+  }
+
+  body[data-r34-route="admin"] table[data-r34-responsive-table="1"] thead {
+    display: none !important;
+  }
+
+  body[data-r34-route="admin"] table[data-r34-responsive-table="1"] tbody,
+  body[data-r34-route="admin"] table[data-r34-responsive-table="1"] tr {
+    width: 100%;
+    display: block !important;
+  }
+
+  body[data-r34-route="admin"] table[data-r34-responsive-table="1"] tr {
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    border: 1px solid var(--r34-line);
+    border-left: 3px solid var(--r34-red);
+    background: #fff;
+  }
+
+  body[data-r34-route="admin"] table[data-r34-responsive-table="1"] td {
+    width: 100% !important;
+    min-height: 36px;
+    display: grid !important;
+    grid-template-columns: 92px minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
+    padding: 7px 0 !important;
+    border: 0 !important;
+    border-bottom: 1px solid #edf0f3 !important;
+    text-align: left !important;
+    white-space: normal !important;
+  }
+
+  body[data-r34-route="admin"] table[data-r34-responsive-table="1"] td:last-child {
+    border-bottom: 0 !important;
+  }
+
+  body[data-r34-route="admin"] table[data-r34-responsive-table="1"] td::before {
+    content: attr(data-r34-label);
+    color: var(--r34-muted);
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-r34-release] *,
+  body[data-r34-release] *::before,
+  body[data-r34-release] *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    transition-delay: 0s !important;
+  }
+}

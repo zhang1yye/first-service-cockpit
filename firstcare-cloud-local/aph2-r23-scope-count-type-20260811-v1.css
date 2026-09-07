@@ -1,0 +1,13 @@
+/*
+ * R23 经营分组卡数字字号统一层。
+ * 只统一“经营分组 / 服务中心数”中的两个数字，不改变数据与卡片结构。
+ */
+@media (min-width: 1024px) {
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .aph-home-kpi-grid
+    .r8-home-scope .num > span {
+    font-size: 34px !important;
+    line-height: 42px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.03em !important;
+  }
+}

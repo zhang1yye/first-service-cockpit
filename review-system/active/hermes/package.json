@@ -1,0 +1,19 @@
+{
+  "name": "first-service-hermes-gateway",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "2.8.6",
+    "express": "5.2.1",
+    "helmet": "8.3.0",
+    "morgan": "1.11.0"
+  },
+  "overrides": {
+    "body-parser": "2.3.0"
+  }
+}

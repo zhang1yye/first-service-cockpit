@@ -1,0 +1,38 @@
+/* 收缴率卡：左侧呈现结果环，右侧以两行金额明细支撑经营判断。 */
+@media (min-width: 1024px) {
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection-body {
+    display: grid !important;
+    grid-template-columns: 88px minmax(0, 1fr);
+    align-items: center !important;
+    gap: 14px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection-details {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    align-self: stretch;
+    border-left: 1px solid rgba(226, 35, 35, 0.16);
+    padding-left: 18px;
+    row-gap: 0 !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection-details > :not([hidden]) {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 0;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-collection-details > :not([hidden]) .text-xs {
+    flex: 0 0 auto;
+    line-height: 28px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-collection-details > :not([hidden]) .num.text-lg {
+    flex: 0 1 auto;
+    text-align: right;
+  }
+}

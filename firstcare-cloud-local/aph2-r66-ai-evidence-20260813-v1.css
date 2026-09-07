@@ -1,0 +1,69 @@
+/* AI证据分层：动态来源与已批准知识保持可视区分。 */
+#north-ai-assistant .north-ai-knowledge {
+  display: flex;
+  max-width: 92%;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+#north-ai-assistant .north-ai-knowledge-item {
+  padding: 5px 8px;
+  border: 1px solid rgba(40, 91, 141, .22);
+  border-radius: 8px;
+  color: #285b8d;
+  background: #eef5fb;
+  font-size: 11px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+#north-ai-assistant .north-ai-center-choices {
+  display: grid;
+  width: min(92%, 560px);
+  gap: 8px;
+  margin-top: 2px;
+}
+
+#north-ai-assistant .north-ai-center-choices-title {
+  margin: 0;
+  color: #5f6670;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+#north-ai-assistant .north-ai-center-choice {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #d7dce2;
+  border-radius: 8px;
+  color: #272b31;
+  background: #ffffff;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color .16s ease, background-color .16s ease, color .16s ease;
+}
+
+#north-ai-assistant .north-ai-center-choice:hover {
+  border-color: #b8101a;
+  color: #8f0c14;
+  background: #fff7f7;
+}
+
+#north-ai-assistant .north-ai-center-choice:focus-visible {
+  outline: 2px solid #b8101a;
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  #north-ai-assistant .north-ai-knowledge,
+  #north-ai-assistant .north-ai-meta,
+  #north-ai-assistant .north-ai-limitations,
+  #north-ai-assistant .north-ai-center-choices {
+    max-width: 96%;
+    width: 96%;
+  }
+}

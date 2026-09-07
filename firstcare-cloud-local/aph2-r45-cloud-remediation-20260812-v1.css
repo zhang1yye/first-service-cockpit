@@ -1,0 +1,121 @@
+/* R45：云端全量复验收口。只改路由身份、语义、触控和渐进展开，不改业务数据。 */
+
+body[data-r45-release] {
+  --r45-red: #cf001b;
+  --r45-text: #343c47;
+  --r45-muted: #66717e;
+  --r45-line: #dfe3e8;
+  --r45-warning: #fff8e8;
+}
+
+.aph-r45-route-intro {
+  margin: 0 0 16px;
+  padding: 2px 0 14px;
+  border-bottom: 1px solid var(--r45-line);
+}
+
+.aph-r45-route-intro h1 {
+  margin: 0;
+  color: var(--r45-text);
+  font-size: 24px;
+  font-weight: 650;
+  letter-spacing: -.02em;
+}
+
+.aph-r45-route-intro p {
+  margin: 6px 0 0;
+  color: var(--r45-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.aph-r45-project-gate {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 6px 16px;
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  border-left: 3px solid #c77a00;
+  background: var(--r45-warning);
+  color: var(--r45-text);
+}
+
+.aph-r45-project-gate strong { font-size: 14px; }
+.aph-r45-project-gate p { margin: 0; color: var(--r45-muted); font-size: 12px; line-height: 1.55; }
+.aph-r45-project-gate a { color: var(--r45-red); font-size: 12px; font-weight: 600; }
+
+@media (max-width: 640px) {
+  /* R34 的 display:block!important 曾覆盖 HTML hidden；后置恢复真实折叠。 */
+  body[data-r45-route="admin"] table[data-r34-responsive-table="1"] tbody tr[hidden] {
+    display: none !important;
+  }
+
+  body[data-r45-release].aph2-theme:not(.aph-admin-page) #root header.sticky.top-0 button[aria-label="账号菜单"] {
+    width: 44px !important;
+    min-width: 44px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+  }
+
+  body[data-r45-release].aph2-theme .north-ai-assistant .north-ai-close {
+    width: 44px !important;
+    min-width: 44px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+  }
+
+  body[data-r45-route="projects"] main :is(select, input:not([type="checkbox"]):not([type="radio"])),
+  body[data-r45-route="payment"] main select,
+  body[data-r45-route="daily"] main select,
+  body[data-r45-route="collection"] main select,
+  body[data-r45-route="ai-alerts"] main select,
+  body[data-r45-route="ai-report"] main select {
+    height: 44px !important;
+    min-height: 44px !important;
+  }
+
+  body[data-r45-release] .r6-sort-button,
+  body[data-r45-release] .aph-r45-touch-target,
+  body[data-r45-release] .aph-r45-touch-action {
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+
+  body[data-r45-route="projects"] [data-r6-mapping-link],
+  body[data-r45-route="projects"] a[href^="/admin/#mappings"] {
+    display: flex !important;
+    align-items: center;
+    min-height: 44px !important;
+  }
+
+  body[data-r45-route="review"] button[aria-label^="查看方案："],
+  body[data-r45-route="import"] .aph-r45-touch-action {
+    min-width: 44px !important;
+    min-height: 44px !important;
+    padding-right: 8px !important;
+    padding-left: 8px !important;
+  }
+
+  .aph-r45-route-intro h1 { font-size: 20px; }
+
+  .aph-r45-project-gate {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .aph-r45-project-gate a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-r45-release] *,
+  body[data-r45-release] *::before,
+  body[data-r45-release] *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}

@@ -1,0 +1,11 @@
+[Unit]
+Description=Run First Service prior-day collection reconciliation at 00:00 China time
+
+[Timer]
+OnCalendar=*-*-* 00:00:00 Asia/Shanghai
+Persistent=false
+AccuracySec=1min
+Unit=cockpit-daily-reconciliation.service
+
+[Install]
+WantedBy=timers.target

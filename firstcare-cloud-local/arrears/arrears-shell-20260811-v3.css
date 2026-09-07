@@ -1,0 +1,13 @@
+/* 侧栏展开时页签避让，正文使用固定安全边距避免标题和数据被覆盖。 */
+.aph-page-tabs { transition: left .18s cubic-bezier(.4, 0, .2, 1); }
+.aph-icon-rail:hover + .aph-page-tabs,
+.aph-icon-rail.is-expanded + .aph-page-tabs { left: 140px; }
+main { padding-left: 94px; }
+
+@media (max-width: 680px) {
+  main { padding-left: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aph-page-tabs { transition: none; }
+}

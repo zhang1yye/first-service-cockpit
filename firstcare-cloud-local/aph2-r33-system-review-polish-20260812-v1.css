@@ -1,0 +1,389 @@
+/* R33：系统管理、研发审核和登录页沿用首页的经营层级。 */
+
+/* 只在本轮目标路由恢复清晰的键盘焦点。 */
+body.aph-r33-ui-polish :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid #cf001b !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 3px rgba(207, 0, 27, .12) !important;
+}
+
+/* 左侧轨道固定 60px，展开面板覆盖正文，不再推动内容和页签。 */
+@media (min-width: 641px) {
+  body.aph-r33-ui-polish .aph-exact-sidebar,
+  body.aph-r33-ui-polish .aph-exact-sidebar:hover,
+  body.aph-r33-ui-polish .aph-exact-sidebar.is-hovered,
+  body.aph-r33-ui-polish .aph-exact-sidebar.is-expanded {
+    flex: 0 0 60px !important;
+    width: 60px !important;
+    min-width: 60px !important;
+    max-width: 60px !important;
+  }
+
+  body.aph-r33-ui-polish .aph-page-tabs,
+  body.aph-r33-ui-polish #root > div:has(> .aph-exact-sidebar:hover) .aph-page-tabs,
+  body.aph-r33-ui-polish #root > div:has(> .aph-exact-sidebar.is-hovered) .aph-page-tabs,
+  body.aph-r33-ui-polish #root > div:has(> .aph-exact-sidebar.is-expanded) .aph-page-tabs {
+    left: 60px !important;
+  }
+
+  body.aph-r33-ui-polish.aph-admin-page > #root > div,
+  body.aph-r33-ui-polish.aph-admin-page > #root > div:has(> .aph-exact-sidebar:hover),
+  body.aph-r33-ui-polish.aph-admin-page > #root > div:has(> .aph-exact-sidebar.is-hovered),
+  body.aph-r33-ui-polish.aph-admin-page > #root > div:has(> .aph-exact-sidebar.is-expanded) {
+    padding-left: 60px !important;
+  }
+}
+
+/* 系统管理：两种身份入口保持清楚，但不再使用通用模板式眉题和编号。 */
+body[data-aph-unified-view="system"] .aph-system-hub {
+  width: min(1320px, 100%);
+  min-height: 0;
+  padding: 24px 26px 30px;
+}
+
+body[data-aph-unified-view="system"] .aph-system-intro {
+  align-items: center;
+  padding: 2px 0 18px;
+  border-bottom-width: 1px;
+}
+
+body[data-aph-unified-view="system"] .aph-system-eyebrow,
+body[data-aph-unified-view="system"] .aph-system-entry-head {
+  display: none;
+}
+
+body[data-aph-unified-view="system"] .aph-system-intro h1 {
+  margin: 0 0 7px;
+  font-size: 26px;
+  letter-spacing: -.02em;
+}
+
+body[data-aph-unified-view="system"] .aph-system-intro p {
+  max-width: 72ch;
+  color: #626b77;
+  line-height: 1.65;
+}
+
+body[data-aph-unified-view="system"] .aph-system-readonly {
+  margin-top: 0;
+  color: #4f5966;
+  background: #f7f8fa;
+}
+
+body[data-aph-unified-view="system"] .aph-system-entry-grid {
+  gap: 16px;
+  margin-top: 16px;
+}
+
+body[data-aph-unified-view="system"] .aph-system-entry {
+  min-height: 260px;
+  padding: 22px 24px 20px;
+  border-radius: 14px;
+  border-top-width: 1px;
+  box-shadow: 0 8px 24px rgba(25, 34, 45, .06);
+}
+
+body[data-aph-unified-view="system"] .aph-system-entry.is-usage {
+  border-color: rgba(207, 0, 27, .22);
+  background: linear-gradient(145deg, #fff 0%, #fffafa 100%);
+}
+
+body[data-aph-unified-view="system"] .aph-system-entry.is-admin {
+  border-color: #d9dee5;
+  background: linear-gradient(145deg, #fff 0%, #f8f9fb 100%);
+}
+
+body[data-aph-unified-view="system"] .aph-system-entry h2 {
+  margin-bottom: 8px;
+  font-size: 20px;
+  letter-spacing: -.01em;
+}
+
+body[data-aph-unified-view="system"] .aph-system-entry p {
+  min-height: 44px;
+  max-width: 62ch;
+  color: #68717d;
+  line-height: 1.65;
+}
+
+body[data-aph-unified-view="system"] .aph-system-entry ul {
+  margin: 15px 0 17px;
+  line-height: 1.75;
+}
+
+body[data-aph-unified-view="system"] .aph-system-entry > strong {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 3px;
+}
+
+body[data-aph-unified-view="system"] .aph-system-note {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-left-width: 1px;
+  border: 1px solid #e1e5ea;
+  background: #fff;
+}
+
+/* 研发审核：默认首屏只回答“今天需要处理什么”。 */
+body.aph-r24-review .review-workbench-shell {
+  gap: 12px !important;
+}
+
+body.aph-r24-review .aph-review-workbench-switch {
+  position: relative;
+  top: auto;
+  z-index: 3;
+  min-height: 48px;
+  margin: 0 0 12px;
+  padding: 0 16px;
+  gap: 24px;
+  border: 1px solid #e1e5ea;
+  border-left-width: 1px;
+  box-shadow: none;
+}
+
+body.aph-r24-review .aph-review-workbench-switch > button {
+  min-height: 48px;
+  padding: 0 2px !important;
+  border: 0 !important;
+  border-bottom: 2px solid transparent !important;
+  background: transparent !important;
+  color: #68717d !important;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+body.aph-r24-review .aph-review-workbench-switch > button[aria-selected="true"] {
+  border-bottom-color: #cf001b !important;
+  color: #2f3742 !important;
+  background: transparent !important;
+}
+
+body.aph-r24-review .aph-review-freshness {
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  color: #59636f;
+}
+
+body.aph-r24-review .review-workbench-shell[data-review-workbench-mode="today"] .review-workbench-aside {
+  display: none !important;
+}
+
+body.aph-r24-review .review-workbench-shell[data-review-workbench-mode="today"] .review-workbench-main {
+  grid-column: 1 / -1 !important;
+}
+
+body.aph-r24-review .review-workbench-shell[data-review-workbench-mode="today"] .aph-review-hero-compact {
+  display: none !important;
+}
+
+body.aph-r24-review [data-review-task-priority="1"] {
+  order: -1;
+  border-top: 2px solid #cf001b !important;
+}
+
+body.aph-r24-review .review-native-root .review-panel,
+body.aph-r24-review .review-native-root .review-workbench-stat-card {
+  border-radius: 14px !important;
+  border-color: #e1e5ea !important;
+  box-shadow: 0 6px 18px rgba(25, 34, 45, .055) !important;
+}
+
+body.aph-r24-review .review-native-root .review-workbench-stat-card {
+  min-height: 86px !important;
+}
+
+body.aph-r24-review .review-native-root .review-workbench-stat-icon {
+  width: 42px;
+  height: 42px;
+  flex-basis: 42px;
+  border-radius: 10px !important;
+}
+
+body.aph-r24-review .review-native-root :where(.text-slate-400, .text-slate-500, .text-muted-foreground) {
+  color: #636c78 !important;
+}
+
+body.aph-r24-review .aph-review-ops-groups {
+  padding: 10px 0 12px;
+}
+
+body.aph-r24-review .aph-review-ops-groups button[aria-selected="true"] {
+  background: #cf001b !important;
+  border-color: #cf001b !important;
+}
+
+/* 驾驶舱登录页：增强品牌、可读性和恢复提示，不改变认证逻辑。 */
+body.aph-auth-route.aph-r33-ui-polish {
+  background: #f2f3f6 !important;
+}
+
+body.aph-auth-route.aph-r33-ui-polish::before {
+  content: "APH 2.0  ·  第一服务华北地区经营驾驶舱";
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 28px;
+  background: #050505;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  display: flex !important;
+}
+
+body.aph-auth-route.aph-r33-ui-polish #root > div {
+  color: #343c47 !important;
+  background: #f2f3f6 !important;
+}
+
+body.aph-auth-route.aph-r33-ui-polish #root .card-soft {
+  width: min(420px, calc(100vw - 32px));
+  padding: 32px 34px !important;
+  overflow: hidden;
+  border: 1px solid #dde2e8 !important;
+  border-radius: 14px !important;
+  background: #fff !important;
+  box-shadow: 0 18px 42px rgba(25, 34, 45, .12) !important;
+}
+
+body.aph-auth-route.aph-r33-ui-polish #root main img[alt="第一服务"] {
+  width: calc(100% + 68px) !important;
+  height: 64px !important;
+  margin: -32px -34px 24px !important;
+  padding: 14px 0 !important;
+  object-fit: contain;
+  background: #cf001b;
+}
+
+body.aph-auth-route.aph-r33-ui-polish #root .text-muted-foreground {
+  color: #606a76 !important;
+}
+
+body.aph-auth-route.aph-r33-ui-polish #root input {
+  color: #303844 !important;
+  background: #fff !important;
+  border-color: #cfd5dd !important;
+}
+
+body.aph-auth-route.aph-r33-ui-polish #root button[type="submit"] {
+  color: #fff !important;
+  background: #cf001b !important;
+}
+
+body.aph-auth-route.aph-r33-ui-polish #root button[type="submit"]:disabled {
+  color: #767f8b !important;
+  background: #e4e7eb !important;
+  opacity: 1 !important;
+}
+
+.aph-r33-login-help {
+  margin: 14px 0 0;
+  color: #5f6975;
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.aph-r33-login-password {
+  position: relative;
+}
+
+.aph-r33-login-password input {
+  padding-right: 42px !important;
+}
+
+.aph-r33-password-toggle {
+  position: absolute;
+  right: 8px;
+  bottom: 5px;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background: transparent;
+  color: #59636f;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+@media (max-width: 820px) {
+  body[data-aph-unified-view="system"] .aph-system-entry {
+    min-height: 0;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  /* 自定义四项移动导航启用后，隐藏应用自带的第二条横向导航。 */
+  body.aph-mobile-nav-ready #root .sticky.top-\[72px\].lg\:hidden {
+    display: none !important;
+  }
+}
+
+/* 项目页保留高密度表格，但正文和状态信息不低于可读字号。 */
+body.aph-r24-projects :where(
+  .aph-project-page-head p,
+  .aph-project-source,
+  .aph-project-kpis span,
+  .aph-project-kpis small,
+  .aph-project-toolbar,
+  .aph-project-table,
+  table
+) {
+  font-size: 12px !important;
+}
+
+body.aph-r24-projects .aph-project-kpis article {
+  min-height: 124px;
+}
+
+/* 质量责任入口是操作，不再伪装成没有数值的指标卡。 */
+body.aph-r24-command a[href^="/admin"][aria-label*="数据真实性中心"] {
+  display: flex !important;
+  min-height: 120px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px !important;
+  color: #343c47 !important;
+  background: #fff !important;
+  border: 1px solid #dfe3e8 !important;
+  border-left: 3px solid #cf001b !important;
+  text-decoration: none !important;
+}
+
+body.aph-r24-command a[href^="/admin"][aria-label*="数据真实性中心"]::after {
+  content: "查看未闭环事项、责任人与截止日期 →";
+  color: #69727e;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  body.aph-r24-review .aph-review-workbench-switch {
+    align-items: flex-start;
+    padding: 0 12px;
+    gap: 16px;
+  }
+
+  body.aph-r24-review .aph-review-freshness {
+    flex: 1 0 100%;
+    padding: 8px 0 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.aph-r33-ui-polish *,
+  body.aph-r33-ui-polish *::before,
+  body.aph-r33-ui-polish *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}

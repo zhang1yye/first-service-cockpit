@@ -1,0 +1,6 @@
+/* R59：移动端嵌入 Inspector 从外层固定导航下方开始，保留完整可触达的关闭按钮。 */
+@media (max-width: 860px) {
+  .r55-inspector:not([hidden]) {
+    top: var(--r59-arrears-inspector-top-inset, 0px);
+  }
+}

@@ -1,0 +1,52 @@
+/* R59：桌面侧栏展开时，整个工作区同步让出 140px，所有页面正文不再被覆盖。 */
+@media (min-width: 641px) {
+  body.aph2-theme .aph-exact-sidebar:not(.aph-r57-hover-suppressed):hover,
+  body.aph2-theme .aph-exact-sidebar:not(.aph-r57-hover-suppressed).is-hovered,
+  body.aph2-theme .aph-exact-sidebar:not(.aph-r57-hover-suppressed).is-expanded {
+    flex: 0 0 140px !important;
+    width: 140px !important;
+    min-width: 140px !important;
+    max-width: 140px !important;
+  }
+
+  body.aph2-theme:not(.aph-admin-page)
+    #root > div:has(> .aph-exact-sidebar:not(.aph-r57-hover-suppressed):hover)
+    .aph-page-tabs,
+  body.aph2-theme:not(.aph-admin-page)
+    #root > div:has(> .aph-exact-sidebar:not(.aph-r57-hover-suppressed).is-hovered)
+    .aph-page-tabs,
+  body.aph2-theme:not(.aph-admin-page)
+    #root > div:has(> .aph-exact-sidebar:not(.aph-r57-hover-suppressed).is-expanded)
+    .aph-page-tabs {
+    left: 140px !important;
+  }
+
+  body.aph2-theme.aph-admin-page
+    > #root > div:has(> .aph-exact-sidebar:not(.aph-r57-hover-suppressed):hover),
+  body.aph2-theme.aph-admin-page
+    > #root > div:has(> .aph-exact-sidebar:not(.aph-r57-hover-suppressed).is-hovered),
+  body.aph2-theme.aph-admin-page
+    > #root > div:has(> .aph-exact-sidebar:not(.aph-r57-hover-suppressed).is-expanded) {
+    padding-left: 140px !important;
+  }
+
+  body.aph2-theme.aph-admin-page
+    #root > div:has(> .aph-exact-sidebar:not(.aph-r57-hover-suppressed):hover)
+    > .aph-page-tabs,
+  body.aph2-theme.aph-admin-page
+    #root > div:has(> .aph-exact-sidebar:not(.aph-r57-hover-suppressed).is-hovered)
+    > .aph-page-tabs,
+  body.aph2-theme.aph-admin-page
+    #root > div:has(> .aph-exact-sidebar:not(.aph-r57-hover-suppressed).is-expanded)
+    > .aph-page-tabs {
+    left: 140px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.aph2-theme .aph-exact-sidebar,
+  body.aph2-theme .aph-page-tabs,
+  body.aph2-theme main#main-content {
+    transition-duration: 0.01ms !important;
+  }
+}

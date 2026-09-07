@@ -1,0 +1,248 @@
+/* R64：AI 是顶栏工具，不再以固定浮标覆盖 KPI、地图、表格或操作按钮。 */
+body[data-r64-ai-header] #north-ai-assistant > .north-ai-launcher.aph-r64-ai-source {
+  display: none !important;
+}
+
+body[data-r64-ai-header] .aph-r57-mobile-ai-launcher {
+  display: none !important;
+}
+
+body[data-r64-ai-header] #north-ai-assistant > .north-ai-overlay[aria-hidden="false"].is-open {
+  z-index: 10050 !important;
+}
+
+.aph-r64-ai-launcher,
+.aph-r64-admin-mobile-identity,
+.aph-r64-admin-account-wrap {
+  display: none;
+}
+
+body[data-r64-ai-header].aph2-theme #root :is(header.sticky.top-0, header.aph-admin-shell-header) button.aph-r64-ai-launcher {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px !important;
+  min-width: 44px !important;
+  max-width: 44px !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  max-height: 44px !important;
+  align-self: center;
+  margin: 0;
+  padding: 0 !important;
+  overflow: hidden;
+  border: 1px solid #303844;
+  border-radius: 0 !important;
+  color: #ffffff;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+body[data-r64-ai-header].aph2-theme #root :is(header.sticky.top-0, header.aph-admin-shell-header) button.aph-r64-ai-launcher:hover {
+  color: #ffffff !important;
+  border-color: #b8101a;
+  background: #252525 !important;
+}
+
+body[data-r64-ai-header].aph2-theme #root :is(header.sticky.top-0, header.aph-admin-shell-header) button.aph-r64-ai-launcher:focus-visible {
+  outline: 2px solid #ffffff !important;
+  outline-offset: -4px;
+  border-color: #b8101a;
+}
+
+body[data-r64-ai-header] .aph-r64-desktop-ai-mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  color: #ffffff;
+  background: #b8101a;
+  font: 700 13px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: -.06em;
+}
+
+@media (min-width: 641px) {
+  body[data-r64-ai-header].aph2-theme #root header.aph-admin-shell-header.aph-r64-ai-host {
+    position: relative !important;
+    padding-right: 72px !important;
+  }
+
+  body[data-r64-ai-header].aph2-theme #root header.aph-admin-shell-header button.aph-r64-ai-launcher[data-r64-placement="admin"] {
+    position: absolute;
+    top: 3px;
+    right: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  body[data-r64-ai-header].aph2-theme.aph-r64-mobile-shell {
+    padding-top: 50px !important;
+  }
+
+  body[data-r64-ai-header].aph2-theme.aph-r64-mobile-shell #root :is(header.sticky.top-0, header.aph-admin-shell-header) {
+    position: fixed !important;
+    inset: 0 0 auto 0 !important;
+    z-index: 80 !important;
+    width: 100% !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    max-height: 50px !important;
+  }
+
+  body[data-r64-ai-header].aph2-theme.aph-r64-mobile-shell #root header.sticky.top-0 > div {
+    height: 50px !important;
+    min-height: 50px !important;
+  }
+
+  body[data-r64-ai-header].aph2-theme.aph-r64-mobile-shell .aph-mobile-primary-nav {
+    top: 50px !important;
+    z-index: 79 !important;
+  }
+
+  body[data-r64-ai-header].aph2-theme.aph-r64-mobile-shell #root header.sticky.top-0 .aph-header-menu {
+    display: none !important;
+  }
+
+  body[data-r64-ai-header].aph2-theme.aph-admin-page.aph-r64-mobile-shell #root header.aph-admin-shell-header {
+    display: flex !important;
+    flex-flow: row nowrap !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 0 12px !important;
+    overflow: visible !important;
+    color: #ffffff !important;
+    background: #000000 !important;
+  }
+
+  body[data-r64-ai-header].aph2-theme.aph-admin-page.aph-r64-mobile-shell #root header.aph-admin-shell-header > div:first-child {
+    display: none !important;
+  }
+
+  body[data-r64-ai-header].aph2-theme.aph-admin-page.aph-r64-mobile-shell #root header.aph-admin-shell-header .aph-r64-admin-mobile-identity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 50px;
+  }
+
+  body[data-r64-ai-header].aph2-theme #root header.aph-admin-shell-header .aph-r64-admin-mobile-brand {
+    display: grid !important;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 52px;
+    height: 44px;
+    min-height: 44px;
+    color: #ffffff;
+  }
+
+  body[data-r64-ai-header].aph2-theme #root header.aph-admin-shell-header .aph-r64-admin-mobile-brand img {
+    display: block;
+    width: auto;
+    height: 40px;
+    max-width: 52px;
+    object-fit: contain;
+  }
+
+  body[data-r64-ai-header].aph2-theme #root header.aph-admin-shell-header .aph-r64-admin-mobile-title {
+    display: block !important;
+    min-width: 0;
+    overflow: hidden;
+    color: #ffffff !important;
+    font-size: 16px;
+    font-weight: 650;
+    line-height: 24px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  body[data-r64-ai-header].aph2-theme #root header.aph-admin-shell-header .aph-r64-admin-account-wrap {
+    position: relative;
+    display: block;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+  }
+
+  body[data-r64-ai-header].aph2-theme #root header.aph-admin-shell-header .aph-r64-admin-account {
+    display: grid;
+    place-items: center;
+    width: 44px !important;
+    min-width: 44px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    margin: 0;
+    padding: 0 !important;
+    border: 1px solid #303844;
+    border-radius: 0 !important;
+    color: #ffffff !important;
+    background: transparent !important;
+  }
+
+  body[data-r64-ai-header].aph2-theme #root header.aph-admin-shell-header .aph-r64-admin-account svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  body[data-r64-ai-header].aph2-theme #root header.aph-admin-shell-header .aph-r64-admin-account:focus-visible {
+    outline: 2px solid #ffffff !important;
+    outline-offset: -4px;
+    border-color: #b8101a;
+  }
+
+  body[data-r64-ai-header].aph2-theme #root header.aph-admin-shell-header .aph-r64-admin-account-menu {
+    position: absolute;
+    top: 48px;
+    right: 0;
+    z-index: 100;
+    display: grid;
+    gap: 6px;
+    width: 196px;
+    padding: 10px;
+    color: #ffffff;
+    background: #101820;
+    border: 1px solid #303844;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .32);
+  }
+
+  body[data-r64-ai-header].aph2-theme #root header.aph-admin-shell-header .aph-r64-admin-account-menu[hidden] {
+    display: none !important;
+  }
+
+  body[data-r64-ai-header].aph2-theme #root header.aph-admin-shell-header .aph-r64-admin-account-menu strong {
+    color: #aeb7c2 !important;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  body[data-r64-ai-header].aph2-theme #root header.aph-admin-shell-header .aph-r64-admin-account-menu a {
+    display: flex !important;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 12px;
+    color: #ffffff !important;
+    background: #252525;
+    text-decoration: none;
+  }
+
+  body[data-r64-ai-header].aph2-theme #root header.aph-admin-shell-header button.aph-r64-ai-launcher[data-r64-placement="admin"] {
+    position: relative !important;
+    inset: auto !important;
+    flex: 0 0 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aph-r64-ai-launcher,
+  body[data-r64-ai-header] #north-ai-assistant > .north-ai-overlay {
+    transition: none !important;
+  }
+}

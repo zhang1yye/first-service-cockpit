@@ -1,0 +1,228 @@
+/* R35：欠费经营页对齐驾驶舱首页配色。只调整视觉角色，不修改数据、结构与交互。 */
+:root {
+  --arrears-home-brand: #e60012;
+  --arrears-home-accent: #d14f5a;
+  --arrears-home-accent-soft: #fff3f4;
+  --arrears-home-canvas: #f3f4f7;
+  --arrears-home-panel: #ffffff;
+  --arrears-home-ink: #303743;
+  --arrears-home-muted: #68717d;
+  --arrears-home-line: rgba(32, 47, 66, .1);
+  --arrears-home-shadow: 0 10px 30px rgba(45, 57, 72, .07), 0 2px 7px rgba(45, 57, 72, .04);
+  --aph-page: var(--arrears-home-canvas);
+  --aph-panel: var(--arrears-home-panel);
+  --aph-ink: var(--arrears-home-ink);
+  --aph-muted: var(--arrears-home-muted);
+  --aph-line: #e2e5e9;
+  --aph-line-strong: #cfd5dd;
+  --aph-navy: #0d1b2a;
+}
+
+html,
+body,
+.aph-arrears-embedded,
+.aph-arrears-embedded body {
+  background: var(--arrears-home-canvas);
+  color: var(--arrears-home-ink);
+}
+
+.page-heading {
+  border-color: var(--arrears-home-line);
+  border-bottom-color: var(--arrears-home-line);
+  border-radius: 14px;
+  background: var(--arrears-home-panel);
+  box-shadow: var(--arrears-home-shadow);
+}
+
+.page-heading .eyebrow,
+.workspace-heading .eyebrow {
+  display: none;
+}
+
+.page-heading h1,
+.workspace-heading h2,
+.panel-title h2,
+.overview-empty strong {
+  color: var(--arrears-home-ink);
+}
+
+.page-heading p,
+.workspace-heading p,
+.metrics small,
+.metrics span,
+.overview-empty p,
+.quality-list dt,
+.flow span,
+td small {
+  color: var(--arrears-home-muted);
+}
+
+.guardrail {
+  border: 1px solid rgba(209, 79, 90, .18);
+  border-left-width: 1px;
+  border-radius: 12px;
+  background: var(--arrears-home-accent-soft);
+}
+
+.guardrail strong,
+.back-link,
+.confidence,
+.section-mark {
+  color: var(--arrears-home-brand) !important;
+}
+
+.arrears-view-tabs {
+  border-color: var(--arrears-home-line);
+  border-radius: 14px;
+  background: var(--arrears-home-panel);
+  box-shadow: 0 4px 14px rgba(45, 57, 72, .045);
+}
+
+.arrears-view-tabs button {
+  border-radius: 8px;
+  background: #f4f5f7;
+  color: #59636f;
+}
+
+.arrears-view-tabs button:hover {
+  background: #fff7f8;
+  color: var(--arrears-home-brand);
+}
+
+.arrears-view-tabs button[aria-selected="true"] {
+  border-color: var(--arrears-home-brand);
+  background: var(--arrears-home-brand);
+  color: #fff;
+}
+
+.arrears-view-tabs button:focus-visible {
+  outline-color: var(--arrears-home-brand);
+}
+
+.metrics article,
+.panel {
+  border-color: var(--arrears-home-line);
+  border-radius: 14px;
+  background: var(--arrears-home-panel);
+  box-shadow: var(--arrears-home-shadow);
+}
+
+.metrics article {
+  overflow: hidden;
+}
+
+.metrics article::before {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--arrears-home-accent), rgba(209, 79, 90, .16));
+  opacity: .42;
+}
+
+.metrics article.metric-primary {
+  border-bottom: 1px solid var(--arrears-home-line);
+  background:
+    radial-gradient(circle at 10% 100%, rgba(209, 79, 90, .08), transparent 38%),
+    linear-gradient(145deg, #fff 0%, #fffafb 100%);
+}
+
+.metrics strong,
+.operating-metrics .metric-primary strong,
+.quality-list dd,
+.breakdown-heading strong {
+  color: var(--arrears-home-ink);
+}
+
+.tag,
+.data-state.unavailable,
+.data-state.failed,
+.status.bad {
+  border-color: rgba(209, 79, 90, .2);
+  background: var(--arrears-home-accent-soft);
+  color: #b7192c;
+}
+
+.data-state {
+  border-radius: 8px;
+}
+
+.primary {
+  border-color: var(--arrears-home-brand);
+  background: var(--arrears-home-brand);
+}
+
+.primary:hover {
+  border-color: #c90010;
+  background: #c90010;
+}
+
+.secondary {
+  border-color: #d7dce3;
+  border-radius: 8px;
+  color: #4f5966;
+}
+
+.secondary:hover {
+  border-color: rgba(209, 79, 90, .38);
+  background: #fff8f8;
+  color: var(--arrears-home-brand);
+}
+
+.overview-empty {
+  border: 1px solid var(--arrears-home-line);
+  border-radius: 14px;
+  background: var(--arrears-home-panel);
+  box-shadow: 0 4px 14px rgba(45, 57, 72, .04);
+}
+
+.empty-index {
+  border-radius: 10px;
+  background: var(--arrears-home-accent-soft);
+  color: var(--arrears-home-accent);
+}
+
+.panel-title {
+  border-bottom-color: var(--arrears-home-line);
+}
+
+.breakdown-track {
+  border-radius: 999px;
+  background: #eceff3;
+}
+
+.breakdown-bar {
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--arrears-home-brand), #e45b67);
+}
+
+.quality-note {
+  border-left-width: 1px;
+  border-radius: 8px;
+  background: var(--arrears-home-accent-soft);
+  color: #626b77;
+}
+
+th {
+  background: var(--aph-navy);
+}
+
+tbody tr:hover {
+  background: #fff8f8;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline-color: var(--arrears-home-brand);
+  box-shadow: 0 0 0 3px rgba(230, 0, 18, .1);
+}
+
+@media (max-width: 680px) {
+  .page-heading,
+  .metrics article,
+  .panel,
+  .overview-empty,
+  .arrears-view-tabs {
+    border-radius: 12px;
+  }
+}

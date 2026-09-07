@@ -1,0 +1,23 @@
+/* R56 v2：长证据来源改为纵向阅读，避免与方法、校验时间重叠。 */
+body[data-r42-route="ai-alerts"] [data-r56-ai-center-app] .r56-evidence-list li {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.2rem;
+  align-items: start;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--r56-line);
+}
+
+body[data-r42-route="ai-alerts"] [data-r56-ai-center-app] .r56-evidence-list li:first-child {
+  padding-top: 0;
+}
+
+body[data-r42-route="ai-alerts"] [data-r56-ai-center-app] .r56-evidence-list li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+body[data-r42-route="ai-alerts"] [data-r56-ai-center-app] .r56-evidence-list :is(strong, span, small) {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}

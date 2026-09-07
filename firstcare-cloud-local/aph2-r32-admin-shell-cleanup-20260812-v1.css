@@ -1,0 +1,70 @@
+/* R32：后台页复用驾驶舱 APH 顶栏，移除旧壳标题与重复入口。 */
+@media (min-width: 641px) {
+  body.aph2-theme.aph-admin-page
+    #root header.aph-admin-shell-header
+    > div:first-child
+    > :is(a, span) {
+    display: none !important;
+  }
+
+  body.aph2-theme.aph-admin-page
+    #root header.aph-admin-shell-header
+    .aph-header-menu {
+    position: fixed !important;
+    left: 140px !important;
+    top: 0 !important;
+    z-index: 72 !important;
+    width: 48px !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    display: grid !important;
+    place-items: center !important;
+    padding: 0 !important;
+    background: #000000 !important;
+    border: 0 !important;
+  }
+
+  body.aph2-theme.aph-admin-page
+    #root header.aph-admin-shell-header
+    .aph-header-menu img {
+    width: 18px !important;
+    height: 18px !important;
+    object-fit: contain !important;
+  }
+
+  body.aph2-theme.aph-admin-page
+    #root header.aph-admin-shell-header
+    .aph-header-status {
+    position: fixed !important;
+    left: 50% !important;
+    top: 25px !important;
+    z-index: 71 !important;
+    display: block !important;
+    max-width: calc(100vw - 520px) !important;
+    transform: translate(-50%, -50%) !important;
+    overflow: hidden !important;
+    color: #f5f5f5 !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    letter-spacing: .12em !important;
+    line-height: 20px !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  body.aph2-theme.aph-admin-page
+    #root header.aph-admin-shell-header
+    .aph-header-status b {
+    color: #ff3b30 !important;
+    font-size: inherit !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body.aph2-theme.aph-admin-page
+    #root header.aph-admin-shell-header
+    > div:first-child
+    > :is(a, span) {
+    display: none !important;
+  }
+}

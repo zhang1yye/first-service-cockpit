@@ -1,0 +1,23 @@
+/* R44：窄桌面侧栏展开安全区 + 刷新页签行为修复。 */
+
+@media (min-width: 641px) and (max-width: 1759px) {
+  body[data-r42-route="home"]
+    #root > div:has(> .aph-exact-sidebar:hover)
+    main#main-content,
+  body[data-r42-route="home"]
+    #root > div:has(> .aph-exact-sidebar.is-hovered)
+    main#main-content,
+  body[data-r42-route="home"]
+    #root > div:has(> .aph-exact-sidebar.is-expanded)
+    main#main-content {
+    padding-left: 98px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-r44-release] *,
+  html[data-r44-release] *::before,
+  html[data-r44-release] *::after {
+    transition-duration: .01ms !important;
+  }
+}

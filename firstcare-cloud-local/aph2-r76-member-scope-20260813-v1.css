@@ -1,0 +1,91 @@
+/* R76：成员类型、片区与多服务中心选择。仅作用于系统管理成员页。 */
+.r65-admin .r76-center-select {
+  position: relative;
+  min-width: 220px;
+}
+
+.r65-admin .r76-center-select > summary {
+  min-height: 32px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 9px;
+  border: 1px solid var(--border, #d0d5dd);
+  border-radius: 4px;
+  background: var(--card, #fff);
+  color: var(--foreground, #1f2937);
+  cursor: pointer;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.r65-admin .r76-center-select > summary::-webkit-details-marker {
+  display: none;
+}
+
+.r65-admin .r76-center-select > summary::after {
+  content: "⌄";
+  color: var(--muted-foreground, #667085);
+}
+
+.r65-admin .r76-center-select[open] > summary {
+  outline: 2px solid var(--primary, #d71920);
+  outline-offset: 2px;
+}
+
+.r65-admin .r76-center-options {
+  position: absolute;
+  z-index: 120;
+  top: calc(100% + 5px);
+  left: 0;
+  width: min(360px, calc(100vw - 32px));
+  max-height: 260px;
+  overflow: auto;
+  padding: 6px;
+  border: 1px solid var(--border, #d0d5dd);
+  border-radius: 6px;
+  background: var(--card, #fff);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, .18);
+}
+
+.r65-admin .r76-center-options label {
+  min-height: 36px;
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  padding: 5px 7px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.r65-admin .r76-center-options label:hover {
+  background: var(--secondary, #f3f4f6);
+}
+
+.r65-admin .r76-center-options input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary, #d71920);
+}
+
+.r65-admin .r76-center-empty {
+  margin: 0;
+  padding: 10px;
+  color: var(--muted-foreground, #667085);
+  font-size: 12px;
+}
+
+.r65-admin .r76-centers-field {
+  min-width: 0;
+}
+
+@media (max-width: 720px) {
+  .r65-admin .r76-center-select,
+  .r65-admin .r76-center-options {
+    width: 100%;
+    min-width: 0;
+  }
+}

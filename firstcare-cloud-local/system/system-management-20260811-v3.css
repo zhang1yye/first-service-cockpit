@@ -1,0 +1,8 @@
+/* 侧栏展开时只调整页签起点，正文保持不动。 */
+.system-tabs { transition: left .18s cubic-bezier(.4, 0, .2, 1); }
+.system-nav:hover + .system-main .system-tabs,
+.system-nav.is-expanded + .system-main .system-tabs { left: 140px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .system-tabs { transition: none; }
+}

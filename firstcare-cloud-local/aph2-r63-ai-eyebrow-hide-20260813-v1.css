@@ -1,0 +1,4 @@
+/* AI 预警中心：去掉标题上方的页面说明眉题。 */
+body.aph2-theme [data-r56-ai-center-app] .r56-eyebrow {
+  display: none !important;
+}

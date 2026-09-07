@@ -1,0 +1,12 @@
+/* R50：欠费经营内嵌页仅修复浅色背景上的品牌文字对比度。 */
+
+.guardrail strong,
+.back-link,
+.confidence,
+.section-mark {
+  color: #b8101a !important;
+}
+
+.empty-index {
+  color: #a81d2a !important;
+}

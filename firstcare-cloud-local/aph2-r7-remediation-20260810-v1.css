@@ -1,0 +1,77 @@
+.aph-header-status.r7-unified-source-host {
+  width: min(860px, calc(100vw - 690px));
+  min-width: 0;
+  max-width: none;
+  letter-spacing: 0 !important;
+}
+
+body.aph2-theme header.sticky.top-0 .aph-header-status.r7-unified-source-host::before {
+  content: none !important;
+}
+
+.r7-unified-source-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  gap: 12px;
+  min-width: 0;
+  color: #d6d9de;
+  font-size: 12px !important;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.r7-unified-source-title {
+  color: #f3f4f6;
+  font-size: 13px !important;
+  font-weight: 600;
+  letter-spacing: .05em;
+}
+
+.r7-unified-source-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding-left: 12px;
+  border-left: 1px solid #273342;
+}
+
+.r7-unified-source-item b,
+.r7-unified-source-item em,
+.r7-unified-source-item time {
+  font: inherit;
+  font-style: normal;
+}
+
+body.aph2-theme header.sticky.top-0 .aph-header-status.r7-unified-source-host .r7-unified-source-item b { display: inline !important; color: #f3f4f6 !important; font-size: 12px !important; }
+.r7-unified-source-item em { display: inline; color: #9ca3af; font-size: 11px !important; }
+.r7-unified-source-item time { color: #f04b4f; font-size: 12px !important; font-variant-numeric: tabular-nums; }
+.r7-unified-source-item[data-status="available"] em { color: #86d4ae; }
+.r7-unified-source-item[data-status="unavailable"] em { color: #f0b36b; }
+
+.r7-history-unavailable-value {
+  color: #89909a !important;
+  text-decoration: none !important;
+}
+
+.r7-stale-snapshot-panel {
+  border-color: rgba(216, 138, 28, .35) !important;
+}
+
+.r7-stale-snapshot-note {
+  margin-top: 6px;
+  color: #f0c27b;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+@media (max-width: 1180px) {
+  .r7-unified-source-title { display: none; }
+  .aph-header-status.r7-unified-source-host { max-width: 48vw; }
+}
+
+@media (max-width: 760px) {
+  .aph-header-status.r7-unified-source-host { display: none !important; }
+}

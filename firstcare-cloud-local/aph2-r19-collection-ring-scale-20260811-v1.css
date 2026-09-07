@@ -1,0 +1,27 @@
+/* 收缴率复合卡：放大左侧环形图，并保持右侧金额区与左右等分结构不变。 */
+@media (min-width: 1024px) {
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-collection > .card-soft {
+    padding: 10px 18px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-rate-ring {
+    width: 100px !important;
+    height: 100px !important;
+    min-width: 100px;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-rate-ring .num.text-2xl {
+    font-size: 24px !important;
+    line-height: 30px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-rate-ring .text-micro {
+    margin-top: 2px !important;
+    font-size: 13px !important;
+    line-height: 18px !important;
+  }
+}

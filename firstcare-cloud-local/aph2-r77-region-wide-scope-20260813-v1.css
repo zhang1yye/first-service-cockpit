@@ -1,0 +1,12 @@
+/* R77：地区职能直接对应全部片区和全部服务中心。 */
+.r65-admin .r76-all-scope {
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  padding: 0 9px;
+  border: 1px solid color-mix(in srgb, var(--primary, #d71920) 24%, transparent);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--primary, #d71920) 5%, var(--card, #fff));
+  color: var(--primary, #c9161d);
+  font-size: 13px;
+}

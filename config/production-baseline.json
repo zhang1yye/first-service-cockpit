@@ -1,0 +1,966 @@
+{
+  "schemaVersion": 3,
+  "capturedAt": "2026-08-30T07:31:36.591Z",
+  "origin": "https://www.firstcare.cloud",
+  "release": "cockpit-r157-production-baseline-20260830-v1",
+  "indexSha256": "46008a744a7efa097e05ce2751177749acb9fb195d822f917c488935a0a92bfe",
+  "mirrorIndex": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/index.html",
+  "entrypoints": [
+    {
+      "reference": "/favicon.svg",
+      "sha256": "b5e45d51c283e5c5537fb2fea6d58c670b152fa9af5ab054e88d66a63c9e2c15",
+      "direct": true
+    },
+    {
+      "reference": "/apple-touch-icon.png",
+      "sha256": "f890e095d0a239bff3c2535a15b0ca668c2f0a013cd84839751cd3a3d684ee13",
+      "direct": true
+    },
+    {
+      "reference": "/apple-touch-icon-precomposed.png",
+      "sha256": "f890e095d0a239bff3c2535a15b0ca668c2f0a013cd84839751cd3a3d684ee13",
+      "direct": true
+    },
+    {
+      "reference": "/logo.png",
+      "sha256": "9e8b1bf298809cce48e66a4dd96d74f5a8ec3d793279fe771c7334c3e0997f1b",
+      "direct": true
+    },
+    {
+      "reference": "/aph2-r130-performance-controller-20260826-v1.js?v=r130-perf1",
+      "sha256": "30660f7a23d69817f62eaea32737bb611b9288a4920fe18f7f798451d7dbec08",
+      "direct": true
+    },
+    {
+      "reference": "/aph2-r132-direct-service-center-master-20260827-v1.js?v=r132-direct3",
+      "sha256": "e6623d500fac8185e8ba3f31fd3ed2a1270d0a7b508449fc71e42ea14a3e29c9",
+      "direct": true
+    },
+    {
+      "reference": "/aph2-r155-screenshot-distillation-arrears-scope-20260830-v1.js",
+      "sha256": "63e6f36ab541114d420b51d7ac8bbe380d8a88f83a1511612bb84af160c9e3a4",
+      "direct": true
+    },
+    {
+      "reference": "/aph2-r127-audit-remediation-20260826-v3.js?v=r138-daily-trend1",
+      "sha256": "60273901c44e6a24cd8d85cbaad97c943fd317ec7f487e012369b3158e20be2c",
+      "direct": true
+    },
+    {
+      "reference": "/aph2-r107-private-ai-sections-disabled-20260820-v1.js?v=r107-disable-ai-sections1",
+      "sha256": "c3d227e4556ab5edb806c9fcfcd2070b6096ea983a76685726566b407a179fca",
+      "direct": true
+    },
+    {
+      "reference": "/aph2-r107-private-ai-sections-disabled-20260820-v1.css?v=r107-disable-ai-sections1",
+      "sha256": "0f22210c3b83f0787126131d3e5e25cd80d831b169687688baf60618c81358c0",
+      "direct": true
+    },
+    {
+      "reference": "/aph2-r80-current-site-fixes-20260816-v1.js?v=r80-current1",
+      "sha256": "925c20d86ce9c3a6358e13dd327f9059e81384f7a077c6b77960e05d45e228ac",
+      "direct": true
+    },
+    {
+      "reference": "/assets/cockpit-bundle-head-20260816.js?v=r157-refresh-route-preservation-20260830-v1",
+      "sha256": "16ff0e407d7ef6ad31046694120c1a9fa0741c94b8b19bcfaba9b9a36f5039c7",
+      "direct": true
+    },
+    {
+      "reference": "/assets/cockpit-bundle-defer-20260816-r89-ai-opinion.js?v=r89-ai-opinion1",
+      "sha256": "6dd155530a72c835ec4cfb1ca952fcaaffce227e18f0e36cee3efc1155415b3e",
+      "direct": true
+    },
+    {
+      "reference": "/aph2-r125-review-utilities-20260826-v1.css",
+      "sha256": "c1227afecae4a9ca774f919df0d2703b8525e313257b2cfb9a2e26c8a409b9ea",
+      "direct": true
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/app-G7HUEEER.js",
+      "sha256": "543eb01ef92bb213212e70dcf87118fa7abe15d5f7ac8dbb52c6acc89716dd18",
+      "direct": true
+    },
+    {
+      "reference": "/assets/index-g4YFe_Nj.css",
+      "sha256": "0d430cd84b67e5f96d3688c419a71dd487a1ff8cdf51aaacb5e1e1a053bd6bef",
+      "direct": true
+    },
+    {
+      "reference": "/releases/cockpit-r126-arrears-ai-workflow-20260826-v2/aph2-r126-arrears-ai-workflow-20260826-v2.js",
+      "sha256": "46d7051a262f6028526c224673bdc66cf9c8615de6ed1eb33435c057556fb6e0",
+      "direct": true
+    },
+    {
+      "reference": "/aph2-r106-ai-action-advice-20260820-v1.css?v=r106-ai-action1",
+      "sha256": "739c245fa023872e2f002fe69321b85484068832633e87fbabd5f4e1fa111b04",
+      "direct": true
+    },
+    {
+      "reference": "/assets/cockpit-bundle-20260816-r89-ai-opinion.css",
+      "sha256": "a379c07fcc5d7957755daee2e3d6b2d7372367bae0c3f12fe51a62a6530da517",
+      "direct": true
+    },
+    {
+      "reference": "/aph2-r130-runtime-optimized-20260826-v1.css?v=r130-perf1",
+      "sha256": "343b6ac1a40198d3097e3f8aa7fb6bd9b9aa929671adf3e084daf3df7dc12b48",
+      "direct": true
+    },
+    {
+      "reference": "/aph2-r131-service-center-master-20260826-v1.css?v=r131-master1",
+      "sha256": "87e7d209a4680a2cc6428a0a7abe1acdc561df9a92173e6a0274964575373d5b",
+      "direct": true
+    },
+    {
+      "reference": "/aph2-r135-hide-data-basis-20260827-v1.css?v=r135-hide-basis1",
+      "sha256": "15d2423eb6279857234208cc1d2817083bd004eb741be75d15ed1018cc176896",
+      "direct": true
+    },
+    {
+      "reference": "/aph2-r137-region-map-height-20260827-v1.css?v=r137-map-height1",
+      "sha256": "897f313f486b54528e496413fa16272a92d3620fa83a7ca8288d049d839b05bb",
+      "direct": true
+    },
+    {
+      "reference": "/aph2-r145-precompetition-hardening-20260829-v1.css?v=r145-hardening1",
+      "sha256": "9dfd094bd672b88211cb58c0a14e93f7f557264739fd5e1cce0636db75d7dfb7",
+      "direct": true
+    },
+    {
+      "reference": "/aph2-r90-operating-capabilities-20260816-v1.js?v=r130-cap-slot1",
+      "sha256": "7a0f7f3aec4d88ef3acd9c02514a93adbd3f3162e6b4ed4fbc176b0ce5916fc8",
+      "direct": true
+    },
+    {
+      "reference": "/aph2-r94-sidebar-icons-20260819-v1.js?v=r94-icons1",
+      "sha256": "b29d34e848a2cdfba78fc69fc6c7eebcf47dab917d7daed5f0a0f4e178ff056b",
+      "direct": true
+    },
+    {
+      "reference": "/aph2-r118-table-consistency-20260825-v1.js?v=r118-table1",
+      "sha256": "3ac05232b4c23e5e064b938e1fd12a8faef1c267aa6af6c0bcd74fc5a0d1542e",
+      "direct": true
+    },
+    {
+      "reference": "/north-ai-assistant-20260813-r55.js?v=r121-r119-r120-merged1",
+      "sha256": "a7afde8e37dddd2115079764add4e89d6a81bf66a89f85c24b966372606e889f",
+      "direct": true
+    },
+    {
+      "reference": "/aph2-r50-ai-usability-20260812-v2.js?v=r121-r119-r120-merged1",
+      "sha256": "8ae925f21f7f3fcde374c3f25b00296a2be35ff3a2227c8e6c587e4cbf72191a",
+      "direct": true
+    },
+    {
+      "reference": "/aph2-r145-precompetition-hardening-20260829-v1.js?v=r145-hardening1",
+      "sha256": "4dd7f0c3ce3527bac88f0428dffbde4cb9f46773b2ad78cfed88eef603ef98eb",
+      "direct": true
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-7C7IT5GR.js",
+      "sha256": "fbcdde96df8bf9bb88ac4298cacc292ef68d6073cbc523a52ee8568f83e1cb0a",
+      "direct": false
+    },
+    {
+      "reference": "/aph-icons/RectangleCopy.png",
+      "sha256": "ab63f74713af10ff05ecb8bb250c48035f1a51ff0783bfe2b255bbcccf453e26",
+      "direct": false
+    },
+    {
+      "reference": "/aph-icons/shouyeF.png",
+      "sha256": "45382caccf044cea655b98f9bed567af776d3323142c923447cd8b7f8410abc0",
+      "direct": false
+    },
+    {
+      "reference": "/aph-icons/shangye.png",
+      "sha256": "1c0622cddc3a1f3c83d4d893370846fb7fff64cad9516254b88d1415032c0518",
+      "direct": false
+    },
+    {
+      "reference": "/aph-icons/chengbentongjifenxi.png",
+      "sha256": "3c177cd62f44f98fe2eedf67f157a20ad4424c7697617114684375590e6c0287",
+      "direct": false
+    },
+    {
+      "reference": "/aph-icons/renliziyuan.png",
+      "sha256": "471b547c56d53c028f0b1dfb1525470bdd295dd25b082742bb689e152c96dbd9",
+      "direct": false
+    },
+    {
+      "reference": "/aph-icons/jiaoyu.png",
+      "sha256": "d15ae9ac5e3ab00e12295ba920360930354f02bdc8305d88824976f3979f80b3",
+      "direct": false
+    },
+    {
+      "reference": "/aph-icons/tiyukebu.png",
+      "sha256": "8d51a9caed467fbe6ecaebc8debf7ffbf68c0a4ace40b4c311996b6ef60e31fe",
+      "direct": false
+    },
+    {
+      "reference": "/aph-icons/caiwu.png",
+      "sha256": "3483b4cdc37faad295832280469d2068c898c12f7189d55cb4afdd97410a7896",
+      "direct": false
+    },
+    {
+      "reference": "/aph-icons/fangchanwuye.png",
+      "sha256": "6ee4a405f5d513d16b88959a33aaa97830485fa5eb81496b310381d2a8736483",
+      "direct": false
+    },
+    {
+      "reference": "/aph-icons/jurassic_users.png",
+      "sha256": "74311668ffd3dd7a102b1d785d6d7453ba6e807173fc70a239c705f038c4b47c",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-6DUYUTAS.js",
+      "sha256": "025e109646022c541b67f0198191f8b4bd3c35269ee13e77a703053292b45d8a",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-GIVL6D2R.js",
+      "sha256": "3e3681cbb17c6122948ad2f9b1fe28cfd28604e7b275259ae4a31ed916aeebd9",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-5G47Z27Q.js",
+      "sha256": "f716c38013d94b58c70c7dc13741ef714135e6f9011a77a2fac0260e041e42f5",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-D3P3MDJ2.js",
+      "sha256": "8971add394e5fd295ec9309ca46c04261f424fcb78fb9bf835f89ae7ae806d14",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-24D7OGMQ.js",
+      "sha256": "d5424fe4d4d85e1f4b5c4162aefbe8f774d1f0b4bbb2814931a6fd002f008d79",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-4VAYZCQG.js",
+      "sha256": "d9aae87103b972237e5a73cb836a752aab981c2f303a84ca15d5e26c46a0692b",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-YAFZUARX.js",
+      "sha256": "abd008b553e938ba32ec2c5f233e6b07e27743dec55e427d50a31176d92c6082",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-LR35IIDP.js",
+      "sha256": "b979d61047a6121e59331cbbf092c730389059ba007a47fee14a1367bc200f0a",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-5ICXUZV4.js",
+      "sha256": "6c9cd204318ef57df85cb2a8aa6e493df3dfa74636dcecaa0607be77456d250e",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-IWVMRTJI.js",
+      "sha256": "d37be51d378a57096eca1c988dd8b0b54231f9c2f7dd0ccf0a6c5a939a4445f0",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-OTE3KXRM.js",
+      "sha256": "68f60e42cd7386fbfe7e8ed4e3d233dbaf9edffa07c7f5970ecdb0cf52993f3d",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-R65SIMPLEADMIN.js",
+      "sha256": "7e328f56abb9b44afa958770c4da0aff0228602abbd60e0447b27a70a215b753",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-ZMSUC5VA.js",
+      "sha256": "8770fd702b5bcb5edf15b96e04baee9d42b109499ca540c1f879d0704cc133e4",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-XPGKS6ED.js",
+      "sha256": "ffe873a6ca5b91087ead6c3c9b90d29c73fea4dee2f7abffabdeef70a58111e9",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-4UXV2DAK.js",
+      "sha256": "7610dbfd7641313643e9844b8c0961e71ce3ce6c5edba3d2421dee9b5a31e7e1",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/arrears-core-r126.js",
+      "sha256": "97d180eade3a614c0ad1b257834389a31e70f5f76dcc4b1d5a5d75f9542cf2f2",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/review-core-r126.js",
+      "sha256": "97d3bceef12506196771fbf76f734be4a39315f46180a7ca8a3c650450178f7c",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-C5JXPXJ4.js",
+      "sha256": "3b9103d04eadb29c52821c9becb33165fee52d68e57ea7d35f34bf187532a378",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-EQB6LH6G.js",
+      "sha256": "f876d83b37b9c16664dce0b0e3f5ba4e143dd08dbb77455a2cbe2988d1942207",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-ACVHGQNL.js",
+      "sha256": "3dd5b4441bf8f805ce65f63f2c30def1dc286ee1b8247690f0bf490079ded19d",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-JWS375NQ.js",
+      "sha256": "685530be4cca92a9b4f030c2b86ded94fc7a53c95d635eeadd199be6f6865631",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-76W6RM7R.js",
+      "sha256": "e0b74333b9b3974e6ebf36cda27f6d55ed2d4d9b581355ba9435e6fed89eb449",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-B7OXCVDS.js",
+      "sha256": "89b45c5286e7ea86fafc14aca27e3515a0a96edf1d76bc57a2499960691791f5",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-J2DCCBRC.js",
+      "sha256": "32d4a0b83032738fd92272b18c58ae44d69eddce5cd827aa541a053f37271de3",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-HC7VEANF.js",
+      "sha256": "f4fd736e9c2f3e3714668a591dc5ed32b45ab7012e679fda7a4f6e0d5fa139ec",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-EMIRPXM2.js",
+      "sha256": "26f7ad50581555893a72e8fcf74de93e9fbad1d0efa8f46b77f4a4cdfadc2dd5",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-IT6XG2UZ.js",
+      "sha256": "7af2062de7537ef0d1e09a0bb7547af65db61b9ae5dfd9312bb4349b57dec706",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-HVQCEKT6.js",
+      "sha256": "f658a10329993852fa0c885712722a2a06b733bc941940e783d1c5b9e55ccd59",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-ZR3DVJHF.js",
+      "sha256": "beda87d88df08033467926e5b1cf305f3eeab175483506bdcfacdbf117445e0a",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-D64SYIXT.js",
+      "sha256": "28e1563933c5aa269bb40f5862af120d424bdd06c5c8aee8ed5b4ac95863b99e",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-NP4UBNKG.js",
+      "sha256": "f92b83446990a18889b33b9feb3dde3c026ec79f0767456b98c5e29ffc67362f",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-PS7NG7RU.js",
+      "sha256": "d117738eaadd7383e15777fe80926b240e2c9f029279bf4a5a9638946a757996",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-XKU4G3YF.js",
+      "sha256": "d52d7e715e40ac9903ce2cc3930095210b575aba8d1d27a7e1e273c68ff7bd2e",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-COMPLETIONCAP.js",
+      "sha256": "323807a810e67fdd7fd123d7b187fb23cd274a4522f81f143f39d7e0d1c6c5ba",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-JYY5IWD4.js",
+      "sha256": "0b540c23c878423426b3fa2dca3e2e58782659b4c666cca4c81e1f0f1cde0d2a",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-THHB4IWD.js",
+      "sha256": "d48e754e6b8c2bbf23764607cb1e083f159120d9def476b8dc548220e6588f08",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-5FP7JSZX.js",
+      "sha256": "2cef18767698e67e89ed164463400f62d1b902f97733c0d25bc60f75e0f7ddea",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-ED34MXK5.js",
+      "sha256": "9b92b0e8daab0143808b483d46122c113c64f4bf34721809d8efcc96481ddb1c",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-5UFY6ANF.js",
+      "sha256": "4c7552d7b94887f39fe38a9a061ce3927af64f36350a3650739d1fade9ada8a3",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-OS4B43O6.js",
+      "sha256": "f1ebbe772c62d5ca85385afb6520f5708075ca5da26e71b8de944e10fe16e8be",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-H5T7XJQQ.js",
+      "sha256": "46e09787828991a46e690a4678017d1c55a39b33457c34532a7dc09ff1c0338f",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-VQTGRHQJ.js",
+      "sha256": "336432c3d852ad19e34788992438a0b900f46a2bad4b90eccdc1c4799fe8caab",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-YSZPXHKZ.js",
+      "sha256": "9c2ac299c0a1e6f1a05fbd83d2a25b3cc68efafdad6a15531a0793e353631cf1",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-I7HYXS5H.js",
+      "sha256": "daa10c20b836bfdecab12570dd8206b7af94bbc0f6b592784ba4f3a11c1d1538",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-5FD3NE3L.js",
+      "sha256": "8a30c9629fc5f979af3f13b72c96b9001b2078a103b0b64a5fe6968dd5a45dee",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-PIVD3BZV.js",
+      "sha256": "a905855764a0133a472ec9da9fb4c285a4e0c6006a3d997e6104db3ec71cd99c",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-BHTEFX7B.js",
+      "sha256": "d591b574d3d269c471073f44a281c9253df19b35be2de64faf3af6f3f770d7aa",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-65EAF7ZH.js",
+      "sha256": "4ce1f2dcd2578160fd076d7c66992c969aff48a06915f4bbab640adb05606768",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-EATNGUNC.js",
+      "sha256": "8dc3d20e80121acf675113fd3d2b6adbfb18f478dc268d410dd2bf8baa3b2878",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-YUGHVBGZ.js",
+      "sha256": "2b48b580e70bce97907f139b5f832a972df0be43510dc6e07a6c4fb6483670b6",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/react-r126.js",
+      "sha256": "123346b635ccac5b696a0e84b211df682bb1da6fedcaa97d70ff9813073aea04",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/jsx-runtime-r126.js",
+      "sha256": "cf4fc1ad05bc802029ea37338923f0e77201a2258c390b2d088cfda9b4d2d471",
+      "direct": false
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-XGALVLQQ.js",
+      "sha256": "44dabaed23310e0cd36cb99cf8d6d340f805fb1bf42c722d4c15c1802fea872a",
+      "direct": false
+    }
+  ],
+  "localArtifacts": [
+    {
+      "reference": "/favicon.svg",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/favicon.svg",
+      "sha256": "b5e45d51c283e5c5537fb2fea6d58c670b152fa9af5ab054e88d66a63c9e2c15"
+    },
+    {
+      "reference": "/apple-touch-icon.png",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/apple-touch-icon.png",
+      "sha256": "f890e095d0a239bff3c2535a15b0ca668c2f0a013cd84839751cd3a3d684ee13"
+    },
+    {
+      "reference": "/apple-touch-icon-precomposed.png",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/apple-touch-icon-precomposed.png",
+      "sha256": "f890e095d0a239bff3c2535a15b0ca668c2f0a013cd84839751cd3a3d684ee13"
+    },
+    {
+      "reference": "/logo.png",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/logo.png",
+      "sha256": "9e8b1bf298809cce48e66a4dd96d74f5a8ec3d793279fe771c7334c3e0997f1b"
+    },
+    {
+      "reference": "/aph2-r130-performance-controller-20260826-v1.js?v=r130-perf1",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph2-r130-performance-controller-20260826-v1.js",
+      "sha256": "30660f7a23d69817f62eaea32737bb611b9288a4920fe18f7f798451d7dbec08"
+    },
+    {
+      "reference": "/aph2-r132-direct-service-center-master-20260827-v1.js?v=r132-direct3",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph2-r132-direct-service-center-master-20260827-v1.js",
+      "sha256": "e6623d500fac8185e8ba3f31fd3ed2a1270d0a7b508449fc71e42ea14a3e29c9"
+    },
+    {
+      "reference": "/aph2-r155-screenshot-distillation-arrears-scope-20260830-v1.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph2-r155-screenshot-distillation-arrears-scope-20260830-v1.js",
+      "sha256": "63e6f36ab541114d420b51d7ac8bbe380d8a88f83a1511612bb84af160c9e3a4"
+    },
+    {
+      "reference": "/aph2-r127-audit-remediation-20260826-v3.js?v=r138-daily-trend1",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph2-r127-audit-remediation-20260826-v3.js",
+      "sha256": "60273901c44e6a24cd8d85cbaad97c943fd317ec7f487e012369b3158e20be2c"
+    },
+    {
+      "reference": "/aph2-r107-private-ai-sections-disabled-20260820-v1.js?v=r107-disable-ai-sections1",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph2-r107-private-ai-sections-disabled-20260820-v1.js",
+      "sha256": "c3d227e4556ab5edb806c9fcfcd2070b6096ea983a76685726566b407a179fca"
+    },
+    {
+      "reference": "/aph2-r107-private-ai-sections-disabled-20260820-v1.css?v=r107-disable-ai-sections1",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph2-r107-private-ai-sections-disabled-20260820-v1.css",
+      "sha256": "0f22210c3b83f0787126131d3e5e25cd80d831b169687688baf60618c81358c0"
+    },
+    {
+      "reference": "/aph2-r80-current-site-fixes-20260816-v1.js?v=r80-current1",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph2-r80-current-site-fixes-20260816-v1.js",
+      "sha256": "925c20d86ce9c3a6358e13dd327f9059e81384f7a077c6b77960e05d45e228ac"
+    },
+    {
+      "reference": "/assets/cockpit-bundle-head-20260816.js?v=r157-refresh-route-preservation-20260830-v1",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-bundle-head-20260816.js",
+      "sha256": "16ff0e407d7ef6ad31046694120c1a9fa0741c94b8b19bcfaba9b9a36f5039c7"
+    },
+    {
+      "reference": "/assets/cockpit-bundle-defer-20260816-r89-ai-opinion.js?v=r89-ai-opinion1",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-bundle-defer-20260816-r89-ai-opinion.js",
+      "sha256": "6dd155530a72c835ec4cfb1ca952fcaaffce227e18f0e36cee3efc1155415b3e"
+    },
+    {
+      "reference": "/aph2-r125-review-utilities-20260826-v1.css",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph2-r125-review-utilities-20260826-v1.css",
+      "sha256": "c1227afecae4a9ca774f919df0d2703b8525e313257b2cfb9a2e26c8a409b9ea"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/app-G7HUEEER.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/app-G7HUEEER.js",
+      "sha256": "543eb01ef92bb213212e70dcf87118fa7abe15d5f7ac8dbb52c6acc89716dd18"
+    },
+    {
+      "reference": "/assets/index-g4YFe_Nj.css",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/index-g4YFe_Nj.css",
+      "sha256": "0d430cd84b67e5f96d3688c419a71dd487a1ff8cdf51aaacb5e1e1a053bd6bef"
+    },
+    {
+      "reference": "/releases/cockpit-r126-arrears-ai-workflow-20260826-v2/aph2-r126-arrears-ai-workflow-20260826-v2.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/releases/cockpit-r126-arrears-ai-workflow-20260826-v2/aph2-r126-arrears-ai-workflow-20260826-v2.js",
+      "sha256": "46d7051a262f6028526c224673bdc66cf9c8615de6ed1eb33435c057556fb6e0"
+    },
+    {
+      "reference": "/aph2-r106-ai-action-advice-20260820-v1.css?v=r106-ai-action1",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph2-r106-ai-action-advice-20260820-v1.css",
+      "sha256": "739c245fa023872e2f002fe69321b85484068832633e87fbabd5f4e1fa111b04"
+    },
+    {
+      "reference": "/assets/cockpit-bundle-20260816-r89-ai-opinion.css",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-bundle-20260816-r89-ai-opinion.css",
+      "sha256": "a379c07fcc5d7957755daee2e3d6b2d7372367bae0c3f12fe51a62a6530da517"
+    },
+    {
+      "reference": "/aph2-r130-runtime-optimized-20260826-v1.css?v=r130-perf1",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph2-r130-runtime-optimized-20260826-v1.css",
+      "sha256": "343b6ac1a40198d3097e3f8aa7fb6bd9b9aa929671adf3e084daf3df7dc12b48"
+    },
+    {
+      "reference": "/aph2-r131-service-center-master-20260826-v1.css?v=r131-master1",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph2-r131-service-center-master-20260826-v1.css",
+      "sha256": "87e7d209a4680a2cc6428a0a7abe1acdc561df9a92173e6a0274964575373d5b"
+    },
+    {
+      "reference": "/aph2-r135-hide-data-basis-20260827-v1.css?v=r135-hide-basis1",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph2-r135-hide-data-basis-20260827-v1.css",
+      "sha256": "15d2423eb6279857234208cc1d2817083bd004eb741be75d15ed1018cc176896"
+    },
+    {
+      "reference": "/aph2-r137-region-map-height-20260827-v1.css?v=r137-map-height1",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph2-r137-region-map-height-20260827-v1.css",
+      "sha256": "897f313f486b54528e496413fa16272a92d3620fa83a7ca8288d049d839b05bb"
+    },
+    {
+      "reference": "/aph2-r145-precompetition-hardening-20260829-v1.css?v=r145-hardening1",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph2-r145-precompetition-hardening-20260829-v1.css",
+      "sha256": "9dfd094bd672b88211cb58c0a14e93f7f557264739fd5e1cce0636db75d7dfb7"
+    },
+    {
+      "reference": "/aph2-r90-operating-capabilities-20260816-v1.js?v=r130-cap-slot1",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph2-r90-operating-capabilities-20260816-v1.js",
+      "sha256": "7a0f7f3aec4d88ef3acd9c02514a93adbd3f3162e6b4ed4fbc176b0ce5916fc8"
+    },
+    {
+      "reference": "/aph2-r94-sidebar-icons-20260819-v1.js?v=r94-icons1",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph2-r94-sidebar-icons-20260819-v1.js",
+      "sha256": "b29d34e848a2cdfba78fc69fc6c7eebcf47dab917d7daed5f0a0f4e178ff056b"
+    },
+    {
+      "reference": "/aph2-r118-table-consistency-20260825-v1.js?v=r118-table1",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph2-r118-table-consistency-20260825-v1.js",
+      "sha256": "3ac05232b4c23e5e064b938e1fd12a8faef1c267aa6af6c0bcd74fc5a0d1542e"
+    },
+    {
+      "reference": "/north-ai-assistant-20260813-r55.js?v=r121-r119-r120-merged1",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/north-ai-assistant-20260813-r55.js",
+      "sha256": "a7afde8e37dddd2115079764add4e89d6a81bf66a89f85c24b966372606e889f"
+    },
+    {
+      "reference": "/aph2-r50-ai-usability-20260812-v2.js?v=r121-r119-r120-merged1",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph2-r50-ai-usability-20260812-v2.js",
+      "sha256": "8ae925f21f7f3fcde374c3f25b00296a2be35ff3a2227c8e6c587e4cbf72191a"
+    },
+    {
+      "reference": "/aph2-r145-precompetition-hardening-20260829-v1.js?v=r145-hardening1",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph2-r145-precompetition-hardening-20260829-v1.js",
+      "sha256": "4dd7f0c3ce3527bac88f0428dffbde4cb9f46773b2ad78cfed88eef603ef98eb"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-7C7IT5GR.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-7C7IT5GR.js",
+      "sha256": "fbcdde96df8bf9bb88ac4298cacc292ef68d6073cbc523a52ee8568f83e1cb0a"
+    },
+    {
+      "reference": "/aph-icons/RectangleCopy.png",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph-icons/RectangleCopy.png",
+      "sha256": "ab63f74713af10ff05ecb8bb250c48035f1a51ff0783bfe2b255bbcccf453e26"
+    },
+    {
+      "reference": "/aph-icons/shouyeF.png",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph-icons/shouyeF.png",
+      "sha256": "45382caccf044cea655b98f9bed567af776d3323142c923447cd8b7f8410abc0"
+    },
+    {
+      "reference": "/aph-icons/shangye.png",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph-icons/shangye.png",
+      "sha256": "1c0622cddc3a1f3c83d4d893370846fb7fff64cad9516254b88d1415032c0518"
+    },
+    {
+      "reference": "/aph-icons/chengbentongjifenxi.png",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph-icons/chengbentongjifenxi.png",
+      "sha256": "3c177cd62f44f98fe2eedf67f157a20ad4424c7697617114684375590e6c0287"
+    },
+    {
+      "reference": "/aph-icons/renliziyuan.png",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph-icons/renliziyuan.png",
+      "sha256": "471b547c56d53c028f0b1dfb1525470bdd295dd25b082742bb689e152c96dbd9"
+    },
+    {
+      "reference": "/aph-icons/jiaoyu.png",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph-icons/jiaoyu.png",
+      "sha256": "d15ae9ac5e3ab00e12295ba920360930354f02bdc8305d88824976f3979f80b3"
+    },
+    {
+      "reference": "/aph-icons/tiyukebu.png",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph-icons/tiyukebu.png",
+      "sha256": "8d51a9caed467fbe6ecaebc8debf7ffbf68c0a4ace40b4c311996b6ef60e31fe"
+    },
+    {
+      "reference": "/aph-icons/caiwu.png",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph-icons/caiwu.png",
+      "sha256": "3483b4cdc37faad295832280469d2068c898c12f7189d55cb4afdd97410a7896"
+    },
+    {
+      "reference": "/aph-icons/fangchanwuye.png",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph-icons/fangchanwuye.png",
+      "sha256": "6ee4a405f5d513d16b88959a33aaa97830485fa5eb81496b310381d2a8736483"
+    },
+    {
+      "reference": "/aph-icons/jurassic_users.png",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/aph-icons/jurassic_users.png",
+      "sha256": "74311668ffd3dd7a102b1d785d6d7453ba6e807173fc70a239c705f038c4b47c"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-6DUYUTAS.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-6DUYUTAS.js",
+      "sha256": "025e109646022c541b67f0198191f8b4bd3c35269ee13e77a703053292b45d8a"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-GIVL6D2R.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-GIVL6D2R.js",
+      "sha256": "3e3681cbb17c6122948ad2f9b1fe28cfd28604e7b275259ae4a31ed916aeebd9"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-5G47Z27Q.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-5G47Z27Q.js",
+      "sha256": "f716c38013d94b58c70c7dc13741ef714135e6f9011a77a2fac0260e041e42f5"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-D3P3MDJ2.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-D3P3MDJ2.js",
+      "sha256": "8971add394e5fd295ec9309ca46c04261f424fcb78fb9bf835f89ae7ae806d14"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-24D7OGMQ.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-24D7OGMQ.js",
+      "sha256": "d5424fe4d4d85e1f4b5c4162aefbe8f774d1f0b4bbb2814931a6fd002f008d79"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-4VAYZCQG.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-4VAYZCQG.js",
+      "sha256": "d9aae87103b972237e5a73cb836a752aab981c2f303a84ca15d5e26c46a0692b"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-YAFZUARX.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-YAFZUARX.js",
+      "sha256": "abd008b553e938ba32ec2c5f233e6b07e27743dec55e427d50a31176d92c6082"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-LR35IIDP.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-LR35IIDP.js",
+      "sha256": "b979d61047a6121e59331cbbf092c730389059ba007a47fee14a1367bc200f0a"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-5ICXUZV4.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-5ICXUZV4.js",
+      "sha256": "6c9cd204318ef57df85cb2a8aa6e493df3dfa74636dcecaa0607be77456d250e"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-IWVMRTJI.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-IWVMRTJI.js",
+      "sha256": "d37be51d378a57096eca1c988dd8b0b54231f9c2f7dd0ccf0a6c5a939a4445f0"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-OTE3KXRM.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-OTE3KXRM.js",
+      "sha256": "68f60e42cd7386fbfe7e8ed4e3d233dbaf9edffa07c7f5970ecdb0cf52993f3d"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-R65SIMPLEADMIN.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-R65SIMPLEADMIN.js",
+      "sha256": "7e328f56abb9b44afa958770c4da0aff0228602abbd60e0447b27a70a215b753"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-ZMSUC5VA.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-ZMSUC5VA.js",
+      "sha256": "8770fd702b5bcb5edf15b96e04baee9d42b109499ca540c1f879d0704cc133e4"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-XPGKS6ED.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-XPGKS6ED.js",
+      "sha256": "ffe873a6ca5b91087ead6c3c9b90d29c73fea4dee2f7abffabdeef70a58111e9"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-4UXV2DAK.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-4UXV2DAK.js",
+      "sha256": "7610dbfd7641313643e9844b8c0961e71ce3ce6c5edba3d2421dee9b5a31e7e1"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/arrears-core-r126.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/arrears-core-r126.js",
+      "sha256": "97d180eade3a614c0ad1b257834389a31e70f5f76dcc4b1d5a5d75f9542cf2f2"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/review-core-r126.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/review-core-r126.js",
+      "sha256": "97d3bceef12506196771fbf76f734be4a39315f46180a7ca8a3c650450178f7c"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-C5JXPXJ4.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-C5JXPXJ4.js",
+      "sha256": "3b9103d04eadb29c52821c9becb33165fee52d68e57ea7d35f34bf187532a378"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-EQB6LH6G.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-EQB6LH6G.js",
+      "sha256": "f876d83b37b9c16664dce0b0e3f5ba4e143dd08dbb77455a2cbe2988d1942207"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-ACVHGQNL.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-ACVHGQNL.js",
+      "sha256": "3dd5b4441bf8f805ce65f63f2c30def1dc286ee1b8247690f0bf490079ded19d"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-JWS375NQ.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-JWS375NQ.js",
+      "sha256": "685530be4cca92a9b4f030c2b86ded94fc7a53c95d635eeadd199be6f6865631"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-76W6RM7R.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-76W6RM7R.js",
+      "sha256": "e0b74333b9b3974e6ebf36cda27f6d55ed2d4d9b581355ba9435e6fed89eb449"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-B7OXCVDS.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-B7OXCVDS.js",
+      "sha256": "89b45c5286e7ea86fafc14aca27e3515a0a96edf1d76bc57a2499960691791f5"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-J2DCCBRC.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-J2DCCBRC.js",
+      "sha256": "32d4a0b83032738fd92272b18c58ae44d69eddce5cd827aa541a053f37271de3"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-HC7VEANF.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-HC7VEANF.js",
+      "sha256": "f4fd736e9c2f3e3714668a591dc5ed32b45ab7012e679fda7a4f6e0d5fa139ec"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-EMIRPXM2.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-EMIRPXM2.js",
+      "sha256": "26f7ad50581555893a72e8fcf74de93e9fbad1d0efa8f46b77f4a4cdfadc2dd5"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-IT6XG2UZ.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-IT6XG2UZ.js",
+      "sha256": "7af2062de7537ef0d1e09a0bb7547af65db61b9ae5dfd9312bb4349b57dec706"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-HVQCEKT6.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-HVQCEKT6.js",
+      "sha256": "f658a10329993852fa0c885712722a2a06b733bc941940e783d1c5b9e55ccd59"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-ZR3DVJHF.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-ZR3DVJHF.js",
+      "sha256": "beda87d88df08033467926e5b1cf305f3eeab175483506bdcfacdbf117445e0a"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-D64SYIXT.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-D64SYIXT.js",
+      "sha256": "28e1563933c5aa269bb40f5862af120d424bdd06c5c8aee8ed5b4ac95863b99e"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-NP4UBNKG.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-NP4UBNKG.js",
+      "sha256": "f92b83446990a18889b33b9feb3dde3c026ec79f0767456b98c5e29ffc67362f"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-PS7NG7RU.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-PS7NG7RU.js",
+      "sha256": "d117738eaadd7383e15777fe80926b240e2c9f029279bf4a5a9638946a757996"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-XKU4G3YF.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-XKU4G3YF.js",
+      "sha256": "d52d7e715e40ac9903ce2cc3930095210b575aba8d1d27a7e1e273c68ff7bd2e"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-COMPLETIONCAP.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-COMPLETIONCAP.js",
+      "sha256": "323807a810e67fdd7fd123d7b187fb23cd274a4522f81f143f39d7e0d1c6c5ba"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-JYY5IWD4.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-JYY5IWD4.js",
+      "sha256": "0b540c23c878423426b3fa2dca3e2e58782659b4c666cca4c81e1f0f1cde0d2a"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-THHB4IWD.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-THHB4IWD.js",
+      "sha256": "d48e754e6b8c2bbf23764607cb1e083f159120d9def476b8dc548220e6588f08"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-5FP7JSZX.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-5FP7JSZX.js",
+      "sha256": "2cef18767698e67e89ed164463400f62d1b902f97733c0d25bc60f75e0f7ddea"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-ED34MXK5.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-ED34MXK5.js",
+      "sha256": "9b92b0e8daab0143808b483d46122c113c64f4bf34721809d8efcc96481ddb1c"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-5UFY6ANF.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-5UFY6ANF.js",
+      "sha256": "4c7552d7b94887f39fe38a9a061ce3927af64f36350a3650739d1fade9ada8a3"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-OS4B43O6.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-OS4B43O6.js",
+      "sha256": "f1ebbe772c62d5ca85385afb6520f5708075ca5da26e71b8de944e10fe16e8be"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-H5T7XJQQ.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-H5T7XJQQ.js",
+      "sha256": "46e09787828991a46e690a4678017d1c55a39b33457c34532a7dc09ff1c0338f"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-VQTGRHQJ.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-VQTGRHQJ.js",
+      "sha256": "336432c3d852ad19e34788992438a0b900f46a2bad4b90eccdc1c4799fe8caab"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-YSZPXHKZ.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-YSZPXHKZ.js",
+      "sha256": "9c2ac299c0a1e6f1a05fbd83d2a25b3cc68efafdad6a15531a0793e353631cf1"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-I7HYXS5H.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-I7HYXS5H.js",
+      "sha256": "daa10c20b836bfdecab12570dd8206b7af94bbc0f6b592784ba4f3a11c1d1538"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-5FD3NE3L.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-5FD3NE3L.js",
+      "sha256": "8a30c9629fc5f979af3f13b72c96b9001b2078a103b0b64a5fe6968dd5a45dee"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-PIVD3BZV.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-PIVD3BZV.js",
+      "sha256": "a905855764a0133a472ec9da9fb4c285a4e0c6006a3d997e6104db3ec71cd99c"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-BHTEFX7B.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-BHTEFX7B.js",
+      "sha256": "d591b574d3d269c471073f44a281c9253df19b35be2de64faf3af6f3f770d7aa"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-65EAF7ZH.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-65EAF7ZH.js",
+      "sha256": "4ce1f2dcd2578160fd076d7c66992c969aff48a06915f4bbab640adb05606768"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-EATNGUNC.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-EATNGUNC.js",
+      "sha256": "8dc3d20e80121acf675113fd3d2b6adbfb18f478dc268d410dd2bf8baa3b2878"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-YUGHVBGZ.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-YUGHVBGZ.js",
+      "sha256": "2b48b580e70bce97907f139b5f832a972df0be43510dc6e07a6c4fb6483670b6"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/react-r126.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/react-r126.js",
+      "sha256": "123346b635ccac5b696a0e84b211df682bb1da6fedcaa97d70ff9813073aea04"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/jsx-runtime-r126.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/jsx-runtime-r126.js",
+      "sha256": "cf4fc1ad05bc802029ea37338923f0e77201a2258c390b2d088cfda9b4d2d471"
+    },
+    {
+      "reference": "/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-XGALVLQQ.js",
+      "path": "production-overlays/cockpit-r157-production-baseline-20260830-v1/payload/assets/cockpit-r126-arrears-ai-workflow-20260826-v2/chunk-XGALVLQQ.js",
+      "sha256": "44dabaed23310e0cd36cb99cf8d6d340f805fb1bf42c722d4c15c1802fea872a"
+    }
+  ],
+  "protectedRoutes": [
+    "/daily",
+    "/payment",
+    "/collection",
+    "/projects",
+    "/review",
+    "/admin"
+  ],
+  "sourceStatus": {
+    "rebuildable": true,
+    "strategy": "immutable-production-snapshot",
+    "backend": "TypeScript source + package-lock.json + Node 20 clean build",
+    "frontend": "cockpit-r157-production-baseline-20260830-v1 immutable static payload captured from the active production lineage"
+  }
+}

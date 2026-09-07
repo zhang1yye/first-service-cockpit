@@ -1,0 +1,172 @@
+/* 华北经营助手 · 独立版本化组件，不修改驾驶舱业务模块 */
+:root {
+  --north-ai-bg: #050e1a;
+  --north-ai-surface: #091827;
+  --north-ai-surface-2: #0d2032;
+  --north-ai-line: rgba(0, 204, 249, .22);
+  --north-ai-cyan: #00ccf9;
+  --north-ai-text: #e9f8ff;
+  --north-ai-muted: #8ba6b7;
+  --north-ai-warning: #f4bf58;
+  --north-ai-danger: #ff6b78;
+}
+
+.north-ai-launcher {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 58;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: 58px;
+  min-height: 58px;
+  padding: 7px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 204, 249, .38);
+  border-radius: 18px;
+  color: var(--north-ai-text);
+  background: rgba(5, 20, 34, .94);
+  box-shadow: 0 18px 48px rgba(0, 36, 58, .42), inset 0 1px 0 rgba(255, 255, 255, .08);
+  backdrop-filter: blur(16px);
+  cursor: pointer;
+  transition: width .24s ease, transform .22s ease, border-color .22s ease, background .22s ease;
+}
+.north-ai-launcher:hover,
+.north-ai-launcher:focus-visible { width: 210px; gap: 10px; }
+.north-ai-launcher:hover { transform: translateY(-2px); border-color: rgba(0, 204, 249, .75); background: rgba(6, 28, 45, .98); }
+.north-ai-launcher:active { transform: translateY(0) scale(.98); }
+.north-ai-launcher:focus-visible,
+.north-ai-close:focus-visible,
+.north-ai-chip:focus-visible,
+.north-ai-send:focus-visible,
+.north-ai-input:focus-visible { outline: 2px solid var(--north-ai-cyan); outline-offset: 3px; }
+.north-ai-launcher[hidden] { display: none !important; }
+
+.north-ai-launcher-mark,
+.north-ai-brand-mark {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  color: var(--north-ai-cyan);
+  border: 1px solid rgba(0, 204, 249, .4);
+  background: radial-gradient(circle at 35% 25%, rgba(0, 204, 249, .26), rgba(0, 80, 120, .08) 58%, transparent 59%), #071623;
+  overflow: hidden;
+}
+.north-ai-launcher-mark { width: 44px; height: 44px; border-radius: 14px; }
+.north-ai-brand-mark { width: 52px; height: 52px; border-radius: 17px; }
+.north-ai-launcher-mark::before,
+.north-ai-brand-mark::before {
+  content: "AI";
+  font: 700 15px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: -.06em;
+}
+.north-ai-launcher-mark::after,
+.north-ai-brand-mark::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px dashed rgba(0, 204, 249, .28);
+  border-radius: inherit;
+  animation: north-ai-orbit 12s linear infinite;
+}
+@keyframes north-ai-orbit { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .north-ai-launcher-mark::after, .north-ai-brand-mark::after { animation: none; } }
+
+.north-ai-launcher-copy { display: grid; flex: 0 0 126px; gap: 2px; opacity: 0; transform: translateX(8px); text-align: left; transition: opacity .18s ease, transform .18s ease; }
+.north-ai-launcher:hover .north-ai-launcher-copy,
+.north-ai-launcher:focus-visible .north-ai-launcher-copy { opacity: 1; transform: translateX(0); }
+.north-ai-launcher-copy strong { font-size: 14px; line-height: 1.2; font-weight: 650; }
+.north-ai-launcher-copy span { color: var(--north-ai-muted); font-size: 11px; line-height: 1.2; }
+.north-ai-launcher-dot { display: none; width: 7px; height: 7px; border-radius: 50%; background: var(--north-ai-cyan); box-shadow: 0 0 14px var(--north-ai-cyan); }
+
+.north-ai-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(1, 7, 13, .56);
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .24s ease;
+}
+.north-ai-overlay.is-open { opacity: 1; pointer-events: auto; }
+.north-ai-panel {
+  width: min(470px, calc(100vw - 20px));
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  color: var(--north-ai-text);
+  background:
+    radial-gradient(circle at 92% 8%, rgba(0, 204, 249, .11), transparent 28%),
+    linear-gradient(180deg, #071523 0%, var(--north-ai-bg) 100%);
+  border-left: 1px solid var(--north-ai-line);
+  box-shadow: -26px 0 70px rgba(0, 20, 34, .5);
+  transform: translateX(102%);
+  transition: transform .3s cubic-bezier(.2, .8, .2, 1);
+}
+.north-ai-overlay.is-open .north-ai-panel { transform: translateX(0); }
+.north-ai-header { display: flex; align-items: center; gap: 13px; min-width: 0; padding: 18px 18px 15px; border-bottom: 1px solid rgba(139, 166, 183, .14); }
+.north-ai-title { min-width: 0; flex: 1; }
+.north-ai-title h2 { margin: 0; font-size: 18px; line-height: 1.25; font-weight: 680; letter-spacing: -.02em; }
+.north-ai-title p { margin: 4px 0 0; color: var(--north-ai-muted); font-size: 12px; }
+.north-ai-readonly { padding: 4px 7px; border: 1px solid rgba(0, 204, 249, .22); border-radius: 5px; color: #9deeff; background: rgba(0, 204, 249, .07); font-size: 10px; letter-spacing: .06em; }
+.north-ai-close { width: 38px; height: 38px; display: grid; place-items: center; border: 0; border-radius: 11px; color: #b8ccda; background: transparent; cursor: pointer; font-size: 25px; line-height: 1; transition: color .2s ease, background .2s ease; }
+.north-ai-close:hover { color: #fff; background: rgba(255,255,255,.07); }
+
+.north-ai-conversation { min-width: 0; overflow-y: auto; overscroll-behavior: contain; padding: 20px 18px 24px; scroll-behavior: smooth; }
+.north-ai-welcome { padding: 19px; border: 1px solid rgba(0, 204, 249, .16); border-radius: 18px; background: linear-gradient(145deg, rgba(0, 204, 249, .08), rgba(13, 32, 50, .72)); box-shadow: inset 0 1px 0 rgba(255,255,255,.04); }
+.north-ai-kicker { margin-bottom: 8px; color: var(--north-ai-cyan); font: 600 11px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .12em; text-transform: uppercase; }
+.north-ai-welcome h3 { margin: 0 0 9px; font-size: 20px; line-height: 1.35; font-weight: 650; letter-spacing: -.02em; }
+.north-ai-welcome p { margin: 0; color: #b8ccd9; font-size: 14px; line-height: 1.75; }
+.north-ai-context-status { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 13px; }
+.north-ai-status { padding: 5px 8px; border-radius: 6px; color: #9deeff; background: rgba(0, 204, 249, .08); font-size: 11px; }
+.north-ai-status.warning { color: #ffd982; background: rgba(244, 191, 88, .1); }
+.north-ai-status.unavailable { color: #ff9ca6; background: rgba(255, 107, 120, .1); }
+.north-ai-suggestions { display: grid; gap: 8px; margin: 16px 0 4px; }
+.north-ai-chip { min-width: 0; padding: 11px 13px; border: 1px solid rgba(139, 166, 183, .16); border-radius: 12px; color: #dcecf5; background: rgba(9, 24, 39, .7); text-align: left; font-size: 13px; line-height: 1.4; cursor: pointer; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+.north-ai-chip:hover { transform: translateX(3px); border-color: rgba(0, 204, 249, .42); background: rgba(0, 204, 249, .07); }
+
+.north-ai-message { display: grid; gap: 7px; margin-top: 17px; }
+.north-ai-message-user { justify-items: end; }
+.north-ai-message-assistant { justify-items: start; }
+.north-ai-bubble { max-width: 88%; padding: 12px 14px; border-radius: 15px; font-size: 14px; line-height: 1.72; white-space: pre-wrap; overflow-wrap: anywhere; }
+.north-ai-message-user .north-ai-bubble { color: #03202d; background: #66dcf6; border-bottom-right-radius: 5px; }
+.north-ai-message-assistant .north-ai-bubble { color: #dbeaf3; background: #102336; border: 1px solid rgba(139, 166, 183, .13); border-bottom-left-radius: 5px; }
+.north-ai-message-loading .north-ai-bubble { color: var(--north-ai-muted); }
+.north-ai-message-loading .north-ai-bubble::after { content: "···"; display: inline-block; width: 22px; overflow: hidden; vertical-align: bottom; animation: north-ai-typing 1.2s steps(4,end) infinite; }
+@keyframes north-ai-typing { from { width: 0; } to { width: 22px; } }
+.north-ai-meta { display: flex; flex-wrap: wrap; gap: 6px; max-width: 92%; }
+.north-ai-meta span { padding: 4px 7px; border-radius: 5px; color: var(--north-ai-muted); background: rgba(139,166,183,.07); font-size: 10px; line-height: 1.35; }
+.north-ai-meta span.warning { color: #ffd982; }
+.north-ai-meta span.unavailable { color: #ff9ca6; }
+.north-ai-limitations { max-width: 92%; color: #f4ca72; font-size: 11px; line-height: 1.55; }
+
+.north-ai-composer-wrap { padding: 12px 18px max(16px, env(safe-area-inset-bottom)); border-top: 1px solid rgba(139, 166, 183, .14); background: rgba(5, 14, 26, .86); backdrop-filter: blur(16px); }
+.north-ai-composer { display: grid; grid-template-columns: minmax(0, 1fr) 44px; gap: 8px; padding: 6px; border: 1px solid rgba(139, 166, 183, .22); border-radius: 15px; background: rgba(13, 32, 50, .84); box-shadow: inset 0 1px 0 rgba(255,255,255,.03); }
+.north-ai-input { width: 100%; min-width: 0; min-height: 42px; max-height: 112px; resize: none; border: 0; padding: 10px 9px; color: var(--north-ai-text); background: transparent; font: inherit; font-size: 14px; line-height: 1.5; outline: 0; }
+.north-ai-input::placeholder { color: #6f8b9d; }
+.north-ai-send { width: 44px; height: 44px; align-self: end; border: 0; border-radius: 12px; color: #03202d; background: var(--north-ai-cyan); cursor: pointer; font-size: 19px; transition: transform .2s ease, opacity .2s ease; }
+.north-ai-send:hover { transform: translateY(-1px); }
+.north-ai-send:active { transform: scale(.97); }
+.north-ai-send:disabled { cursor: not-allowed; opacity: .38; transform: none; }
+.north-ai-disclaimer { margin: 8px 2px 0; color: #668194; font-size: 10px; line-height: 1.45; text-align: center; }
+
+@media (max-width: 640px) {
+  .north-ai-launcher { right: 12px; bottom: 14px; min-height: 52px; padding: 5px; border-radius: 16px; }
+  .north-ai-launcher-mark { width: 42px; height: 42px; }
+  .north-ai-launcher-copy, .north-ai-launcher-dot { display: none; }
+  .north-ai-panel { width: 100vw; border-left: 0; }
+  .north-ai-header { padding: max(13px, env(safe-area-inset-top)) 14px 12px; }
+  .north-ai-brand-mark { width: 44px; height: 44px; border-radius: 14px; }
+  .north-ai-title h2 { font-size: 16px; }
+  .north-ai-readonly { display: none; }
+  .north-ai-conversation { padding: 15px 14px 20px; }
+  .north-ai-welcome { padding: 16px; border-radius: 16px; }
+  .north-ai-welcome h3 { font-size: 18px; }
+  .north-ai-bubble { max-width: 92%; }
+  .north-ai-composer-wrap { padding-left: 12px; padding-right: 12px; }
+}

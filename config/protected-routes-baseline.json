@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "reason": "每日回款明细、回款执行评估和收缴率明细已经验收。结构重构不得静默改变其业务、数据、API或页面专项资产。",
+  "routes": [
+    "/daily",
+    "/payment",
+    "/collection"
+  ],
+  "files": {
+    "server/src/routes/daily.ts": "49e67b025c2be491bf5391f33f334f8de5ec33746020dc9b3806901a4c7b0813",
+    "server/src/routes/payments.ts": "763eafd9426f16a46ff0dfb486e2372417ed5546c85c16305935d5ac64adbe59",
+    "server/src/routes/collections.ts": "b1c927598b2f4d80ffb001d5f7534908163d172de2edf28ead5fb37e4708a61c",
+    "server/src/collection-scope.ts": "3c9234eb543c8bbe7f02c154d42c12c0c0b5ad61dcc8927b1bc53e8d7a2b0e1c",
+    "server/src/collection-dataset.ts": "009fa051eb88f6b6563e16239915c554e7ac9b79892ab9840a69fc71bd12d835",
+    "firstcare-cloud-local/aph2-payment-layout-20260810-v1.js": "0cef93b1387595a29e58c46c03d95026baff9724a33e121b4a6a564709ad99f1",
+    "firstcare-cloud-local/aph2-payment-layout-20260810-v1.css": "334f399629bd1e52c091e7403086191d6be7e4573015bea6ed687df17d94700e",
+    "firstcare-cloud-local/aph2-r20-collection-target-polish-20260811-v1.js": "4d42739cc34966c94183ca5d0a4e804688f52d92437f66e40849984cb35f3780",
+    "firstcare-cloud-local/aph2-r20-collection-target-polish-20260811-v1.css": "1b543b9f9523692d5974a6fd1cd507f90e55b8b0f073b584ac308683ecaf5a0c",
+    "tests/collection-summary-consistency.test.mjs": "8749c6f63cb9d8eecbaa002ba0a6da1e401ea82f00fefa339ee9e50308e6daf2",
+    "tests/payment-viewport-layout.test.mjs": "60b32d89cd15c209f041ce06f18705264886d04bc9de515e17d6cbd7335fd069",
+    "tests/collection-full-table-visibility.test.mjs": "5d8e70665e2c4b54147f3fb521115c7de5f4a301ac1836f6f51eae163b19cc57"
+  }
+}

@@ -1,0 +1,40 @@
+/* R65：路由点击后的 60px 抑制态必须真正隐藏导航文字，不留裁切字形。 */
+@media (min-width: 641px) {
+  body.aph2-theme
+    .aph-exact-sidebar.aph-r57-hover-suppressed
+    .aph-exact-sidebar-panel a span {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateX(-3px) !important;
+    transition: none !important;
+  }
+}
+
+/* AI 预警列表在最窄桌面壳层下改用两列，避免四列最小宽度裁掉结论和操作。 */
+@media (min-width: 641px) and (max-width: 767px) {
+  body[data-r42-route="ai-alerts"] [data-r56-ai-center-app] .r56-center-toggle {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.6rem 0.75rem;
+    min-height: 0;
+    padding: 1rem 0;
+  }
+
+  body[data-r42-route="ai-alerts"] [data-r56-ai-center-app] .r56-status {
+    justify-self: end;
+  }
+
+  body[data-r42-route="ai-alerts"] [data-r56-ai-center-app] .r56-center-conclusion,
+  body[data-r42-route="ai-alerts"] [data-r56-ai-center-app] .r56-center-disclosure {
+    grid-column: 1 / -1;
+  }
+
+  body[data-r42-route="ai-alerts"] [data-r56-ai-center-app] .r56-center-disclosure {
+    justify-self: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.aph2-theme .aph-exact-sidebar-panel a span {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,30 @@
+/* 收缴率环内安全区：所有文字必须落在圆环内径之内，不能触碰进度弧。 */
+@media (min-width: 1024px) {
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-rate-ring > .absolute.inset-0 {
+    width: 70px;
+    height: 70px;
+    inset: 15px !important;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-rate-ring .num.text-2xl {
+    max-width: 70px;
+    font-size: 18px !important;
+    line-height: 23px !important;
+    letter-spacing: -0.045em !important;
+    white-space: nowrap;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-rate-ring .text-micro {
+    max-width: 70px;
+    margin-top: 2px !important;
+    font-size: 9px !important;
+    line-height: 13px !important;
+    letter-spacing: -0.015em !important;
+    white-space: nowrap;
+  }
+}

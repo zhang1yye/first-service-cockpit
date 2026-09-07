@@ -1,0 +1,10 @@
+/* R54：AI 助手关闭按钮触控基线，仅修正按钮尺寸。 */
+@media (max-width: 640px) {
+  html body #north-ai-assistant button.north-ai-close {
+    width: 44px !important;
+    min-width: 44px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    box-sizing: border-box;
+  }
+}

@@ -1,0 +1,90 @@
+/* 首页经营指标区：六张卡按三列两行等宽等高排列，避免信息被裁切。 */
+@media (min-width: 1024px) {
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-budget {
+    display: contents !important;
+    height: auto !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection,
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-budget > :not(.r8-home-duplicate),
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    :is(.r8-home-period, .r8-home-growth, .r8-home-scope) {
+    height: 164px;
+    min-width: 0;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection {
+    grid-column: 1 / span 4 !important;
+    grid-row: 2 !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-budget > :nth-child(2) {
+    grid-column: 5 / span 4 !important;
+    grid-row: 2 !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-budget > :nth-child(3) {
+    grid-column: 9 / span 4 !important;
+    grid-row: 2 !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-period {
+    grid-column: 1 / span 4 !important;
+    grid-row: 3 !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-growth {
+    grid-column: 5 / span 4 !important;
+    grid-row: 3 !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-scope {
+    grid-column: 9 / span 4 !important;
+    grid-row: 3 !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection > .card-soft,
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-budget > :not(.r8-home-duplicate) > .card-soft,
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    :is(.r8-home-period, .r8-home-growth, .r8-home-scope) > .card-soft {
+    height: 100% !important;
+    min-height: 0 !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection > .card-soft {
+    gap: 5px !important;
+    padding: 11px 16px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection-body {
+    gap: 12px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-rate-ring {
+    width: 96px !important;
+    height: 96px !important;
+    min-width: 96px;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-rate-ring .num.text-2xl {
+    font-size: 21px !important;
+    line-height: 26px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    :is(.r8-home-period, .r8-home-growth, .r8-home-scope) > .card-soft {
+    gap: 7px !important;
+    padding: 16px 18px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    :is(.r8-home-period, .r8-home-growth, .r8-home-scope) > .card-soft > .text-micro {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+  }
+}

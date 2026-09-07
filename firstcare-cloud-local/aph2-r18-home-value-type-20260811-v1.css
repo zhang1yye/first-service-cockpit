@@ -1,0 +1,30 @@
+/* 首页经营指标字号：五张居中卡统一主数字节奏，收缴率复合卡保持不变。 */
+@media (min-width: 1024px) {
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .aph-home-kpi-grid
+    .r8-home-budget > :not(.r8-home-duplicate) .num,
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .aph-home-kpi-grid
+    :is(.r8-home-period, .r8-home-growth, .r8-home-scope) .num.text-3xl {
+    font-size: 34px !important;
+    line-height: 42px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  /* 经营分组中的总数是次级信息，保持同一基线但降低一个层级。 */
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .aph-home-kpi-grid
+    .r8-home-scope .num > span {
+    font-size: 22px !important;
+    line-height: 30px !important;
+  }
+
+  /* 达标状态符号随主数字缩放，避免符号比文字显得更重。 */
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .aph-home-kpi-grid
+    :is(.r8-home-period, .r8-home-growth, .r8-home-scope, .r8-home-budget)
+    .num > svg,
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .aph-home-kpi-grid
+    .r8-home-growth > .card-soft > :nth-child(2) > svg {
+    width: 15px !important;
+    height: 15px !important;
+    min-width: 15px;
+  }
+}

@@ -1,0 +1,99 @@
+/* 首页数据源状态收入 APH 黑色顶栏，不再占用正文网格。 */
+body.aph2-theme.aph-home-source-header > .aph-source-freshness,
+body.aph2-theme.aph-home-source-header .r6-source-freshness-slot {
+  display: none !important;
+}
+
+body.aph2-theme.aph-home-source-header.aph-source-freshness-visible:not(.aph-admin-page) main#main-content {
+  padding-top: 24px !important;
+}
+
+@media (max-width: 640px) {
+  body.aph2-theme.aph-home-source-header.aph-source-freshness-visible:not(.aph-admin-page) main#main-content {
+    padding-top: 16px !important;
+  }
+}
+
+body.aph2-theme header.sticky.top-0 .aph-header-status.r7-source-header-active {
+  width: min(860px, calc(100vw - 690px));
+  max-width: none;
+  color: transparent;
+  font-size: 0 !important;
+  letter-spacing: 0;
+}
+body.aph2-theme header.sticky.top-0 .aph-header-status.r7-source-header-active::before {
+  display: none !important;
+}
+.r7-header-freshness {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  height: 40px;
+  color: #f5f7fa;
+  font-size: 12px !important;
+  line-height: 1;
+  white-space: nowrap;
+}
+.r7-header-freshness-title {
+  flex: 0 0 auto;
+  color: #e8edf3 !important;
+  font-size: 13px !important;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.r7-header-freshness > i {
+  flex: 0 0 auto;
+  margin: 0 13px;
+  color: #f5f7fa;
+  font-style: normal;
+  font-size: 12px;
+}
+.r7-header-freshness article {
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 12px;
+  border-left: 1px solid #26313c;
+}
+.r7-header-freshness article:last-child { border-right: 1px solid #26313c; }
+.r7-header-freshness strong {
+  color: #f5f7fa;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+.r7-header-freshness span {
+  color: #78d9ac !important;
+  font-size: 10px !important;
+  line-height: 1.2;
+}
+.r7-header-freshness article[data-status="unavailable"] span { color: #f1bd68 !important; }
+.r7-header-freshness time {
+  color: #ff3b30;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  letter-spacing: .08em;
+  white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+  body.aph2-theme .aph-home-reflow > .aph-home-region-grid { grid-row: 4 !important; }
+  body.aph2-theme .aph-home-reflow > .aph-home-ranking-grid { grid-row: 5 !important; }
+}
+@media (min-width: 641px) and (max-width: 1100px) {
+  body.aph2-theme header.sticky.top-0 .aph-header-status.r7-source-header-active {
+    width: min(600px, calc(100vw - 410px));
+  }
+  .r7-header-freshness-title { max-width: 150px; overflow: hidden; text-overflow: ellipsis; }
+  .r7-header-freshness article { padding-inline: 9px; }
+  .r7-header-freshness strong { max-width: 72px; overflow: hidden; text-overflow: ellipsis; }
+}
+@media (max-width: 640px) {
+  body.aph2-theme header.sticky.top-0 .aph-header-status.r7-source-header-active { display: none !important; }
+}

@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="第一服务华北经营驾驶舱欠费经营分析，基于权限内有效批次查看金额、账龄、费项、原因与人工复核进度。" />
+  <title>欠费经营分析｜第一服务华北经营驾驶舱</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script src="/arrears/arrears-entry-20260811-v1.js"></script>
+  <link rel="stylesheet" href="/arrears/arrears-overview-20260808-scroll1.css" />
+  <link rel="stylesheet" href="/arrears/arrears-shell-20260811-v2.css" />
+  <link rel="stylesheet" href="/arrears/arrears-shell-20260811-v3.css" />
+  <link rel="stylesheet" href="/arrears/arrears-shell-20260811-v4.css" />
+  <link rel="stylesheet" href="/arrears/arrears-home-palette-20260812-v1.css?v=r35-home-palette1" />
+  <link rel="stylesheet" href="/arrears/aph2-r50-arrears-accessibility-20260812-v1.css?v=r50-arrears-a11y1" />
+  <link rel="stylesheet" href="/arrears/aph2-r51-arrears-keyboard-20260812-v1.css?v=r51-arrears-keyboard1" />
+  <link rel="stylesheet" href="/arrears/aph2-r55-arrears-workbench-20260812-v1.css?v=r55-arrears-workbench1" />
+  <link rel="stylesheet" href="/arrears/aph2-r59-arrears-embedded-inspector-20260813-v1.css?v=r59-arrears-inspector1" />
+  <link rel="stylesheet" href="/arrears/aph2-r62-arrears-direct-ai-20260813-v1.css?v=r62-arrears-direct-ai1" />
+  <link rel="stylesheet" href="/aph2-r63-no-header-explainers-20260813-v3.css?v=r63-header-clean3" />
+  <link rel="stylesheet" href="/arrears/aph2-r65-arrears-optional-conclusion-20260813-v1.css?v=r65-arrears-optional-conclusion1" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+
+  <header class="aph-shell-header">
+    <a class="aph-brand" href="/" aria-label="返回华北经营驾驶舱首页"><img src="/aph-icons/aph-brand-lockup.jpg" alt="APH 2.0" /></a>
+    <button class="aph-menu-toggle" type="button" aria-label="展开或收起导航" aria-controls="arrears-navigation" aria-expanded="false"><i></i><i></i><i></i></button>
+    <div class="aph-shell-status">华北年度经营冲刺 <span>·</span> 欠费经营分析</div>
+    <div class="aph-shell-actions"><span class="user-icon" aria-hidden="true">♙</span><span id="userLabel">当前账号</span><a href="/">返回驾驶舱</a></div>
+  </header>
+
+  <aside class="aph-icon-rail" id="arrears-navigation" aria-label="驾驶舱主导航，鼠标移入自动展开">
+    <nav>
+      <a href="/" title="驾驶舱看板"><img src="/aph-icons/shouyeF.png" alt="" /><span>驾驶舱看板</span></a>
+      <a href="/command" title="经营工作台"><img src="/aph-icons/RectangleCopy.png" alt="" /><span>经营工作台</span></a>
+      <a href="/projects" title="项目管理"><img src="/aph-icons/shangye.png" alt="" /><span>项目管理</span></a>
+      <a href="/payment" title="回款额执行"><img src="/aph-icons/caiwu.png" alt="" /><span>回款额执行</span></a>
+      <a href="/daily" title="每日回款明细"><img src="/aph-icons/renliziyuan.png" alt="" /><span>每日回款明细</span></a>
+      <a href="/collection" title="收缴率明细"><img src="/aph-icons/fangchanwuye.png" alt="" /><span>收缴率明细</span></a>
+      <a class="active" aria-current="page" href="/arrears/" title="欠费经营分析"><img src="/aph-icons/chengbentongjifenxi.png" alt="" /><span>欠费经营分析</span></a>
+      <a href="/ai-alerts" title="AI预警中心"><img src="/aph-icons/chengbentongjifenxi.png" alt="" /><span>AI预警中心</span></a>
+      <a href="/ai-report" title="AI经营月报"><img src="/aph-icons/jiaoyu.png" alt="" /><span>AI经营月报</span></a>
+    </nav>
+  </aside>
+
+  <nav class="aph-page-tabs" aria-label="已打开页面">
+    <span class="aph-tab-prev" aria-hidden="true"><img src="/aph-icons/aph-tab-prev.jpg" alt="" /></span><a href="/">首页</a><a href="/collection">收缴率明细</a><a class="active" aria-current="page" href="/arrears/">欠费经营分析</a>
+  </nav>
+
+  <main id="main-content">
+    <section class="page-heading">
+      <div><span class="eyebrow">ARREARS EVIDENCE WORKBENCH</span><h1>欠费经营分析</h1><p>用欠费台账事实和本地提取的结构化沟通信号生成可复核的AI归因，人工确认后再导出经营结果。</p></div>
+      <div class="heading-actions"><span id="overviewStatus" class="data-state loading">数据读取中</span><button class="secondary" id="overviewRefresh" type="button">刷新经营数据</button><a class="back-link" href="/collection">返回收缴率明细 →</a></div>
+    </section>
+
+    <section class="guardrail">
+      <strong>经营事实门禁</strong><span>仅统计权限内最新有效批次 · 已撤回和验收数据不进入经营汇总 · 欠费金额不等同于收缴率未收金额 · 缺失金额不按0处理</span>
+    </section>
+
+    <section class="r55-shell" id="r55Shell" aria-label="欠费AI分析工作区">
+      <nav class="r55-view-nav" aria-label="欠费分析视图">
+        <button id="r55TasksView" type="button" data-r55-mode="tasks" aria-current="page">分析任务</button>
+        <button id="r55OverviewView" type="button" data-r55-mode="overview">经营总览</button>
+        <button id="r55DetailsView" type="button" data-r55-mode="details">结构分析</button>
+      </nav>
+
+      <section class="r55-error-panel" id="r55ErrorPanel" role="alert" tabindex="-1" hidden>
+        <div>
+          <strong id="r55ErrorTitle">操作未完成</strong>
+          <p id="r55ErrorMessage"></p>
+          <ul id="r55ErrorDetails"></ul>
+          <p class="r55-error-meta" id="r55ErrorMeta"></p>
+          <div id="r55ErrorAction"></div>
+        </div>
+        <button type="button" id="r55DismissError" aria-label="关闭错误提示">×</button>
+      </section>
+
+      <section class="r55-workbench" id="r55Workbench" aria-labelledby="r55WorkbenchTitle">
+        <header class="r55-workbench-header">
+          <div>
+            <span class="eyebrow">AI ANALYSIS TASKS</span>
+            <h2 id="r55WorkbenchTitle">分析任务</h2>
+            <p>每个任务都保留上传校验、AI运行、人工复核、导出和审计记录。</p>
+          </div>
+          <div class="r55-header-actions">
+            <div class="r55-readiness" id="r55Readiness" role="status" aria-live="polite">
+              <span id="r55ArchiveState">归档服务检查中</span>
+              <span id="r55AiState">AI服务检查中</span>
+            </div>
+            <button class="r55-button secondary" id="r55RefreshTasks" type="button">刷新任务</button>
+            <button class="r55-button primary" id="r55NewBatch" type="button" aria-expanded="false" aria-controls="r55CreatePanel">新建分析</button>
+          </div>
+        </header>
+
+        <ol class="r55-pipeline" aria-label="欠费分析流程">
+          <li><span>1</span><b>上传原始证据</b><small>台账＋原始沟通文件</small></li>
+          <li><span>2</span><b>字段与隐私校验</b><small>错误不会进入批次</small></li>
+          <li><span>3</span><b>只读AI分析</b><small>仅引用台账事实和结构化信号</small></li>
+          <li><span>4</span><b>人工复核</b><small>确认或驳回并留痕</small></li>
+          <li><span>5</span><b>确认结果导出</b><small>不混入未确认结论</small></li>
+        </ol>
+
+        <section class="r55-create-panel" id="r55CreatePanel" aria-labelledby="r55CreateTitle" hidden>
+          <div class="r55-section-heading">
+            <div><span class="r55-section-index">01</span><h3 id="r55CreateTitle">新建AI分析任务</h3></div>
+            <p>沟通原文仅作AES密文归档，不进入数据库或云端AI；未命中结构化信号时必须人工核验。分析不回写收费系统，也不创建催缴任务。</p>
+          </div>
+          <form id="r55CreateForm" novalidate>
+            <div class="r55-form-grid">
+              <label>授权项目<select id="r55Project" name="projectId" required><option value="">请选择当前账号有权访问的项目</option></select></label>
+              <label>数据业务日期<input id="r55BusinessDate" name="businessDate" type="date" required /></label>
+              <label class="r55-file-field">欠费台账<input id="r55LedgerFile" name="ledger" type="file" accept=".xlsx,.xls,.csv" required /><small id="r55LedgerMeta">请选择15MB以内的xlsx、xls或csv文件</small></label>
+              <label class="r55-file-field">企小码沟通记录（选填）<input id="r55CommunicationFile" name="communications" type="file" accept=".xlsx,.xls,.csv" /><small id="r55CommunicationMeta">未提供时仅按欠费台账事实分析；记录缺失不等于未联系</small></label>
+            </div>
+            <div class="r55-form-support">
+              <div><button class="r55-link-button" type="button" data-r55-template="ledger">下载欠费台账模板</button><button class="r55-link-button" type="button" data-r55-template="communications">下载企小码模板</button></div>
+              <span id="r55LimitText">正在读取文件限制</span>
+            </div>
+            <section class="r55-validation-panel" id="r55UploadFeedback" role="alert" tabindex="-1" hidden>
+              <strong>文件校验未通过</strong><p id="r55UploadFeedbackMessage"></p><ol id="r55UploadFeedbackDetails"></ol>
+            </section>
+            <div class="r55-form-actions">
+              <button class="r55-button secondary" id="r55CancelCreate" type="button">取消</button>
+              <button class="r55-button primary" id="r55SubmitBatch" type="submit" disabled>上传校验并开始AI分析</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="r55-task-section" aria-labelledby="r55TaskListTitle">
+          <div class="r55-section-heading r55-task-heading">
+            <div><span class="r55-section-index">02</span><h3 id="r55TaskListTitle">任务队列</h3><span class="r55-count" id="r55TaskCount">读取中</span></div>
+            <div class="r55-task-filters" role="search">
+              <label><span>搜索</span><input id="r55TaskSearch" type="search" placeholder="项目、批次或创建人" /></label>
+              <label><span>状态</span><select id="r55TaskStatus"><option value="">全部状态</option><option value="parsed">待AI分析</option><option value="analyzing">AI分析中</option><option value="analyzed">AI完成</option><option value="rule_only">规则结果</option><option value="revoked">已撤回</option><option value="blocked">已阻断</option></select></label>
+              <button class="r55-link-button" id="r55ClearTaskFilters" type="button">清除筛选</button>
+            </div>
+          </div>
+          <div class="r55-table-region" tabindex="0" role="region" aria-label="欠费AI分析任务表，可横向滚动">
+            <table class="r55-task-table">
+              <thead><tr><th>任务</th><th>证据规模</th><th>AI进度</th><th>人工复核</th><th>创建信息</th><th>操作</th></tr></thead>
+              <tbody id="r55TaskRows"><tr><td colspan="6" class="r55-empty-cell">正在读取分析任务…</td></tr></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="r55-review-workspace" id="r55ReviewWorkspace" aria-labelledby="r55ReviewTitle" hidden>
+          <header class="r55-review-header">
+            <div><span class="r55-section-index">03</span><div><h3 id="r55ReviewTitle">复核工作区</h3><p id="r55ReviewSubtitle">选择任务后查看证据</p></div></div>
+            <div class="r55-review-actions">
+              <span class="r55-run-state" id="r55SelectedRunState" role="status" aria-live="polite"></span>
+              <button class="r55-button primary" id="r55AnalyzeSelected" type="button" disabled>开始AI分析</button>
+              <button class="r55-button secondary" id="r55ExportConfirmed" type="button" disabled>导出已确认结果</button>
+              <button class="r55-button secondary" id="r55RunHistory" type="button">AI运行记录</button>
+              <button class="r55-button secondary" id="r55AuditTrail" type="button">审计记录</button>
+              <button class="r55-link-button" id="r55CloseReview" type="button">关闭工作区</button>
+            </div>
+          </header>
+
+          <div class="r55-result-filters" role="search" aria-label="筛选AI分析结果">
+            <label><span>搜索资源</span><input id="r55ResultSearch" type="search" placeholder="输入脱敏资源编号" /></label>
+            <label><span>复核状态</span><select id="r55ReviewStatus"><option value="">全部</option><option value="pending">待复核</option><option value="confirmed">已确认</option><option value="rejected">已驳回</option></select></label>
+            <label><span>AI原因</span><select id="r55Cause"><option value="">全部原因</option><option value="service_dispute">服务争议</option><option value="charge_dispute">收费争议</option><option value="vacancy">房屋空置</option><option value="financial_hardship">支付困难</option><option value="ownership_or_handover">产权/交付问题</option><option value="contact_barrier">联系障碍</option><option value="promised_payment">已承诺缴费</option><option value="legal_dispute">法律争议</option><option value="unknown">待人工核验</option></select></label>
+            <button class="r55-button secondary" id="r55ApplyResultFilters" type="button">筛选</button>
+            <button class="r55-link-button" id="r55ClearResultFilters" type="button">清除</button>
+          </div>
+
+          <div class="r55-review-grid">
+            <section class="r55-result-list" aria-labelledby="r55ResultListTitle">
+              <div class="r55-list-meta"><h4 id="r55ResultListTitle">资源队列</h4><span id="r55ResultCount">0项</span></div>
+              <div class="r55-table-region" tabindex="0" role="region" aria-label="欠费AI分析结果表，可横向滚动">
+                <table class="r55-result-table">
+                  <thead><tr><th>资源</th><th>欠费事实</th><th>沟通信号</th><th>AI结论</th><th>复核状态</th></tr></thead>
+                  <tbody id="r55ResultRows"><tr><td colspan="5" class="r55-empty-cell">请选择分析任务</td></tr></tbody>
+                </table>
+              </div>
+              <div class="r55-pagination" aria-label="分析结果分页">
+                <button class="r55-button secondary" id="r55PrevPage" type="button">上一页</button><span id="r55PageState">第1页</span><button class="r55-button secondary" id="r55NextPage" type="button">下一页</button>
+              </div>
+            </section>
+
+            <aside class="r55-inspector" id="r55Inspector" aria-labelledby="r55InspectorTitle" tabindex="-1" hidden>
+              <header><div><span class="eyebrow">EVIDENCE INSPECTOR</span><h4 id="r55InspectorTitle">资源证据</h4></div><button class="r55-icon-button" id="r55CloseInspector" type="button" aria-label="关闭资源证据">×</button></header>
+              <div id="r55InspectorBody"></div>
+            </aside>
+          </div>
+        </section>
+        <p class="r55-announcer" id="r55Announcer" role="status" aria-live="polite"></p>
+      </section>
+    </section>
+
+    <nav class="arrears-view-tabs" aria-label="欠费经营分析视图" role="tablist">
+      <button type="button" role="tab" data-arrears-tab="overview">经营总览</button>
+      <button type="button" role="tab" data-arrears-tab="details">项目与资源明细</button>
+      <button type="button" role="tab" data-arrears-tab="workbench">批次工作台</button>
+    </nav>
+
+    <section class="metrics operating-metrics" aria-label="欠费经营概览" data-arrears-view="overview">
+      <article class="metric-primary"><small>欠费台账净额</small><strong id="metricAmount">—</strong><span id="metricAmountNote">等待有效批次</span></article>
+      <article><small>欠费资源</small><strong id="metricResources">—</strong><span id="metricCommunication">企小码覆盖待核验</span></article>
+      <article><small>覆盖项目</small><strong id="metricProjects">—</strong><span>按当前账号项目权限</span></article>
+      <article><small>有效批次</small><strong id="metricBatches">—</strong><span id="metricBatchNote">同项目同日期只取最新</span></article>
+      <article><small>待人工核验</small><strong id="metricReview">—</strong><span id="metricReviewNote">AI结论不能替代人工确认</span></article>
+      <article><small>最新业务日期</small><strong id="metricDate">—</strong><span id="metricAgeing">长账龄金额待核验</span></article>
+    </section>
+
+    <section class="overview-empty" id="overviewEmpty" aria-live="polite" data-arrears-view="overview">
+      <span class="empty-index">00</span><div><strong>正在读取欠费经营事实</strong><p>仅在存在权限内有效批次时展示金额、账龄和原因分析。</p></div>
+    </section>
+
+    <section class="overview-grid hidden" id="overviewPanels" aria-label="欠费经营结构分析" data-arrears-view="details">
+      <article class="panel portfolio-panel">
+        <div class="panel-title"><div><span class="section-mark">01</span><h2>项目与片区风险</h2></div><span class="tag">净额口径</span></div>
+        <div class="dual-breakdown"><div><h3>项目排序</h3><div id="projectBreakdown" class="breakdown-list"></div></div><div><h3>片区分布</h3><div id="areaBreakdown" class="breakdown-list compact"></div></div></div>
+      </article>
+      <article class="panel structure-panel">
+        <div class="panel-title"><div><span class="section-mark">02</span><h2>账龄结构</h2></div><span class="tag neutral">按资源与金额</span></div>
+        <div id="ageingBreakdown" class="breakdown-list panel-body"></div>
+      </article>
+      <article class="panel structure-panel">
+        <div class="panel-title"><div><span class="section-mark">03</span><h2>费项结构</h2></div><span class="tag neutral">含冲销与负数</span></div>
+        <div id="feeBreakdown" class="breakdown-list panel-body"></div>
+      </article>
+      <article class="panel cause-panel">
+        <div class="panel-title"><div><span class="section-mark">04</span><h2>欠费原因</h2></div><span class="tag">人工优先</span></div>
+        <div id="causeBreakdown" class="breakdown-list panel-body"></div>
+      </article>
+      <article class="panel quality-panel">
+        <div class="panel-title"><div><span class="section-mark">05</span><h2>数据可用性</h2></div><span class="tag neutral">门禁提示</span></div>
+        <dl class="quality-list"><div><dt>金额完整率</dt><dd id="qualityAmount">—</dd></div><div><dt>待人工复核</dt><dd id="qualityReview">—</dd></div><div><dt>无匹配沟通记录</dt><dd id="qualityCommunication">—</dd></div></dl>
+        <p class="quality-note">记录缺失不等于未联系；金额缺失不补0；人工未确认的原因仅作待复核线索。</p>
+      </article>
+    </section>
+
+    <section class="overview-empty hidden" id="detailEmpty" aria-live="polite" data-arrears-view="details">
+      <span class="empty-index">—</span><div><strong>暂无项目与资源明细</strong><p>只有权限内有效批次通过经营事实门禁后，才展示项目、账龄、费项和原因结构。</p></div>
+    </section>
+
+    <section class="workspace-heading" data-arrears-view="workbench">
+      <div><span class="eyebrow">EVIDENCE WORKBENCH</span><h2>批次工作台</h2><p>上传、分析和人工核验保留原流程；经营总览只读取结构化结果，不回写收费事实。</p></div>
+    </section>
+
+    <section class="grid" data-arrears-view="workbench">
+      <article class="panel upload-panel">
+        <div class="panel-title"><div><span class="step">01</span><h2>创建分析批次</h2></div><span class="tag">项目级权限</span></div>
+        <form id="uploadForm">
+          <label>授权项目<select id="projectId" name="projectId" required><option value="">请选择当前账号有权访问的项目</option></select></label>
+          <label>数据业务日期<input id="businessDate" name="businessDate" type="date" required /></label>
+          <label>欠费台账<input id="ledgerFile" name="ledger" type="file" accept=".xlsx,.xls,.csv" required /><small>15MB以内，使用资源编码作为唯一关联键</small></label>
+          <label>企小码沟通记录（选填）<input id="communicationFile" name="communications" type="file" accept=".xlsx,.xls,.csv" /><small>15MB以内；未提供时仅按欠费台账事实分析</small></label>
+          <div class="template-row"><button class="secondary" type="button" data-template="ledger">下载欠费台账模板</button><button class="secondary" type="button" data-template="communications">下载企小码模板</button></div>
+          <button class="primary" id="uploadButton" type="submit">上传并校验</button>
+        </form>
+      </article>
+
+      <article class="panel flow-panel">
+        <div class="panel-title"><div><span class="step">02</span><h2>分析链路</h2></div><span class="tag">只读AI</span></div>
+        <ol class="flow"><li><b>文件门禁</b><span>格式、大小、内容签名与SHA-256</span></li><li><b>项目范围</b><span>上传人只能选择授权项目</span></li><li><b>字段最小化</b><span>姓名、电话、证件号和账号脱敏</span></li><li><b>规则预归类</b><span>事实、规则和AI推断分别保存</span></li><li><b>云端AI归因</b><span>仅引用L-/C-证据编号，输出置信度</span></li><li><b>人工核验</b><span>确认或驳回后再用于管理判断</span></li></ol>
+      </article>
+    </section>
+
+    <section class="panel batches-panel" data-arrears-view="workbench">
+      <div class="panel-title"><div><span class="step">03</span><h2>上传批次</h2></div><button class="secondary" id="refreshButton">刷新</button></div>
+      <div class="table-wrap"><table><thead><tr><th>批次</th><th>项目/业务日期</th><th>数据规模</th><th>校验</th><th>AI状态</th><th>操作</th></tr></thead><tbody id="batchRows"><tr><td colspan="6" class="empty">正在加载…</td></tr></tbody></table></div>
+    </section>
+
+    <section class="panel result-panel hidden" id="resultPanel" data-arrears-view="workbench">
+      <div class="panel-title"><div><span class="step">04</span><h2 id="resultTitle">证据化归因结果</h2></div><button class="secondary" id="closeResults">关闭</button></div>
+      <div id="resultSummary" class="result-summary"></div>
+      <div id="resultRows" class="result-list"></div>
+    </section>
+    <div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
+  </main>
+  <script src="/arrears/arrears-overview-20260808.js" defer></script>
+  <script src="/arrears/arrears-shell-20260811-v2.js" defer></script>
+  <script src="/arrears/aph2-r51-arrears-keyboard-20260812-v1.js?v=r51-arrears-keyboard1" defer></script>
+  <script src="/arrears/aph2-r55-arrears-workbench-20260812-v1.js?v=r55-arrears-workbench1" defer></script>
+  <script src="/arrears/aph2-r59-arrears-embedded-inspector-20260813-v1.js?v=r59-arrears-inspector1" defer></script>
+  <script src="/arrears/aph2-r60-arrears-modal-occlusion-20260813-v1.js?v=r60-arrears-modal1" defer></script>
+  <script src="/arrears/aph2-r62-arrears-direct-ai-20260813-v1.js?v=r62-arrears-direct-ai1" defer></script>
+  <script src="/arrears/aph2-r65-arrears-optional-conclusion-20260813-v1.js?v=r65-arrears-optional-conclusion1" defer></script>
+</body>
+</html>

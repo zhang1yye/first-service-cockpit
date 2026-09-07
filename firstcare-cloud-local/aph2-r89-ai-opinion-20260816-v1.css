@@ -1,0 +1,124 @@
+/* R89：AI经营意见与已核验事实分层，仅作用于华北经营助手。 */
+#north-ai-assistant .north-ai-opinion {
+  display: grid;
+  gap: 0;
+  width: min(100%, 740px);
+  margin-top: 8px;
+  overflow: hidden;
+  border: 1px solid #dfe3e8;
+  border-left: 3px solid #cf001b;
+  border-radius: 12px;
+  color: #343940;
+  background: #fff;
+}
+
+#north-ai-assistant .north-ai-opinion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-bottom: 1px solid #edf0f3;
+}
+
+#north-ai-assistant .north-ai-opinion-header strong {
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 680;
+}
+
+#north-ai-assistant .north-ai-opinion-header span {
+  padding: 3px 7px;
+  border-radius: 999px;
+  color: #9f1625;
+  background: #fff0f2;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+#north-ai-assistant .north-ai-opinion-section {
+  padding: 13px 14px;
+}
+
+#north-ai-assistant .north-ai-opinion-section + .north-ai-opinion-section {
+  border-top: 1px solid #edf0f3;
+}
+
+#north-ai-assistant .north-ai-opinion-section h4 {
+  margin: 0 0 6px;
+  color: #747b84;
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 650;
+}
+
+#north-ai-assistant .north-ai-opinion-section p,
+#north-ai-assistant .north-ai-opinion-evidence p,
+#north-ai-assistant .north-ai-opinion-disclaimer {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+#north-ai-assistant .north-ai-opinion-section p {
+  font-size: 14px;
+  line-height: 1.72;
+}
+
+#north-ai-assistant .north-ai-opinion-actions {
+  background: #f7f8fa;
+}
+
+#north-ai-assistant .north-ai-opinion-evidence {
+  border-top: 1px solid #edf0f3;
+}
+
+#north-ai-assistant .north-ai-opinion-evidence summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  color: #626b76;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+#north-ai-assistant .north-ai-opinion-evidence p {
+  padding: 0 14px 12px;
+  color: #747b84;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+#north-ai-assistant .north-ai-opinion-disclaimer {
+  padding: 10px 14px;
+  border-top: 1px solid #edf0f3;
+  color: #8a919a;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+@media (max-width: 640px) {
+  #north-ai-assistant .north-ai-opinion {
+    border-radius: 10px;
+  }
+
+  #north-ai-assistant .north-ai-opinion-section p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  #north-ai-assistant .north-ai-opinion-header,
+  #north-ai-assistant .north-ai-opinion-section {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #north-ai-assistant .north-ai-opinion * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}

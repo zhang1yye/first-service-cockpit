@@ -1,0 +1,27 @@
+/* R70：侧栏仍以 140px 临时覆盖展开；切页和关闭后的抑制态固定回 60px。 */
+@media (min-width: 641px) {
+  body.aph2-theme .aph-exact-sidebar.aph-r70-hover-suppressed,
+  body.aph2-theme .aph-exact-sidebar.aph-r70-hover-suppressed:hover,
+  body.aph2-theme .aph-exact-sidebar.aph-r70-hover-suppressed.is-hovered,
+  body.aph2-theme .aph-exact-sidebar.aph-r70-hover-suppressed.is-expanded {
+    flex: 0 0 60px !important;
+    width: 60px !important;
+    min-width: 60px !important;
+    max-width: 60px !important;
+  }
+
+  body.aph2-theme .aph-exact-sidebar.aph-r70-hover-suppressed .aph-exact-sidebar-panel,
+  body.aph2-theme .aph-exact-sidebar.aph-r70-hover-suppressed:hover .aph-exact-sidebar-panel,
+  body.aph2-theme .aph-exact-sidebar.aph-r70-hover-suppressed.is-hovered .aph-exact-sidebar-panel,
+  body.aph2-theme .aph-exact-sidebar.aph-r70-hover-suppressed.is-expanded .aph-exact-sidebar-panel {
+    width: 60px !important;
+    box-shadow: none !important;
+  }
+
+  body.aph2-theme .aph-exact-sidebar.aph-r70-hover-suppressed .aph-exact-sidebar-panel a span {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateX(-3px) !important;
+    transition: none !important;
+  }
+}

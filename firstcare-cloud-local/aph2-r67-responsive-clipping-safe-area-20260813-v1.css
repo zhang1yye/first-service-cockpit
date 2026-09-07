@@ -1,0 +1,19 @@
+/* R67：640px 与中宽桌面的裁切边界必须连续、可预测。 */
+
+/* 精确 640px 时，对齐 R43 的 12px 页面 gutter，消除 AI 页 8px 背景 overscan。 */
+@media (min-width: 640px) and (max-width: 640px) {
+  body[data-r42-route="ai-alerts"] [data-r56-ai-center-app] {
+    margin-inline: -12px !important;
+    padding-inline: 12px !important;
+  }
+}
+
+/* 中宽桌面没有足够空间容纳完整的分源状态，禁止显示裁切碎片。 */
+@media (min-width: 641px) and (max-width: 1023px) {
+  body.aph2-theme
+    header.sticky.top-0
+    .aph-header-status.r7-unified-source-host {
+    display: none !important;
+  }
+}
+

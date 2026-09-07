@@ -1,0 +1,104 @@
+/* R50 AI 使用层：保留 APH 的平静工作面，只强化入口、状态和下一步。 */
+
+body[data-r50-ai-usability] #north-ai-assistant .north-ai-launcher:not([hidden]) {
+  display: flex;
+}
+
+.aph-r50-ai-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.aph-r50-ai-action {
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #cfd5dc;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #3f4a57;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.aph-r50-ai-action:hover {
+  border-color: #b8101a;
+  color: #b8101a;
+  background: #fff6f7;
+}
+
+.aph-r50-ai-action.is-primary {
+  border-color: #b8101a;
+  background: #b8101a;
+  color: #ffffff;
+}
+
+.aph-r50-ai-action.is-primary:hover {
+  border-color: #970d15;
+  background: #970d15;
+  color: #ffffff;
+}
+
+.aph-r50-ai-action:focus-visible {
+  outline: 3px solid rgba(184, 16, 26, .28);
+  outline-offset: 2px;
+}
+
+.aph-r50-ai-gate-helper {
+  margin: 4px 0 0;
+  color: #596574;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.aph-r50-ai-recovery {
+  display: grid;
+  gap: 7px;
+  width: min(100%, 420px);
+  margin-top: 8px;
+  padding: 10px;
+  border-left: 3px solid #b8101a;
+  background: #f7f8fa;
+}
+
+.aph-r50-ai-recovery p {
+  margin: 0 0 2px;
+  color: #596574;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.aph-r50-ai-recovery .aph-r50-ai-action {
+  width: 100%;
+  min-height: 44px;
+  text-align: left;
+}
+
+@media (max-width: 640px) {
+  body[data-r50-ai-usability] #north-ai-assistant .north-ai-launcher {
+    bottom: calc(72px + env(safe-area-inset-bottom));
+  }
+
+  .aph-r50-ai-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .aph-r50-ai-action {
+    min-height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-r50-ai-usability] #north-ai-assistant *,
+  body[data-r50-ai-usability] #north-ai-assistant *::before,
+  body[data-r50-ai-usability] #north-ai-assistant *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}

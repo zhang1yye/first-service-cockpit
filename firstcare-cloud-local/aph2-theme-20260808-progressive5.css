@@ -1,0 +1,24 @@
+/* 2026-08-08 progressive disclosure and service-center scrolling */
+.aph-page-view-switch,.aph-admin-safety-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 16px;padding:10px 12px;background:#fff;border:1px solid #e5e7eb}
+.aph-review-workbench-switch{grid-column:1/-1;position:sticky;top:88px;z-index:8;margin:0 0 18px;border-left:3px solid #db0011;box-shadow:0 6px 18px rgba(15,23,42,.06)}
+.review-workbench-shell[data-review-workbench-mode="today"] .review-workbench-main{grid-column:1/-1;}
+[data-review-workbench-section="operations"][hidden]{display:none!important}
+.aph-page-view-switch button{border:1px solid #d5d9df;background:#f7f8fa;color:#4b5563;padding:8px 14px;cursor:pointer}
+body.aph2-theme [data-aph-menu-outside-scroll="1"] button[aria-selected="true"],.aph-page-view-switch button[aria-selected="true"]{background:#db0011!important;border-color:#db0011!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+[data-aph-menu-outside-scroll="1"]{position:sticky;top:88px;z-index:9}
+.aph-history-unavailable{min-height:0!important;padding:18px 22px!important}
+.aph-history-unavailable>*:not(.aph-history-status){display:none!important}
+.aph-history-status{display:flex;align-items:center;justify-content:space-between;gap:16px;color:#6b7280}
+.aph-service-center-scroll{max-height:720px!important;max-height:68vh!important;overflow:auto!important;overscroll-behavior:contain;scrollbar-gutter:stable;border-bottom:1px solid #e5e7eb}
+.aph-service-center-detail-shell{max-height:none!important;overflow:visible!important}
+.aph-service-center-scroll table{margin:0!important}
+body.aph2-theme main .aph-service-center-scroll thead,body.aph2-theme main .aph-service-center-scroll thead tr{position:sticky;top:0;z-index:4;background:#0d1928!important;color:#f4f6f8!important}
+body.aph2-theme main .aph-service-center-scroll thead th{background:#0d1928!important;color:#f4f6f8!important;-webkit-text-fill-color:#f4f6f8!important;box-shadow:0 1px 0 #536070}
+body.aph2-theme main .aph-service-center-scroll thead th :where(button,span,svg){color:#f4f6f8!important;-webkit-text-fill-color:#f4f6f8!important}
+.aph-admin-safety-toolbar{position:sticky;top:96px;z-index:5;border-left:3px solid #db0011;color:#4b5563}
+.aph-admin-safety-toolbar strong{color:#111827}
+.aph-admin-save-locked{opacity:.45!important;cursor:not-allowed!important}
+.aph-admin-save-dirty{box-shadow:0 0 0 3px rgba(219,0,17,.12)}
+.aph-gate-empty{padding:28px;border-left:4px solid #f59e0b;background:#fff;color:#4b5563}
+.aph-gate-empty strong{display:block;margin-bottom:8px;font-size:18px;color:#111827}
+@media(max-width:640px){.aph-page-view-switch{position:sticky;top:88px;z-index:4}.aph-history-status{align-items:flex-start;flex-direction:column}.aph-admin-safety-toolbar{top:88px}.aph-service-center-scroll{max-height:62vh}}

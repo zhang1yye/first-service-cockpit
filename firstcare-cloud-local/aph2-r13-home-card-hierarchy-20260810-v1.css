@@ -1,0 +1,85 @@
+/* 首页经营指标区：首行与次行共用同一信息层级，收缴率金额横向并列。 */
+@media (min-width: 1024px) {
+  /* 两张经营卡拆开原有的标题/数值包裹层，让数值落到与第二行一致的基线。 */
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-budget > :not(.r8-home-duplicate) > .card-soft > :first-child > :first-child {
+    grid-row: 1 !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-budget > :not(.r8-home-duplicate) > .card-soft > :first-child > :nth-child(2) {
+    display: contents !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-budget > :not(.r8-home-duplicate) > .card-soft > :first-child > :nth-child(2) > :first-child {
+    grid-column: 2;
+    grid-row: 1;
+    /* 与第二行的图标标题组同样在 36px 标题区垂直居中。 */
+    align-self: center;
+    min-width: 0;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-budget > :not(.r8-home-duplicate) > .card-soft > :first-child > :nth-child(2) > :nth-child(2) {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    align-self: center;
+    display: inline-flex !important;
+    align-items: baseline;
+    gap: 7px !important;
+    min-height: 44px;
+  }
+
+  /* 收缴率卡与其它卡共用标题区；环图下方的两个金额为平行对比，不再纵向堆叠。 */
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection > .card-soft {
+    display: grid !important;
+    grid-template-rows: 36px minmax(0, 1fr);
+    align-content: stretch;
+    gap: 4px !important;
+    padding: 16px 18px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection-body {
+    min-height: 0;
+    align-items: center !important;
+    gap: 14px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-rate-ring {
+    width: 88px !important;
+    height: 88px !important;
+    min-width: 88px;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection-details {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    column-gap: 16px !important;
+    row-gap: 0 !important;
+    min-width: 0;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection-details > :not([hidden]) {
+    display: grid;
+    grid-template-rows: 20px 28px;
+    align-content: center;
+    min-width: 0;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-collection-details > :not([hidden]) .text-xs {
+    margin: 0 !important;
+    font-size: 12px !important;
+    line-height: 20px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-collection-details > :not([hidden]) .num.text-lg {
+    font-size: 22px !important;
+    line-height: 28px !important;
+    letter-spacing: -0.025em !important;
+    white-space: nowrap;
+  }
+}

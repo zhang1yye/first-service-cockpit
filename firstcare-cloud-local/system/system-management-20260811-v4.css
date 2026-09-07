@@ -1,0 +1,66 @@
+/* R28：入口在高缩放和矮窗口下仍清晰可见，整张卡片均可点击。 */
+.entry-card {
+  position: relative;
+  cursor: pointer;
+  transition: border-color .14s ease, box-shadow .14s ease, transform .14s ease;
+}
+
+.entry-card:hover {
+  border-color: #c8ced6;
+  box-shadow: 0 7px 18px rgba(25, 34, 45, .08);
+  transform: translateY(-1px);
+}
+
+.entry-card:focus-visible {
+  outline: 2px solid var(--aph-red);
+  outline-offset: -2px;
+}
+
+.entry-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 9px;
+}
+
+.entry-title-row h2 {
+  margin: 0;
+}
+
+.entry-inline-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  flex: 0 0 auto;
+  color: var(--aph-red);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.admin-card .entry-inline-action {
+  color: #3d4858;
+}
+
+.entry-inline-action b {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.entry-card .entry-action {
+  pointer-events: none;
+}
+
+@media (max-height: 760px) and (min-width: 821px) {
+  .system-main { padding-top: 110px; }
+  .system-intro { padding-bottom: 14px; }
+  .entry-card { min-height: 290px; padding: 20px 24px; }
+  .entry-head { margin-bottom: 14px; }
+  .entry-card p { min-height: 52px; }
+  .entry-card ul { margin: 12px 0 14px; }
+  .system-note { margin-top: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entry-card { transition: none; }
+}

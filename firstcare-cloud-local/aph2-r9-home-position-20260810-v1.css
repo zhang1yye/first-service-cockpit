@@ -1,0 +1,10 @@
+/* 首页经营指标区：按经营阅读顺序形成稳定的三列两行。 */
+@media (min-width: 1024px) {
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection {
+    grid-column: 1 / span 4 !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-budget {
+    grid-column: 5 / span 8 !important;
+  }
+}

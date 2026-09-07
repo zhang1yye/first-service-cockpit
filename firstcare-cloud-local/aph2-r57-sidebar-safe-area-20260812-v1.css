@@ -1,0 +1,40 @@
+/* R57：60px 轨道恒定，140px 导航只做临时覆盖，不推动或缩窄任何页面。 */
+@media (min-width: 641px) {
+  body.aph2-theme .aph-exact-sidebar,
+  body.aph2-theme .aph-exact-sidebar:hover,
+  body.aph2-theme .aph-exact-sidebar.is-hovered,
+  body.aph2-theme .aph-exact-sidebar.is-expanded {
+    flex: 0 0 60px !important;
+    width: 60px !important;
+    min-width: 60px !important;
+    max-width: 60px !important;
+  }
+
+  body.aph2-theme:not(.aph-admin-page) .aph-page-tabs,
+  body.aph2-theme:not(.aph-admin-page) #root > div:has(> .aph-exact-sidebar:hover) .aph-page-tabs,
+  body.aph2-theme:not(.aph-admin-page) #root > div:has(> .aph-exact-sidebar.is-hovered) .aph-page-tabs,
+  body.aph2-theme:not(.aph-admin-page) #root > div:has(> .aph-exact-sidebar.is-expanded) .aph-page-tabs {
+    left: 60px !important;
+  }
+
+  /* 点击路由后先保持收起；鼠标离开侧栏后再恢复正常 hover。 */
+  body.aph2-theme .aph-exact-sidebar.aph-r57-hover-suppressed .aph-exact-sidebar-panel,
+  body.aph2-theme .aph-exact-sidebar.aph-r57-hover-suppressed:hover .aph-exact-sidebar-panel,
+  body.aph2-theme .aph-exact-sidebar.aph-r57-hover-suppressed.is-hovered .aph-exact-sidebar-panel {
+    width: 60px !important;
+  }
+
+  /* R44 的首页临时避让会缩窄正文，R57 恢复原有 18px 页面留白。 */
+  body[data-r42-route="home"] #root > div:has(> .aph-exact-sidebar:hover) main#main-content,
+  body[data-r42-route="home"] #root > div:has(> .aph-exact-sidebar.is-hovered) main#main-content,
+  body[data-r42-route="home"] #root > div:has(> .aph-exact-sidebar.is-expanded) main#main-content {
+    padding-left: 18px !important;
+  }
+
+  body.aph2-theme.aph-admin-page > #root > div,
+  body.aph2-theme.aph-admin-page > #root > div:has(> .aph-exact-sidebar:hover),
+  body.aph2-theme.aph-admin-page > #root > div:has(> .aph-exact-sidebar.is-hovered),
+  body.aph2-theme.aph-admin-page > #root > div:has(> .aph-exact-sidebar.is-expanded) {
+    padding-left: 60px !important;
+  }
+}

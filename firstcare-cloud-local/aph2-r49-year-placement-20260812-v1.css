@@ -1,0 +1,49 @@
+/* R49：首页横幅年度从背景层移入标题内容流，固定在经营提效副标题下方。 */
+
+body[data-r42-route="home"] .aph-business-banner::before {
+  content: none !important;
+}
+
+body[data-r42-route="home"] .aph-business-banner .aph-banner-copy::after {
+  content: "2026";
+  display: block;
+  margin-top: 7px;
+  color: rgba(255, 255, 255, .22);
+  font-size: 60px;
+  font-weight: 800;
+  line-height: .9;
+  letter-spacing: -.04em;
+  text-align: center;
+  text-shadow: none;
+  pointer-events: none;
+}
+
+@media (min-width: 641px) and (max-width: 1023px) {
+  body[data-r42-route="home"] .aph-home-reflow > .aph-home-visual {
+    min-height: 190px !important;
+    height: 190px !important;
+  }
+
+  body[data-r42-route="home"] .aph-business-banner .aph-banner-copy::after {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 640px) {
+  body[data-r42-route="home"] .aph-home-reflow > .aph-home-visual {
+    min-height: 150px !important;
+    height: 150px !important;
+  }
+
+  body[data-r42-route="home"] .aph-business-banner .aph-banner-copy::after {
+    margin-top: 6px;
+    font-size: 42px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-r42-route="home"] .aph-business-banner .aph-banner-copy::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,41 @@
+/* R73：桌面侧栏永久保持 60px，任何交互状态都不得覆盖业务工作区。 */
+@media (min-width: 641px) {
+  body.aph2-theme .aph-exact-sidebar,
+  body.aph2-theme .aph-exact-sidebar:hover,
+  body.aph2-theme .aph-exact-sidebar.is-hovered,
+  body.aph2-theme .aph-exact-sidebar.is-expanded {
+    flex: 0 0 60px !important;
+    width: 60px !important;
+    min-width: 60px !important;
+    max-width: 60px !important;
+  }
+
+  body.aph2-theme .aph-exact-sidebar .aph-exact-sidebar-panel,
+  body.aph2-theme .aph-exact-sidebar:hover .aph-exact-sidebar-panel,
+  body.aph2-theme .aph-exact-sidebar.is-hovered .aph-exact-sidebar-panel,
+  body.aph2-theme .aph-exact-sidebar.is-expanded .aph-exact-sidebar-panel {
+    width: 60px !important;
+    max-width: 60px !important;
+    box-shadow: none !important;
+  }
+
+  body.aph2-theme .aph-exact-sidebar .aph-exact-sidebar-panel a {
+    width: 60px !important;
+    max-width: 60px !important;
+  }
+
+  body.aph2-theme .aph-exact-sidebar .aph-exact-sidebar-panel a span {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateX(-3px) !important;
+    transition: none !important;
+  }
+
+  body.aph2-theme header.sticky.top-0 .aph-header-menu,
+  body.aph2-theme.aph-admin-page
+    #root
+    header.aph-admin-shell-header
+    .aph-header-menu {
+    display: none !important;
+  }
+}

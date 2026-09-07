@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#050505" />
+    <meta name="description" content="第一服务华北地区经营驾驶舱系统管理中心" />
+    <title>系统管理 · 第一服务华北地区</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/system/system-management-20260811-v2.css" />
+    <link rel="stylesheet" href="/system/system-management-20260811-v3.css" />
+    <link rel="stylesheet" href="/system/system-management-20260811-v4.css" />
+    <link rel="stylesheet" href="/aph2-r63-no-header-explainers-20260813-v3.css?v=r63-header-clean3" />
+  </head>
+  <body>
+    <div class="system-shell">
+      <header class="system-topbar">
+        <a class="system-brand" href="/" aria-label="返回驾驶舱首页">
+          <img src="/aph-icons/aph-brand-lockup.jpg" alt="APH 2.0" />
+        </a>
+        <button class="system-menu" type="button" aria-label="展开或收起导航" aria-controls="system-navigation" aria-expanded="false"><i></i><i></i><i></i></button>
+        <p>华北年度经营冲刺　·　系统入口与管理权限</p>
+        <a class="system-return" href="/">返回驾驶舱</a>
+      </header>
+
+      <aside class="system-nav" id="system-navigation" aria-label="驾驶舱导航，鼠标移入自动展开">
+        <a href="/" title="首页"><img src="/aph-icons/shouyeF.png" alt="" /><span>首页</span></a>
+        <a href="/command" title="经营工作台"><img src="/aph-icons/RectangleCopy.png" alt="" /><span>经营工作台</span></a>
+        <a href="/projects" title="项目管理"><img src="/aph-icons/shangye.png" alt="" /><span>项目管理</span></a>
+        <a href="/payment" title="回款额执行"><img src="/aph-icons/caiwu.png" alt="" /><span>回款额执行</span></a>
+        <a href="/daily" title="每日回款明细"><img src="/aph-icons/renliziyuan.png" alt="" /><span>每日回款明细</span></a>
+        <a href="/collection" title="收缴率明细"><img src="/aph-icons/fangchanwuye.png" alt="" /><span>收缴率明细</span></a>
+        <a href="/ai-alerts" title="AI预警中心"><img src="/aph-icons/chengbentongjifenxi.png" alt="" /><span>AI预警中心</span></a>
+        <a href="/ai-report" title="AI经营月报"><img src="/aph-icons/jiaoyu.png" alt="" /><span>AI经营月报</span></a>
+        <a href="/system/" class="active" aria-current="page" title="系统管理"><img src="/aph-icons/jurassic_users.png" alt="" /><span>系统管理</span></a>
+      </aside>
+
+      <main class="system-main">
+        <nav class="system-tabs" aria-label="已打开页面">
+          <span class="tab-prev" aria-hidden="true"><img src="/aph-icons/aph-tab-prev.jpg" alt="" /></span>
+          <a href="/">首页</a>
+          <strong>系统管理</strong>
+        </nav>
+
+        <section class="system-intro" aria-labelledby="system-title">
+          <div>
+            <h1 id="system-title">系统管理</h1>
+            <p>业务使用与后台维护分开进入：日常查看、分析和处置留在驾驶舱；数据源、账号、规则和审计只在管理后台处理。</p>
+          </div>
+          <span class="read-only">业务端只读</span>
+        </section>
+
+        <section class="entry-grid" aria-label="系统入口">
+          <a class="entry-card usage-card" href="/" aria-label="进入驾驶舱使用界面">
+            <div class="entry-head">
+              <span class="entry-icon">⌁</span>
+              <span class="entry-type">USAGE PORTAL</span>
+            </div>
+            <div>
+              <div class="entry-title-row">
+                <h2>使用界面</h2>
+                <span class="entry-inline-action">进入 <b>→</b></span>
+              </div>
+              <p>面向全员的经营驾驶舱。按账号授权展示片区、项目与服务中心数据，用于查看指标、分析明细和跟进异常。</p>
+            </div>
+            <ul>
+              <li>首页总览、经营分析与异常预警</li>
+              <li>回款、收缴率、项目和月报只读查询</li>
+              <li>不开放数据源、账号和口径配置</li>
+            </ul>
+            <span class="entry-action primary">进入使用界面 <span>→</span></span>
+          </a>
+
+          <a class="entry-card admin-card" href="/admin" aria-label="进入系统后台管理">
+            <div class="entry-head">
+              <span class="entry-icon">♙</span>
+              <span class="entry-type">ADMIN CONSOLE</span>
+            </div>
+            <div>
+              <div class="entry-title-row">
+                <h2>后台管理界面</h2>
+                <span class="entry-inline-action">进入 <b>→</b></span>
+              </div>
+              <p>仅限系统管理员。用于管理数据源、项目映射、指标规则、账号权限、发布状态和审计记录。</p>
+            </div>
+            <ul>
+              <li>管理员登录后才能进入和执行操作</li>
+              <li>所有变更保留操作审计</li>
+              <li>业务数据查看与后台配置彼此隔离</li>
+            </ul>
+            <span class="entry-action secondary">进入后台管理 <span>→</span></span>
+          </a>
+        </section>
+
+        <section class="system-note" aria-label="权限说明">
+          <span class="note-icon">i</span>
+          <p><b>权限边界：</b>使用界面遵循账号数据范围；后台管理界面需管理员身份验证。两类入口独立，避免业务使用与高风险配置混用。</p>
+        </section>
+      </main>
+    </div>
+    <script src="/system/system-management-20260811-v2.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+[Unit]
+Description=First Service Cockpit controlled full-history daily reconciliation backfill
+After=network-online.target chrome-headless.service first-service-cockpit.service
+Requires=chrome-headless.service first-service-cockpit.service
+
+[Service]
+Type=oneshot
+User=cockpit-reconciliation
+Group=ubuntu
+DynamicUser=yes
+RuntimeDirectory=first-service-cockpit-reconciliation-backfill
+RuntimeDirectoryMode=0750
+StateDirectory=first-service-cockpit-reconciliation
+StateDirectoryMode=0750
+WorkingDirectory=/home/ubuntu/cockpit
+EnvironmentFile=/home/ubuntu/.hermes/.env
+EnvironmentFile=/etc/first-service/cockpit-daily-reconciliation.env
+UnsetEnvironment=JWT_SECRET
+Environment=NO_PROXY=127.0.0.1,localhost
+Environment=no_proxy=127.0.0.1,localhost
+Environment=COCKPIT_ROOT=/home/ubuntu/cockpit
+Environment=TZ=Asia/Shanghai
+Environment=COCKPIT_RECONCILIATION_MODE=backfill
+Environment=COCKPIT_RECONCILIATION_START_DATE=2026-06-15
+Environment=COCKPIT_RECONCILIATION_BACKFILL_BATCH_SIZE=5
+Environment=COCKPIT_RECONCILIATION_MAX_ATTEMPTS=3
+ExecStart=/home/ubuntu/cockpit/scripts/run-daily-reconciliation.sh
+StandardOutput=journal
+StandardError=journal
+TimeoutStartSec=30min

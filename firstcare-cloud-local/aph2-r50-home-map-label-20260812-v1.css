@@ -1,0 +1,20 @@
+/* R50：首页地图标注始终位于省市轮廓上方，并在红色地图上保持可读。 */
+
+body[data-r42-route="home"]
+  svg[aria-label="辽宁、河北、天津、北京区域地图"]
+  :is(g[tabindex="0"], g[data-r50-map-label-overlay="beijing"]) > text {
+  paint-order: stroke fill !important;
+  stroke: rgba(245, 246, 250, .96) !important;
+  stroke-width: 2px !important;
+  stroke-linejoin: round !important;
+  vector-effect: non-scaling-stroke;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-r42-route="home"]
+    svg[aria-label="辽宁、河北、天津、北京区域地图"]
+    :is(g[tabindex="0"], g[data-r50-map-label-overlay="beijing"]) > text {
+    animation: none !important;
+    transition: none !important;
+  }
+}

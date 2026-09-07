@@ -1,0 +1,245 @@
+/* R62：首屏只保留 AI 分析操作面。 */
+html[data-r62-direct-ai="true"] .guardrail,
+html[data-r62-direct-ai="true"] .r55-view-nav,
+html[data-r62-direct-ai="true"] .r55-pipeline,
+html[data-r62-direct-ai="true"] .r55-create-panel > .r55-section-heading,
+html[data-r62-direct-ai="true"] .arrears-view-tabs,
+html[data-r62-direct-ai="true"] [data-arrears-view] {
+  display: none !important;
+}
+
+html[data-r62-direct-ai="true"] .page-heading {
+  display: block;
+  margin: 0 0 14px;
+  padding: 4px 0 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html[data-r62-direct-ai="true"] .page-heading .eyebrow,
+html[data-r62-direct-ai="true"] .page-heading p,
+html[data-r62-direct-ai="true"] .page-heading .heading-actions {
+  display: none !important;
+}
+
+html[data-r62-direct-ai="true"] .page-heading h1 {
+  margin: 0;
+  color: #202b38;
+  font-size: clamp(24px, 2.2vw, 30px);
+  line-height: 1.2;
+  letter-spacing: -.025em;
+}
+
+html[data-r62-direct-ai="true"] .r55-workbench {
+  padding: 0 0 40px;
+}
+
+html[data-r62-direct-ai="true"] .r55-workbench-header {
+  display: none;
+}
+
+html[data-r62-direct-ai="true"][data-r62-readiness-issue="true"] .r55-workbench-header {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border: 1px solid #efc8cc;
+  border-radius: 8px;
+  background: #fff6f7;
+}
+
+html[data-r62-direct-ai="true"] .r55-workbench-header > div:first-child,
+html[data-r62-direct-ai="true"] #r55NewBatch {
+  display: none !important;
+}
+
+html[data-r62-direct-ai="true"] .r55-create-panel {
+  margin: 0;
+  padding: 22px;
+  border: 1px solid #dde2e8;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(31, 45, 61, .045);
+}
+
+html[data-r62-direct-ai="true"] #r55CreateForm {
+  padding: 0;
+}
+
+html[data-r62-direct-ai="true"] .r55-form-grid {
+  grid-template-columns: minmax(220px, 1fr) minmax(170px, .62fr) minmax(250px, 1.15fr) minmax(250px, 1.15fr);
+  gap: 16px;
+  align-items: start;
+}
+
+html[data-r62-direct-ai="true"] .r55-file-field small,
+html[data-r62-direct-ai="true"] #r55LimitText {
+  display: none !important;
+}
+
+html[data-r62-direct-ai="true"] .r55-form-support {
+  justify-content: flex-start;
+  margin-top: 8px;
+}
+
+html[data-r62-direct-ai="true"] .r55-form-support > div {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+html[data-r62-direct-ai="true"] .r55-form-actions {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #edf0f3;
+}
+
+html[data-r62-direct-ai="true"] #r55CancelCreate {
+  display: none !important;
+}
+
+html[data-r62-direct-ai="true"] #r55SubmitBatch {
+  min-width: 168px;
+  min-height: 44px;
+}
+
+html[data-r62-direct-ai="true"] .r62-history {
+  margin-top: 16px;
+  border: 1px solid #dde2e8;
+  border-radius: 8px;
+  background: #fff;
+}
+
+html[data-r62-direct-ai="true"] .r62-history > summary {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 16px;
+  color: #344150;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+html[data-r62-direct-ai="true"] .r62-history > summary::-webkit-details-marker {
+  display: none;
+}
+
+html[data-r62-direct-ai="true"] .r62-history > summary::after {
+  margin-left: auto;
+  color: #667383;
+  content: "展开";
+  font-size: 12px;
+  font-weight: 500;
+}
+
+html[data-r62-direct-ai="true"] .r62-history[open] > summary::after {
+  content: "收起";
+}
+
+html[data-r62-direct-ai="true"] #r62HistoryCount {
+  order: 2;
+  color: #687585;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+html[data-r62-direct-ai="true"] .r62-history[open] > summary {
+  border-bottom: 1px solid #e5e9ee;
+}
+
+html[data-r62-direct-ai="true"] .r62-history > summary:focus-visible {
+  outline: 2px solid #e60012;
+  outline-offset: 2px;
+}
+
+html[data-r62-direct-ai="true"] .r55-task-section {
+  margin: 0;
+  padding: 0 16px 16px;
+  border: 0;
+}
+
+html[data-r62-direct-ai="true"] .r55-review-workspace {
+  margin-top: 18px;
+}
+
+html[data-r62-direct-ai="true"] .r62-views {
+  display: none;
+  margin-top: 10px;
+  color: #536172;
+}
+
+html[data-r62-direct-ai="true"] .r55-workbench:has(#r62History[open]) + .r62-views,
+html[data-r62-direct-ai="true"] body:not([data-r55-mode="tasks"]) .r62-views {
+  display: block;
+}
+
+html[data-r62-direct-ai="true"] .r62-views > summary {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  padding: 6px 2px;
+  color: #536172;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+html[data-r62-direct-ai="true"] .r62-views > summary:focus-visible {
+  outline: 2px solid #e60012;
+  outline-offset: 2px;
+}
+
+html[data-r62-direct-ai="true"] .r62-views .r55-view-nav {
+  display: flex !important;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 0 12px;
+}
+
+@media (max-width: 1180px) {
+  html[data-r62-direct-ai="true"] .r55-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  html[data-r62-direct-ai="true"] .page-heading {
+    margin-bottom: 10px;
+    padding-top: 0 !important;
+  }
+
+  html[data-r62-direct-ai="true"] .page-heading h1 {
+    font-size: 23px;
+  }
+
+  html[data-r62-direct-ai="true"] .r55-create-panel {
+    padding: 16px 14px;
+    border-radius: 8px;
+  }
+
+  html[data-r62-direct-ai="true"] .r55-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  html[data-r62-direct-ai="true"] .r55-form-actions,
+  html[data-r62-direct-ai="true"] #r55SubmitBatch {
+    width: 100%;
+  }
+
+  html[data-r62-direct-ai="true"] .r62-history > summary {
+    padding: 9px 13px;
+  }
+
+  html[data-r62-direct-ai="true"] .r55-task-section {
+    padding: 0 12px 12px;
+  }
+}

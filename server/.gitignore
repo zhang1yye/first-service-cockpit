@@ -1,0 +1,26 @@
+# runtime / generated
+node_modules/
+dist*/
+.dist*/
+._dist
+cockpit.db*
+logs/
+backups/
+data/
+imports/
+runtime/
+src.rollback*/
+generated-reports/
+.env*
+.daily-stage/
+.daily-cockpit-scrape.lock
+.last_sync
+.r*-deploy.lock
+scripts/.*.candidate*
+*.bak-*
+APH决策_每日提取*.json
+绿仔*.json
+tsconfig.tsbuildinfo
+._*
+__pycache__/
+*.pyc

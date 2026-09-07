@@ -1,0 +1,225 @@
+/* R24 v2 · 其余业务界面密度与空状态收口。仅作用于未验收路由。 */
+
+/* 经营工作台：左右主卡等高，下一步操作不再悬在大块空白上方。 */
+body.aph-r24-command .aph-r24-command-overview {
+  align-items: stretch;
+}
+
+body.aph-r24-command .aph-r24-command-actions {
+  min-height: 100% !important;
+  padding: 22px !important;
+}
+
+body.aph-r24-command .aph-r24-command-actions > :first-child {
+  color: #4b5563 !important;
+  font-weight: 600;
+}
+
+body.aph-r24-command .aph-r24-command-actions > a {
+  min-height: 72px;
+  padding: 14px 16px !important;
+  border: 1px solid #e1e5e9;
+  background: #f7f8fa !important;
+}
+
+body.aph-r24-command .aph-r24-command-actions > a + a {
+  margin-top: 10px;
+}
+
+body.aph-r24-command .aph-r24-command-kpis {
+  gap: 10px !important;
+}
+
+body.aph-r24-command .aph-r24-command-kpis > * {
+  min-height: 112px;
+  padding: 17px 16px !important;
+  border-top: 2px solid #d31f26;
+}
+
+/* 项目管理：压缩头图区与指标区，让首屏能够多展示项目明细。 */
+body.aph-r24-projects .aph-project-page-head {
+  min-height: 118px;
+  padding: 18px 24px;
+  align-items: center;
+}
+
+body.aph-r24-projects .aph-project-page-head h1 {
+  margin: 4px 0 5px;
+  font-size: 25px !important;
+  line-height: 1.25;
+}
+
+body.aph-r24-projects .aph-project-page-head p {
+  line-height: 1.55;
+}
+
+body.aph-r24-projects .aph-project-source {
+  align-self: center;
+}
+
+body.aph-r24-projects .aph-project-kpis {
+  align-items: stretch;
+}
+
+body.aph-r24-projects .aph-project-kpis article {
+  min-height: 118px;
+  padding: 14px 16px;
+}
+
+body.aph-r24-projects .aph-project-kpis strong {
+  margin: 7px 0 5px;
+  font-size: 21px;
+}
+
+body.aph-r24-projects .aph-project-kpis [data-r6-mapping-link] {
+  min-height: 22px;
+  margin-top: 3px;
+}
+
+body.aph-r24-projects .aph-project-toolbar {
+  padding: 13px 18px;
+}
+
+body.aph-r24-projects .aph-project-toolbar select,
+body.aph-r24-projects .aph-project-toolbar input {
+  height: 34px;
+}
+
+/* AI预警：删除无新增信息的二次空状态，单一数据源预警占满可用宽度。 */
+body.aph-r24-ai-alerts .aph-r24-redundant-empty,
+body.aph-r24-ai-report .aph-r24-redundant-alert {
+  display: none !important;
+}
+
+body.aph-r24-ai-alerts .aph-r24-alert-source-card {
+  margin-top: 0 !important;
+  padding: 18px !important;
+}
+
+body.aph-r24-ai-alerts .aph-r24-single-source {
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+body.aph-r24-ai-alerts .aph-r24-single-source > :only-child {
+  min-height: 96px;
+  display: grid;
+  grid-template-columns: minmax(220px, .7fr) minmax(0, 1.3fr) auto;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 18px !important;
+  border-color: #dfe3e8 !important;
+  background: #fff !important;
+}
+
+body.aph-r24-ai-alerts .aph-r24-single-source > :only-child .text-sm.font-medium {
+  color: #303741 !important;
+}
+
+body.aph-r24-ai-alerts .aph-r24-alert-empty-table {
+  min-height: 150px;
+}
+
+body.aph-r24-ai-alerts .aph-r24-alert-empty-table .text-center {
+  min-height: 112px;
+  display: grid;
+  place-items: center;
+  padding: 28px !important;
+  color: #68717c !important;
+}
+
+/* AI月报：门禁仅保留一次，并把筛选、版本、导出动作收成一行。 */
+body.aph-r24-ai-report .aph-r24-report-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) auto;
+  align-items: center;
+  gap: 12px 18px;
+}
+
+body.aph-r24-ai-report .aph-r24-report-filter-actions {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0 !important;
+}
+
+body.aph-r24-ai-report .aph-r24-report-mode-actions {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0 !important;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+body.aph-r24-ai-report .aph-r24-report-mode-actions .no-print {
+  width: auto !important;
+}
+
+body.aph-r24-ai-report .aph-r24-report-empty {
+  grid-column: 1 / -1;
+  margin-top: 2px;
+  padding: 30px 34px !important;
+}
+
+body.aph-r24-ai-report .aph-r24-report-empty .aph-gate-empty {
+  min-height: 116px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px 28px;
+  text-align: left;
+}
+
+body.aph-r24-ai-report .aph-r24-report-empty .aph-gate-empty strong {
+  font-size: 19px;
+}
+
+body.aph-r24-ai-report .aph-r24-report-empty .aph-gate-empty p {
+  max-width: 980px;
+  line-height: 1.75;
+}
+
+/* 研发审核：强化卡片边界与正文可读性，不改变现有功能分区。 */
+body.aph-r24-review main#main-content .card-soft {
+  border-color: #dfe3e8;
+  box-shadow: 0 1px 3px rgba(28, 35, 43, .06);
+}
+
+body.aph-r24-review main#main-content :where(.text-muted-foreground, .text-slate-500, .text-gray-500) {
+  color: #68717c !important;
+}
+
+@media (max-width: 1100px) {
+  body.aph-r24-ai-report .aph-r24-report-layout {
+    grid-template-columns: 1fr;
+  }
+
+  body.aph-r24-ai-report .aph-r24-report-filter-actions,
+  body.aph-r24-ai-report .aph-r24-report-mode-actions {
+    grid-column: 1;
+    grid-row: auto;
+    justify-content: flex-start !important;
+  }
+
+  body.aph-r24-ai-alerts .aph-r24-single-source > :only-child {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  body.aph-r24-projects .aph-project-page-head {
+    min-height: auto;
+    padding: 14px;
+  }
+
+  body.aph-r24-projects .aph-project-kpis article {
+    min-height: 104px;
+  }
+
+  body.aph-r24-command .aph-r24-command-actions {
+    min-height: auto !important;
+  }
+
+  body.aph-r24-ai-report .aph-r24-report-empty {
+    padding: 18px !important;
+  }
+}

@@ -1,0 +1,140 @@
+/* 首页指标去重：仅调整展示层级，不改变数据计算、接口或跳转。 */
+body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-duplicate {
+  display: none !important;
+}
+
+@media (min-width: 1024px) {
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-budget {
+    grid-column: 1 / span 8 !important;
+    grid-row: 2 !important;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr);
+    gap: 10px;
+    height: 178px;
+    min-width: 0;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-budget > :not(.r8-home-duplicate) {
+    min-width: 0;
+    min-height: 0;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-budget > :not(.r8-home-duplicate) > .card-soft {
+    height: 100% !important;
+    min-height: 0 !important;
+    padding: 18px 20px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-budget .num.text-xl {
+    font-size: 26px !important;
+    line-height: 32px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection {
+    grid-column: 9 / span 4 !important;
+    grid-row: 2 !important;
+    height: 178px;
+    min-width: 0;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection > .card-soft {
+    height: 100% !important;
+    min-height: 0 !important;
+    gap: 6px !important;
+    padding: 13px 18px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection-body {
+    gap: 16px !important;
+    min-height: 0;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-rate-ring {
+    width: 108px !important;
+    height: 108px !important;
+    min-width: 108px;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-rate-ring .num.text-2xl {
+    font-size: 22px !important;
+    line-height: 28px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection-details {
+    justify-content: center;
+    gap: 8px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-period,
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-growth,
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-scope {
+    grid-row: 3 !important;
+    height: 130px;
+    min-width: 0;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-period {
+    grid-column: 1 / span 4 !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-growth {
+    grid-column: 5 / span 4 !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-scope {
+    grid-column: 9 / span 4 !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    :is(.r8-home-period, .r8-home-growth, .r8-home-scope) > .card-soft {
+    height: 100% !important;
+    min-height: 0 !important;
+    padding: 15px 18px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    :is(.r8-home-period, .r8-home-growth, .r8-home-scope) .num.text-3xl {
+    font-size: clamp(25px, 2.1vw, 31px) !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] > .aph-home-region-grid {
+    grid-row: 4 !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] > .aph-home-ranking-grid {
+    grid-row: 5 !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-budget {
+    grid-template-rows: minmax(118px, auto);
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection > .card-soft {
+    min-height: 190px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection-body {
+    gap: 18px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-rate-ring {
+    width: 116px !important;
+    height: 116px !important;
+    min-width: 116px;
+  }
+}
+
+@media (max-width: 640px) {
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-budget {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: repeat(2, minmax(112px, auto));
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection-body {
+    align-items: center;
+    gap: 14px !important;
+  }
+}

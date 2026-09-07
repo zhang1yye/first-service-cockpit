@@ -1,0 +1,33 @@
+/* R63 v2：标题区只保留页面名、对象身份和短事实状态；说明性段落下沉到业务模块。 */
+
+/* 主驾驶舱：旧脚本可能重复注入，使用晚加载且精确的选择器稳定抑制。 */
+body.aph2-theme #main-content > .aph-real-data-scope,
+body.aph2-theme #main-content > .aph-r34-tasks-notice,
+body.aph2-theme #main-content > .aph-project-profile-page > .aph-project-page-head > div:first-child > p,
+body.aph2-theme [data-r56-ai-center-app] .r56-page-intro {
+  display: none !important;
+}
+
+/* 事实门禁保留短状态，去掉可见的解释段落。 */
+body.aph2-theme #main-content .aph-r34-truth-summary > p {
+  display: none !important;
+}
+
+/* 管理后台：保留页面名、操作按钮和模块内状态，取消英文眉题与功能解释。 */
+body[data-r56-admin-workspace] #root .page-title > div:first-child > .eyebrow,
+body[data-r56-admin-workspace] #root .page-title > div:first-child > p:last-child:not(:only-child) {
+  display: none !important;
+}
+
+/* 系统入口：保留只读状态、入口说明和权限边界。 */
+.system-topbar > p,
+.system-intro > div > p {
+  display: none !important;
+}
+
+/* 欠费经营分析：仅清页面标题说明，不碰事实门禁、任务步骤和证据正文。 */
+.aph-shell-header > .aph-shell-status,
+main#main-content > .page-heading > div:first-child > .eyebrow,
+main#main-content > .page-heading > div:first-child > p {
+  display: none !important;
+}

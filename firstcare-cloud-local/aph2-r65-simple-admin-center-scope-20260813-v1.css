@@ -1,0 +1,444 @@
+/* R65：系统管理保持一行导航、一张工作表；普通成员只显示自身服务中心。 */
+.r65-admin {
+  min-height: 100vh;
+  background: var(--background, #f4f6f9);
+  color: var(--foreground, #1f2937);
+}
+
+.r65-admin-bar {
+  min-height: 54px;
+  padding: 0 32px;
+  border-bottom: 1px solid var(--border, #dfe3e8);
+  background: var(--card, #fff);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.r65-admin-title,
+.r65-actions,
+.r65-inline-edit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.r65-repair-action,
+.r65-password-field {
+  display: grid;
+  gap: 2px;
+}
+
+.r65-repair-action small,
+.r65-password-field small,
+.r65-member-form small {
+  color: var(--muted-foreground, #667085);
+  font-size: 10px;
+  line-height: 1.25;
+}
+
+.r65-admin-title a,
+.r65-link-button {
+  color: var(--muted-foreground, #667085);
+  font-size: 13px;
+}
+
+.r65-admin-title span {
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.r65-admin-mode,
+#aph-r65-service-center-scope {
+  border: 1px solid color-mix(in srgb, var(--primary, #d71920) 28%, transparent);
+  border-radius: 4px;
+  padding: 4px 9px;
+  color: var(--primary, #c9161d);
+  background: color-mix(in srgb, var(--primary, #d71920) 6%, transparent);
+  font-size: 12px;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.r65-tabs {
+  min-height: 60px;
+  padding: 10px 32px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--border, #dfe3e8);
+  background: var(--background, #f4f6f9);
+}
+
+.r65-tabs button {
+  min-height: 36px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted-foreground, #667085);
+  font-size: 14px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.r65-tabs button:hover {
+  background: var(--secondary, #eef1f5);
+}
+
+.r65-tabs button.is-active {
+  background: var(--primary, #d71920);
+  color: var(--primary-foreground, #fff);
+}
+
+.r65-admin-main {
+  padding: 18px 32px 32px;
+}
+
+.r65-table-wrap,
+.r65-section,
+.r65-report-detail {
+  border: 1px solid var(--border, #dfe3e8);
+  background: var(--card, #fff);
+  overflow: auto;
+}
+
+.r65-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.r65-table th,
+.r65-table td {
+  height: 46px;
+  padding: 7px 12px;
+  border-bottom: 1px solid var(--border, #e5e7eb);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.r65-table th {
+  height: 42px;
+  background: var(--secondary, #f3f4f6);
+  color: var(--muted-foreground, #667085);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.r65-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.r65-table tbody tr:hover td {
+  background: color-mix(in srgb, var(--secondary, #f3f4f6) 55%, transparent);
+}
+
+.r65-number {
+  text-align: right !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.r65-number-input,
+.r65-input,
+.r65-select {
+  height: 32px;
+  border: 1px solid var(--border, #d0d5dd);
+  border-radius: 4px;
+  background: var(--card, #fff);
+  color: var(--foreground, #1f2937);
+  padding: 0 9px;
+  font: inherit;
+}
+
+.r65-number-input {
+  width: 116px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.r65-save-cell {
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+}
+
+.r65-validation {
+  max-width: 140px;
+  color: #b42318 !important;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.r65-input:focus,
+.r65-select:focus,
+.r65-number-input:focus,
+.r65-tabs button:focus-visible,
+.r65-button:focus-visible,
+.r65-link-button:focus-visible {
+  outline: 2px solid var(--primary, #d71920);
+  outline-offset: 2px;
+}
+
+.r65-input--short {
+  width: 160px;
+}
+
+.r65-button,
+.r65-link-button {
+  min-height: 30px;
+  border: 1px solid var(--border, #d0d5dd);
+  border-radius: 4px;
+  padding: 0 10px;
+  background: var(--card, #fff);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.r65-link-button {
+  min-height: 28px;
+  border-color: transparent;
+  background: transparent;
+  padding: 0 4px;
+}
+
+.r65-button--primary {
+  border-color: var(--primary, #d71920);
+  background: var(--primary, #d71920);
+  color: var(--primary-foreground, #fff);
+}
+
+.r65-button--danger,
+.r65-link-button--danger {
+  border-color: color-mix(in srgb, #c81e1e 42%, transparent);
+  color: #b42318;
+}
+
+.r65-button:disabled,
+.r65-link-button:disabled {
+  cursor: not-allowed;
+  opacity: .45;
+}
+
+.r65-unavailable {
+  color: var(--muted-foreground, #667085);
+  font-size: 12px;
+}
+
+.r65-strong {
+  font-weight: 600;
+}
+
+.r65-table small,
+.r65-section small {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted-foreground, #667085);
+  font-size: 11px;
+}
+
+.r65-empty,
+.r65-loading {
+  padding: 52px 20px !important;
+  color: var(--muted-foreground, #667085);
+  text-align: center !important;
+}
+
+.r65-notice {
+  margin-bottom: 12px;
+  border-left: 3px solid #b42318;
+  background: color-mix(in srgb, #b42318 7%, var(--card, #fff));
+  padding: 9px 12px;
+  color: #9f1c15;
+  font-size: 13px;
+}
+
+.r65-notice--success {
+  border-left-color: #17803d;
+  background: color-mix(in srgb, #17803d 7%, var(--card, #fff));
+  color: #176b36;
+}
+
+.r65-member-stack {
+  display: grid;
+  gap: 14px;
+}
+
+.r65-section {
+  padding: 16px;
+}
+
+.r65-section h2,
+.r65-report-detail h2 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.r65-member-form {
+  display: flex;
+  align-items: end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.r65-member-form label {
+  display: grid;
+  gap: 5px;
+  color: var(--muted-foreground, #667085);
+  font-size: 12px;
+}
+
+.r65-member-form .r65-input,
+.r65-member-form .r65-select {
+  min-width: 150px;
+}
+
+.r65-create-button {
+  height: 32px;
+}
+
+.r65-scope-all {
+  color: var(--primary, #c9161d);
+}
+
+.r65-status {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 3px 8px;
+  background: #f2f4f7;
+  color: #475467;
+  font-size: 12px;
+}
+
+.r65-status--ok {
+  background: #ecfdf3;
+  color: #067647;
+}
+
+.r65-status--danger {
+  background: #fef3f2;
+  color: #b42318;
+}
+
+.r65-rule-toggle {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.r65-rule-toggle input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary, #d71920);
+}
+
+.r65-rule-toggle input:focus-visible {
+  outline: 2px solid var(--primary, #d71920);
+  outline-offset: 2px;
+}
+
+.r65-report-detail {
+  margin-top: 14px;
+  padding: 16px;
+}
+
+.r65-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.r65-report-detail pre {
+  max-height: 380px;
+  overflow: auto;
+  white-space: pre-wrap;
+  font-size: 12px;
+}
+
+.r65-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+[data-r65-scope-control-hidden="true"] {
+  display: none !important;
+}
+
+.aph-header-status #aph-r65-service-center-scope {
+  border-color: rgba(255, 255, 255, .24);
+  background: rgba(255, 255, 255, .08);
+  color: #fff;
+}
+
+@media (max-width: 720px) {
+  /* 宿主移动导航固定在 50–102px；后台工作区从其下方开始，保留全局导航。 */
+  body.aph-mobile-nav-ready:has(.r65-admin) .r65-admin {
+    padding-top: 52px;
+  }
+
+  body.aph-mobile-nav-ready:has(.r65-admin) .r65-tabs {
+    position: sticky;
+    top: 102px;
+    z-index: 49;
+  }
+
+  .r65-admin-bar,
+  .r65-tabs,
+  .r65-admin-main {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .r65-admin-mode {
+    display: none;
+  }
+
+  .r65-tabs {
+    scroll-padding-inline: 16px;
+    overscroll-behavior-x: contain;
+  }
+
+  .r65-tabs button {
+    min-height: 40px;
+  }
+
+  .r65-member-form {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .r65-member-form .r65-input,
+  .r65-member-form .r65-select,
+  .r65-create-button {
+    width: 100%;
+  }
+
+  #aph-r65-service-center-scope {
+    max-width: 170px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .r65-admin *,
+  .r65-admin *::before,
+  .r65-admin *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}

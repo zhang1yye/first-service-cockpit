@@ -1,0 +1,114 @@
+/* R65：整批 AI 结论保持单列、可复核，不使用卡片网格。 */
+html[data-r65-arrears-conclusion="true"] .r65-ai-conclusion {
+  margin: 14px 0;
+  padding: 16px 18px;
+  border: 1px solid var(--r55-line, #d9dee6);
+  border-left: 3px solid #e60012;
+  border-radius: 6px;
+  background: #f8f9fb;
+  color: var(--r55-ink, #152130);
+}
+
+html[data-r65-arrears-conclusion="true"] .r65-ai-conclusion[hidden],
+html[data-r65-arrears-conclusion="true"] .r65-conclusion-facts[hidden] {
+  display: none !important;
+}
+
+html[data-r65-arrears-conclusion="true"] .r65-conclusion-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+html[data-r65-arrears-conclusion="true"] .r65-conclusion-mark {
+  display: inline-flex;
+  min-width: 28px;
+  height: 22px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e60012;
+  color: #b80716;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .06em;
+}
+
+html[data-r65-arrears-conclusion="true"] .r65-conclusion-heading h4 {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+html[data-r65-arrears-conclusion="true"] .r65-conclusion-main {
+  max-width: 920px;
+  margin: 12px 0 0;
+  color: #202b38;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+html[data-r65-arrears-conclusion="true"] .r65-conclusion-facts {
+  margin: 11px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+html[data-r65-arrears-conclusion="true"] .r65-conclusion-facts li {
+  position: relative;
+  padding: 5px 0 5px 16px;
+  color: #4b5968;
+  font-size: 13px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+html[data-r65-arrears-conclusion="true"] .r65-conclusion-facts li::before {
+  position: absolute;
+  top: 13px;
+  left: 2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #e60012;
+  content: "";
+}
+
+html[data-r65-arrears-conclusion="true"] .r65-conclusion-boundary {
+  margin: 12px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid #edf0f3;
+  color: #7a4a00;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+@media (max-width: 680px) {
+  html[data-r65-arrears-conclusion="true"] .r65-ai-conclusion {
+    margin: 12px 0;
+    padding: 14px 13px;
+  }
+
+  html[data-r65-arrears-conclusion="true"] .r65-conclusion-main {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.58;
+  }
+
+  html[data-r65-arrears-conclusion="true"] .r65-conclusion-facts {
+    margin-top: 8px;
+  }
+
+  html[data-r65-arrears-conclusion="true"] .r65-conclusion-facts li {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-r65-arrears-conclusion="true"] .r65-ai-conclusion {
+    scroll-behavior: auto;
+  }
+}

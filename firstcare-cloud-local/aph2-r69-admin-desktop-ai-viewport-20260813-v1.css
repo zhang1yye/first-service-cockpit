@@ -1,0 +1,8 @@
+/* R69：恢复后台桌面顶栏的固定几何，避免 AI 入口被相对定位推出视口。 */
+@media (min-width: 641px) {
+  body[data-r64-ai-header].aph2-theme.aph-admin-page
+    #root header.aph-admin-shell-header.aph-r64-ai-host {
+    position: fixed !important;
+    inset: 0 0 auto 60px !important;
+  }
+}

@@ -1,0 +1,6 @@
+/* 回款额明细：让长表格随桌面视口伸展，减少汇总行下方的无效留白。 */
+@media (min-width: 641px) {
+  body.aph2-theme.aph-payment-route .aph-service-center-scroll {
+    max-height: clamp(520px, calc(100dvh - 220px), 820px) !important;
+  }
+}

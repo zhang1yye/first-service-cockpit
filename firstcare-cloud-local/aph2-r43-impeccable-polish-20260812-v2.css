@@ -1,0 +1,280 @@
+/* R43 v2 · Impeccable Operate 精修层：统一字体、语义色、空间节奏与交互反馈。 */
+
+body.aph2-theme {
+  --background: #f3f5f7;
+  --foreground: #2f3742;
+  --card: #ffffff;
+  --card-foreground: #2f3742;
+  --primary: #d71920;
+  --primary-foreground: #ffffff;
+  --secondary: #eef1f4;
+  --secondary-foreground: #424c59;
+  --muted: #eef1f4;
+  --muted-foreground: #66717e;
+  --accent: #fff1f2;
+  --accent-foreground: #b8101a;
+  --border: #dfe3e8;
+  --input: #ffffff;
+  --ring: #d71920;
+  --success: #1f7a4d;
+  --danger: #b42318;
+  --warning: #9a6700;
+  --r43-ease-out: cubic-bezier(.16, 1, .3, 1);
+  background: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.aph2-theme :where(button, input, select, textarea) {
+  font: inherit;
+}
+
+body.aph2-theme :where(.num, [class*="font-mono"]) {
+  font-family: inherit !important;
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  letter-spacing: -.01em;
+}
+
+body.aph2-theme main :where(h1, h2, h3) {
+  color: #28313c;
+  text-wrap: balance;
+}
+
+body.aph2-theme main h1 {
+  font-size: clamp(1.35rem, 1.05rem + .55vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -.025em;
+}
+
+body.aph2-theme main h2 {
+  font-size: clamp(1.05rem, .98rem + .22vw, 1.2rem);
+  font-weight: 650;
+  line-height: 1.35;
+  letter-spacing: -.015em;
+}
+
+body.aph2-theme main h3 {
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.4;
+  letter-spacing: -.01em;
+}
+
+body.aph2-theme main :where(p, li, td, label) {
+  line-height: 1.62;
+}
+
+body.aph2-theme main :where(.text-muted-foreground, .text-slate-400, .text-slate-500, [class*="text-slate-"]) {
+  color: #66717e !important;
+}
+
+body.aph2-theme :where(input, textarea)::placeholder {
+  color: #6b7480 !important;
+  opacity: 1;
+}
+
+/* 工作区使用稳定的 12/18/24 空间节奏，宽屏不再出现孤立大空带。 */
+@media (min-width: 641px) {
+  body[data-r42-route="home"] main#main-content .aph-home-reflow {
+    padding-top: 18px !important;
+  }
+
+  body.aph2-theme main#main-content:not(.aph-unified-main-host) {
+    padding-right: 18px !important;
+    padding-bottom: 30px !important;
+    padding-left: 18px !important;
+  }
+
+  body.aph2-theme main#main-content > div {
+    max-width: 1600px !important;
+    margin-inline: auto;
+  }
+}
+
+/* 品牌锚点回到 APH 黑、白、红，不让经营首页出现额外色彩体系。 */
+body[data-r42-route="home"] .aph-business-banner {
+  border: 1px solid #232a32 !important;
+  background: #13171c !important;
+  box-shadow: 0 10px 28px rgba(15, 23, 32, .12) !important;
+}
+
+body[data-r42-route="home"] .aph-business-banner::after {
+  width: 1px !important;
+  height: auto !important;
+  inset: 18px 18px 18px auto !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: rgba(255, 255, 255, .16);
+}
+
+body[data-r42-route="home"] .aph-business-banner :where(p, small) {
+  color: #d8dde3 !important;
+}
+
+body[data-r42-route="admin"] > #root > div > header {
+  background: #050505 !important;
+  border-color: #252a31 !important;
+}
+
+/* 普通信息区依赖排版和分隔线；只有可交互表面获得反馈。 */
+body.aph2-theme main :where(.card-soft, article, [class*="rounded-"][class*="border"]) {
+  border-color: var(--border) !important;
+  box-shadow: none !important;
+}
+
+body.aph2-theme main :where(.card-soft, article):not(a):not(button):hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+body.aph2-theme main :where(a.card-soft, a.card-link, button.card-soft, [role="button"].card-soft) {
+  transition: border-color .16s var(--r43-ease-out), background-color .16s var(--r43-ease-out), color .16s var(--r43-ease-out) !important;
+}
+
+body.aph2-theme main :where(a.card-soft, a.card-link, button.card-soft, [role="button"].card-soft):hover {
+  border-color: #b8c0ca !important;
+  background-color: #fbfcfd !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body.aph2-theme :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--ring) !important;
+  outline-offset: 3px !important;
+}
+
+body.aph2-theme :where(button, input, select, textarea):disabled {
+  cursor: not-allowed;
+  opacity: .56;
+}
+
+body.aph2-theme main :where(input, select, textarea) {
+  min-height: 40px;
+  border-color: #cbd2da !important;
+  box-shadow: none !important;
+  transition: border-color .14s ease, box-shadow .14s ease !important;
+}
+
+body.aph2-theme main :where(input, select, textarea):focus {
+  border-color: var(--ring) !important;
+  box-shadow: 0 0 0 3px rgba(215, 25, 32, .12) !important;
+}
+
+/* 状态颜色满足浅色背景下的可读性，并继续用文字说明而非只依赖颜色。 */
+body.aph2-theme main :where(.text-emerald-300, .text-emerald-400, .text-green-400, [class*="text-[var(--success)]"]) {
+  color: var(--success) !important;
+}
+
+body.aph2-theme main :where(.text-red-300, .text-red-400, [class*="text-[var(--danger)]"]) {
+  color: var(--danger) !important;
+}
+
+body.aph2-theme main :where(.text-amber-300, .text-amber-400, .text-yellow-400) {
+  color: var(--warning) !important;
+}
+
+body.aph2-theme main [class*="bg-emerald"] { background-color: #eaf6ef !important; }
+body.aph2-theme main [class*="bg-red"] { background-color: #fff0ef !important; }
+body.aph2-theme main :where([class*="bg-amber"], [class*="bg-yellow"]) { background-color: #fff7e6 !important; }
+
+/* 表格强调列关系和行扫描，不用阴影或悬浮位移。 */
+body.aph2-theme main table {
+  color: var(--foreground);
+}
+
+body.aph2-theme main thead {
+  background: #f7f8fa !important;
+}
+
+body.aph2-theme main th {
+  height: 42px;
+  color: #596574 !important;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: .01em;
+}
+
+body.aph2-theme main td {
+  color: #35404d;
+}
+
+body.aph2-theme main tbody tr {
+  transition: background-color .12s ease !important;
+}
+
+body.aph2-theme main tbody tr:hover {
+  background: #f8f9fb !important;
+}
+
+/* 消除未发布修复层中的粗色边；状态依靠背景、标题与一像素语义线。 */
+body[data-r42-route] .aph-real-data-scope,
+body[data-r42-route] .aph-r34-truth-summary,
+body[data-r42-route="admin"] .aph-r36-admin-heading,
+body[data-r42-route="admin"] .aph-admin-safety-toolbar {
+  border-left-width: 1px !important;
+}
+
+/* 一次路由进入、一处抽屉展开、一类导航反馈，避免整页组件轮番动画。 */
+@keyframes aph-r43-route-enter {
+  from { opacity: .82; transform: translateY(5px); clip-path: inset(0 0 7px 0); }
+  to { opacity: 1; transform: translateY(0); clip-path: inset(0); }
+}
+
+body[data-r42-release] #main-content.aph-r34-route-enter {
+  animation: aph-r43-route-enter .24s var(--r43-ease-out) both !important;
+}
+
+body[data-r42-release] .aph-mobile-more-drawer:not([hidden]) {
+  animation: aph-r43-route-enter .2s var(--r43-ease-out) both !important;
+}
+
+body[data-r42-release] .aph-exact-sidebar-panel {
+  transition: box-shadow .18s var(--r43-ease-out) !important;
+}
+
+body[data-r42-release] .aph-exact-sidebar :where(a, button),
+body[data-r42-release] .aph-mobile-primary-nav :where(a, button),
+body[data-r42-release] .aph-page-tabs :where(a, button) {
+  transition: color .14s ease, background-color .14s ease, border-color .14s ease !important;
+}
+
+@media (max-width: 640px) {
+  body.aph2-theme {
+    font-size: 13px;
+  }
+
+  body.aph2-theme main#main-content:not(.aph-unified-main-host) {
+    padding-right: 12px !important;
+    padding-bottom: 24px !important;
+    padding-left: 12px !important;
+  }
+
+  body[data-r42-route="home"] .aph-business-banner {
+    box-shadow: 0 6px 18px rgba(15, 23, 32, .1) !important;
+  }
+
+  body.aph2-theme main th { height: 40px; }
+
+  body[data-r42-route="admin"] .aph-r42-admin-tabs > button:not([aria-selected="true"]) {
+    color: #596574 !important;
+    background: #ffffff !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-r42-release] *,
+  body[data-r42-release] *::before,
+  body[data-r42-release] *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

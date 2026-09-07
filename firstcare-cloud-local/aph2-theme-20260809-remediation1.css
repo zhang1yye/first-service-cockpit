@@ -1,0 +1,90 @@
+/* First Service North China cockpit — full remediation batch 1 (immutable delta). */
+:root{
+  --aph-remediation-text:#3f4752;
+  --aph-remediation-muted:#626b76;
+  --aph-remediation-line:#d7dce2;
+  --aph-remediation-focus:#005fcc;
+  --aph-remediation-warning:#8a4b00;
+  --aph-remediation-danger:#a10f22;
+  --aph-remediation-surface:#f7f9fb;
+}
+
+.aph-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+body.aph2-theme :where(button,a,input,select,textarea,[tabindex]):focus-visible{outline:3px solid var(--aph-remediation-focus)!important;outline-offset:3px!important;box-shadow:0 0 0 5px rgba(0,95,204,.16)!important}
+body.aph2-theme :where(table,td,th,.num,[class*="text-2xl"],[class*="text-3xl"],[class*="text-4xl"]){font-variant-numeric:tabular-nums}
+body.aph2-theme main :where(.text-slate-500,.text-gray-500,.text-zinc-500){color:var(--aph-remediation-muted)!important}
+body.aph2-theme main :where(.text-amber-400,.text-amber-500){color:var(--aph-remediation-warning)!important}
+body.aph2-theme button:disabled,body.aph2-theme [aria-disabled="true"]{opacity:.55!important;cursor:not-allowed!important;filter:saturate(.45)}
+
+.aph-truth-gate{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin:0 0 14px;padding:16px 18px;border:1px solid #e2b869;border-left:4px solid #c77a00;background:#fffaf0;color:#5f3a00;box-shadow:0 1px 2px rgba(35,39,43,.06)}
+.aph-truth-gate strong{display:block;margin-bottom:5px;color:#3e2a08;font-size:17px;line-height:1.35}
+.aph-truth-gate p{margin:0;max-width:920px;color:#654510;font-size:13px;line-height:1.65}
+.aph-truth-gate>span{flex:none;padding:5px 9px;border-radius:999px;background:#f3e0bb;color:#6e4300;font-size:12px;font-weight:700;white-space:nowrap}
+[data-aph-truth-state="unavailable"]{border-color:#d9b675!important;background:#fffaf1!important}
+[data-aph-truth-state="unavailable"] :where(strong,b,[class*="text-2xl"],[class*="text-3xl"],[class*="text-4xl"]){color:#5c6672!important}
+
+body>.aph-source-freshness{position:fixed;top:104px;right:24px;z-index:43;width:min(500px,calc(100vw - 48px));display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0}
+body.aph-source-freshness-visible main#main-content{padding-top:78px!important}
+.aph-source-freshness article{min-height:58px!important;padding:10px 14px!important;display:grid!important;grid-template-columns:1fr auto!important;grid-template-rows:auto auto!important;align-items:center!important;column-gap:12px!important;border:1px solid var(--aph-remediation-line)!important;border-left:3px solid #1f8c64!important;background:#fff!important;box-shadow:none!important}
+.aph-source-freshness article[data-status="unavailable"]{border-left-color:#b66b00!important;background:#fffaf1!important}
+.aph-source-freshness strong{font-size:13px;color:#303741}
+.aph-source-freshness time{grid-row:1/3;grid-column:2;font-size:15px;font-weight:700;color:#20262d;font-variant-numeric:tabular-nums}
+.aph-source-freshness span{font-size:11px;color:var(--aph-remediation-muted)}
+.aph-source-scoped-status{font-size:0!important}
+.aph-source-scoped-status::before{content:"经营数据分源更新 · 以来源状态卡为准";font-size:12px;font-weight:600;color:#d8dee7}
+.aph-source-scoped-status b{display:none!important}
+
+.aph-navigation-toast{position:fixed;right:18px;bottom:18px;z-index:1000;max-width:360px;padding:12px 16px;border:1px solid #b8c5d2;border-left:4px solid #2563eb;background:#fff;color:#2c3540;box-shadow:0 12px 32px rgba(0,0,0,.18);font-size:13px}
+.aph-navigation-toast[data-tone="danger"]{border-left-color:var(--aph-remediation-danger);color:#78121e}
+.aph-mobile-primary-nav,.aph-mobile-more-drawer{display:none}
+
+body.aph2-theme .aph-history-unavailable{min-height:auto!important}
+body.aph2-theme .aph-history-unavailable>:not(.aph-history-status):not(:first-child){max-height:0!important;overflow:hidden!important;margin:0!important;padding:0!important;opacity:0!important}
+body.aph2-theme .aph-history-status{min-height:92px!important;margin-top:10px!important}
+
+@media (max-width: 640px){
+  body.aph2-theme aside[aria-label*="导航栏"],body.aph2-theme .aph-page-tabs{display:none!important}
+  body.aph-mobile-nav-ready main#main-content{padding-top:64px!important}
+  .aph-mobile-primary-nav{position:fixed;left:0;right:0;top:50px;z-index:50;height:52px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch;background:#101820;border-bottom:1px solid #303a45;box-shadow:0 2px 8px rgba(0,0,0,.22)}
+  .aph-mobile-primary-nav a,.aph-mobile-primary-nav button{min-height:44px;margin:4px 0;padding:0 5px;display:grid;place-items:center;border:0;border-right:1px solid #303a45;background:transparent;color:#f1f5f9;font-size:12px;font-weight:650;line-height:1.2;text-align:center;text-decoration:none;white-space:nowrap}
+  .aph-mobile-primary-nav a[aria-current="page"]{background:#cf001b;color:#fff}
+  .aph-mobile-primary-nav button{border-right:0}
+  .aph-mobile-more-drawer{position:fixed;inset:102px 0 0;z-index:70;display:flex;flex-direction:column;padding:0 16px 24px;background:rgba(247,249,251,.985);overflow:auto;box-shadow:0 -12px 40px rgba(0,0,0,.16)}
+  .aph-mobile-more-drawer[hidden]{display:none!important}
+  .aph-mobile-more-drawer header{position:sticky;top:0;z-index:1;min-height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(247,249,251,.98);border-bottom:1px solid var(--aph-remediation-line)}
+  .aph-mobile-more-drawer header strong{font-size:18px;color:#222a33}
+  .aph-mobile-more-drawer header button{min-width:64px;min-height:44px;border:1px solid #b7c0ca;background:#fff;color:#303841}
+  .aph-mobile-more-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding-top:16px}
+  .aph-mobile-more-grid a{min-height:52px;padding:10px 12px;display:flex;align-items:center;justify-content:center;border:1px solid #cfd6de;background:#fff;color:#2d3540;font-size:13px;font-weight:650;text-align:center;text-decoration:none}
+  body.aph-mobile-drawer-open{overflow:hidden}
+
+  .aph-truth-gate{flex-direction:column;gap:10px;margin:0 0 10px;padding:13px 14px}
+  .aph-truth-gate strong{font-size:15px}
+  .aph-truth-gate>span{align-self:flex-start}
+  body>.aph-source-freshness{top:108px;left:8px;right:8px;width:auto;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:0}
+  body.aph-source-freshness-visible main#main-content{padding-top:126px!important}
+  .aph-source-freshness article{min-height:52px!important;padding:8px 11px!important}
+
+  .aph-business-banner{min-height:94px!important;padding:14px 16px!important;grid-template-columns:1fr!important;gap:3px!important}
+  .aph-business-banner .aph-banner-copy{justify-self:start!important}
+  .aph-business-banner .aph-banner-copy p,.aph-business-banner time,.aph-business-banner .aph-banner-brand{display:none!important}
+  .aph-business-banner .aph-banner-copy h1{font-size:21px!important;line-height:1.25!important}
+  .aph-business-banner .aph-banner-copy h2{margin-top:5px!important;max-width:none!important;font-size:11px!important;line-height:1.4!important;letter-spacing:.04em!important}
+
+  .aph-project-page-head{padding:14px!important;display:block!important;min-height:auto!important}
+  .aph-project-page-head>div:first-child>p{display:none!important}
+  .aph-project-page-head h1{font-size:20px!important;line-height:1.3!important}
+  .aph-project-source{margin-top:8px!important;padding-top:8px!important;border-top:1px solid rgba(255,255,255,.18)!important}
+  .aph-project-source strong,.aph-project-source span{display:block!important;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .aph-project-kpis{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+
+  body.aph2-theme .aph-page-view-switch{position:sticky!important;top:102px!important;z-index:12!important}
+  body.aph2-theme :where(button,a,input,select,textarea,[role="button"]){min-height:44px}
+  body.aph2-theme input[type="date"],body.aph2-theme button[aria-label*="日期"]{min-height:44px!important}
+  body.aph2-theme main .aph-service-center-scroll{max-height:min(62vh,640px)!important}
+  .aph-navigation-toast{left:12px;right:12px;bottom:12px;max-width:none}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important}
+}

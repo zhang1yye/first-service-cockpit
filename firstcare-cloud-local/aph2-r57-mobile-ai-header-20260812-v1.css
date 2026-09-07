@@ -1,0 +1,73 @@
+/* R57：移动端 AI 入口收入黑色顶栏，不再遮挡经营数字与表格。 */
+.aph-r57-mobile-ai-launcher {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  body[data-r57-mobile-ai-header] #north-ai-assistant > .north-ai-launcher.aph-r57-mobile-ai-source {
+    display: none !important;
+  }
+
+  body[data-r57-mobile-ai-header].aph2-theme #root :is(header.sticky.top-0, header.aph-admin-shell-header) button.aph-r57-mobile-ai-launcher {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    flex: 0 0 44px;
+    width: 44px !important;
+    min-width: 44px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    max-height: 44px !important;
+    align-self: center;
+    margin: 0;
+    padding: 0 !important;
+    overflow: hidden;
+    border: 1px solid #303844;
+    border-radius: 0 !important;
+    color: #ffffff;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  body[data-r57-mobile-ai-header].aph2-theme #root :is(header.sticky.top-0, header.aph-admin-shell-header) button.aph-r57-mobile-ai-launcher:hover {
+    color: #ffffff !important;
+    border-color: #b8101a;
+    background: #252525 !important;
+  }
+
+  body[data-r57-mobile-ai-header].aph2-theme #root :is(header.sticky.top-0, header.aph-admin-shell-header) button.aph-r57-mobile-ai-launcher:focus-visible {
+    outline: 2px solid #ffffff !important;
+    outline-offset: -4px;
+    border-color: #b8101a;
+  }
+
+  body[data-r57-mobile-ai-header] .aph-r57-mobile-ai-mark {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    color: #ffffff;
+    background: #b8101a;
+    font: 700 13px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    letter-spacing: -.06em;
+  }
+
+  body[data-r57-mobile-ai-header].aph2-theme #root header.aph-admin-shell-header.aph-r57-mobile-ai-host {
+    position: relative !important;
+  }
+
+  body[data-r57-mobile-ai-header].aph2-theme #root header.aph-admin-shell-header button.aph-r57-mobile-ai-launcher[data-r57-placement="admin"] {
+    position: absolute;
+    top: 3px;
+    right: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aph-r57-mobile-ai-launcher {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,157 @@
+/* R45 公共无障碍层：只修复隐藏状态、公共语义和 WCAG 2.2 AA 对比度。 */
+
+body.aph2-theme {
+  --muted-foreground: #596574;
+  --success: #1a6b43;
+  --danger: #a81d18;
+  --warning: #805300;
+}
+
+/* 隐藏的 AI 助手必须同时退出视觉、指针和键盘序列。 */
+#north-ai-assistant .north-ai-overlay[aria-hidden="true"] {
+  display: none !important;
+}
+
+#north-ai-assistant .north-ai-overlay[aria-hidden="false"].is-open {
+  display: flex !important;
+}
+
+/* 浅色工作区的弱化文字统一到 AA 安全色。 */
+body.aph2-theme main .text-muted-foreground,
+body.aph2-theme main .text-slate-400,
+body.aph2-theme main .text-slate-500,
+body.aph2-theme main .text-slate-600 {
+  color: #596574 !important;
+  -webkit-text-fill-color: #596574 !important;
+}
+
+body.aph2-theme main .text-foreground {
+  color: #35404d !important;
+  -webkit-text-fill-color: #35404d !important;
+}
+
+body.aph2-theme main .text-primary {
+  color: #b8101a !important;
+  -webkit-text-fill-color: #b8101a !important;
+}
+
+body.aph2-theme main .text-emerald-200,
+body.aph2-theme main .text-emerald-300,
+body.aph2-theme main .text-emerald-400,
+body.aph2-theme main .text-green-400,
+body.aph2-theme main [class*="text-[var(--success)]"] {
+  color: #1a6b43 !important;
+  -webkit-text-fill-color: #1a6b43 !important;
+}
+
+body.aph2-theme main .text-amber-300,
+body.aph2-theme main .text-amber-400,
+body.aph2-theme main .text-yellow-400 {
+  color: #805300 !important;
+  -webkit-text-fill-color: #805300 !important;
+}
+
+body.aph2-theme main .text-red-300,
+body.aph2-theme main .text-red-400 {
+  color: #a81d18 !important;
+  -webkit-text-fill-color: #a81d18 !important;
+}
+
+/* 旧工具类的 hover 白字在静态浅色底上不可读；常态使用正文安全色。 */
+body.aph2-theme main .text-slate-300 {
+  color: #596574 !important;
+  -webkit-text-fill-color: #596574 !important;
+}
+
+/* 异步数据刷新会重新触发 fadeInUp；锁定前景不透明度，避免动画中途暂时跌破 AA。 */
+body.aph2-theme main .animate-in {
+  opacity: 1 !important;
+}
+
+/* 选中态必须同时锁定前景和背景，避免透明工具类继承浅色。 */
+body.aph2-theme main :where(button, a).bg-primary,
+body.aph2-theme main :where(button, a)[aria-pressed="true"].bg-primary {
+  background-color: #b8101a !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* 表尾合计与状态列可能使用半透明强调底，改用更深前景。 */
+body.aph2-theme main tr.border-t-2 td.text-muted-foreground {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+body.aph2-theme main .data-table tfoot td[class*="text-[var(--success)]"] {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+body.aph2-theme main .data-table tbody td[class*="text-[var(--success)]"] {
+  color: #155936 !important;
+  -webkit-text-fill-color: #155936 !important;
+}
+
+/* AI 预警旧卡片仍带深色主题前景/表头底，统一回浅色工作区。 */
+body[data-r42-route="ai-alerts"].aph2-theme main .bg-card\/35 {
+  background-color: #ffffff !important;
+  color: #35404d !important;
+  -webkit-text-fill-color: #35404d !important;
+}
+
+body[data-r42-route="ai-alerts"].aph2-theme main table thead,
+body[data-r42-route="ai-alerts"].aph2-theme main table th {
+  background-color: #f7f8fa !important;
+  color: #46515e !important;
+  -webkit-text-fill-color: #46515e !important;
+}
+
+/* 上传区的旧深色主题前景色在白色卡片上失效，回到工作区正文色。 */
+body[data-r42-route="import"].aph2-theme main .card-soft {
+  color: #35404d !important;
+  -webkit-text-fill-color: initial;
+}
+
+/* 黑色顶栏需要反向的高对比度次要文字。 */
+body.aph2-theme header .text-muted-foreground,
+body.aph2-theme header .text-slate-400,
+body.aph2-theme header .text-slate-500 {
+  color: #aeb7c2 !important;
+  -webkit-text-fill-color: #aeb7c2 !important;
+}
+
+/* 页签实际是页面导航，未选项在白底上也必须清晰。 */
+body.aph2-theme .aph-route-tab:not(.is-active),
+body.aph2-theme .aph-route-tab-close {
+  color: #596574 !important;
+  -webkit-text-fill-color: #596574 !important;
+}
+
+body.aph2-theme .aph-route-tab.is-active {
+  color: #343c47 !important;
+  -webkit-text-fill-color: #343c47 !important;
+}
+
+/* review 的两个顶层视图是切换按钮组，保留现有视觉反馈。 */
+body.aph2-theme .aph-review-workbench-switch > button[aria-pressed="true"] {
+  border-color: #cf001b !important;
+  background: #cf001b !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+/* 首页品牌区的红底使用不透明白字，避免抗锯齿混色低于 AA。 */
+body[data-r42-route="home"] .aph-business-banner :where(p, h2, time),
+body[data-r42-route="home"] .aph-business-banner .text-muted-foreground,
+body[data-r42-route="home"] .aph-business-banner .text-slate-400,
+body[data-r42-route="home"] .aph-business-banner .text-slate-500 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+[data-r45-a11y="scroll-region"]:focus-visible {
+  outline: 2px solid #cf001b !important;
+  outline-offset: 3px !important;
+}

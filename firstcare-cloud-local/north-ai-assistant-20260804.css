@@ -1,0 +1,174 @@
+/* 华北经营助手 · APH 2.0 浅色业务主题热修复，仅作用于独立组件 */
+#north-ai-assistant {
+  --north-ai-bg: #f5f6fa;
+  --north-ai-surface: #ffffff;
+  --north-ai-surface-2: #f0f1f4;
+  --north-ai-line: #e8e9ed;
+  --north-ai-line-strong: #d7d9dc;
+  --north-ai-primary: #cf001b;
+  --north-ai-primary-hover: #b80018;
+  --north-ai-primary-soft: #fff0f2;
+  --north-ai-text: #41464c;
+  --north-ai-muted: #7f848a;
+  --north-ai-ink: #050505;
+  --north-ai-success: #258e59;
+  --north-ai-warning: #f1a52f;
+  --north-ai-danger: #c75159;
+  font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
+}
+
+.north-ai-launcher {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 58;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: 58px;
+  min-height: 58px;
+  padding: 7px;
+  overflow: hidden;
+  border: 1px solid var(--north-ai-line-strong);
+  border-radius: 2px;
+  color: var(--north-ai-text);
+  background: rgba(255, 255, 255, .98);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .12);
+  cursor: pointer;
+  transition: width .22s ease, transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.north-ai-launcher:hover,
+.north-ai-launcher:focus-visible { width: 210px; gap: 10px; }
+.north-ai-launcher:hover { transform: translateY(-1px); border-color: var(--north-ai-primary); box-shadow: 0 6px 18px rgba(0, 0, 0, .15); }
+.north-ai-launcher:active { transform: translateY(0) scale(.98); }
+.north-ai-launcher:focus-visible,
+.north-ai-close:focus-visible,
+.north-ai-chip:focus-visible,
+.north-ai-send:focus-visible,
+.north-ai-input:focus-visible { outline: 2px solid var(--north-ai-primary); outline-offset: 2px; }
+.north-ai-launcher[hidden] { display: none !important; }
+
+.north-ai-launcher-mark,
+.north-ai-brand-mark {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  color: #ffffff;
+  border: 0;
+  border-radius: 2px;
+  background: var(--north-ai-primary);
+  overflow: hidden;
+}
+.north-ai-launcher-mark { width: 44px; height: 44px; }
+.north-ai-brand-mark { width: 46px; height: 46px; }
+.north-ai-launcher-mark::before,
+.north-ai-brand-mark::before {
+  content: "AI";
+  font: 700 15px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: -.06em;
+}
+.north-ai-launcher-mark::after,
+.north-ai-brand-mark::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, .52);
+}
+
+.north-ai-launcher-copy { display: grid; flex: 0 0 126px; gap: 2px; opacity: 0; transform: translateX(8px); text-align: left; transition: opacity .18s ease, transform .18s ease; }
+.north-ai-launcher:hover .north-ai-launcher-copy,
+.north-ai-launcher:focus-visible .north-ai-launcher-copy { opacity: 1; transform: translateX(0); }
+.north-ai-launcher-copy strong { color: #343940; font-size: 14px; line-height: 1.2; font-weight: 650; }
+.north-ai-launcher-copy span { color: var(--north-ai-muted); font-size: 11px; line-height: 1.2; }
+.north-ai-launcher-dot { display: none; width: 7px; height: 7px; border-radius: 50%; background: var(--north-ai-primary); }
+
+.north-ai-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(0, 0, 0, .28);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .22s ease;
+}
+.north-ai-overlay.is-open { opacity: 1; pointer-events: auto; }
+.north-ai-panel {
+  width: min(470px, calc(100vw - 20px));
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  color: var(--north-ai-text);
+  background: var(--north-ai-bg);
+  border-left: 1px solid var(--north-ai-line);
+  box-shadow: -12px 0 32px rgba(0, 0, 0, .16);
+  transform: translateX(102%);
+  transition: transform .28s cubic-bezier(.2, .8, .2, 1);
+}
+.north-ai-overlay.is-open .north-ai-panel { transform: translateX(0); }
+.north-ai-header { display: flex; align-items: center; gap: 12px; min-width: 0; padding: 14px 16px; color: #ffffff; background: var(--north-ai-ink); border-bottom: 1px solid #252525; }
+.north-ai-title { min-width: 0; flex: 1; }
+.north-ai-title h2 { margin: 0; color: #ffffff; font-size: 18px; line-height: 1.25; font-weight: 680; letter-spacing: -.02em; }
+.north-ai-title p { margin: 4px 0 0; color: #c8cbd0; font-size: 12px; }
+.north-ai-readonly { padding: 4px 7px; border: 1px solid rgba(255, 255, 255, .3); border-radius: 2px; color: #ffffff; background: rgba(255, 255, 255, .08); font-size: 10px; letter-spacing: .06em; }
+.north-ai-close { width: 38px; height: 38px; display: grid; place-items: center; border: 0; border-radius: 2px; color: #c8cbd0; background: transparent; cursor: pointer; font-size: 25px; line-height: 1; transition: color .18s ease, background .18s ease; }
+.north-ai-close:hover { color: #ffffff; background: #252525; }
+
+.north-ai-conversation { min-width: 0; overflow-y: auto; overscroll-behavior: contain; padding: 16px 16px 22px; scroll-behavior: smooth; }
+.north-ai-welcome { padding: 18px; border: 1px solid var(--north-ai-line); border-left: 3px solid var(--north-ai-primary); border-radius: 2px; background: var(--north-ai-surface); box-shadow: 0 1px 3px rgba(0, 0, 0, .05); }
+.north-ai-kicker { margin-bottom: 8px; color: var(--north-ai-primary); font: 600 11px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .1em; text-transform: uppercase; }
+.north-ai-welcome h3 { margin: 0 0 9px; color: #343940; font-size: 20px; line-height: 1.35; font-weight: 650; letter-spacing: -.02em; }
+.north-ai-welcome p { margin: 0; color: #70747a; font-size: 14px; line-height: 1.7; }
+.north-ai-context-status { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 13px; }
+.north-ai-status { padding: 5px 8px; border: 1px solid rgba(37, 142, 89, .16); border-radius: 2px; color: var(--north-ai-success); background: rgba(37, 142, 89, .08); font-size: 11px; }
+.north-ai-status.warning { color: #9a6200; border-color: rgba(241, 165, 47, .22); background: rgba(241, 165, 47, .1); }
+.north-ai-status.unavailable { color: var(--north-ai-danger); border-color: rgba(199, 81, 89, .2); background: rgba(199, 81, 89, .08); }
+.north-ai-suggestions { display: grid; gap: 8px; margin: 14px 0 4px; }
+.north-ai-chip { min-width: 0; padding: 11px 13px; border: 1px solid var(--north-ai-line); border-radius: 2px; color: #4d5259; background: var(--north-ai-surface); text-align: left; font-size: 13px; line-height: 1.4; cursor: pointer; box-shadow: 0 1px 2px rgba(0, 0, 0, .035); transition: transform .18s ease, border-color .18s ease, color .18s ease, background .18s ease; }
+.north-ai-chip:hover { transform: translateX(2px); border-color: var(--north-ai-primary); color: var(--north-ai-primary); background: var(--north-ai-primary-soft); }
+
+.north-ai-message { display: grid; gap: 7px; margin-top: 17px; }
+.north-ai-message-user { justify-items: end; }
+.north-ai-message-assistant { justify-items: start; }
+.north-ai-bubble { max-width: 88%; padding: 11px 13px; border-radius: 2px; font-size: 14px; line-height: 1.7; white-space: pre-wrap; overflow-wrap: anywhere; box-shadow: 0 1px 2px rgba(0, 0, 0, .035); }
+.north-ai-message-user .north-ai-bubble { color: #ffffff; background: var(--north-ai-primary); }
+.north-ai-message-assistant .north-ai-bubble { color: var(--north-ai-text); background: var(--north-ai-surface); border: 1px solid var(--north-ai-line); }
+.north-ai-message-loading .north-ai-bubble { color: var(--north-ai-muted); }
+.north-ai-message-loading .north-ai-bubble::after { content: "···"; display: inline-block; width: 22px; overflow: hidden; vertical-align: bottom; animation: north-ai-typing 1.2s steps(4,end) infinite; }
+@keyframes north-ai-typing { from { width: 0; } to { width: 22px; } }
+.north-ai-meta { display: flex; flex-wrap: wrap; gap: 6px; max-width: 92%; }
+.north-ai-meta span { padding: 4px 7px; border: 1px solid var(--north-ai-line); border-radius: 2px; color: var(--north-ai-muted); background: var(--north-ai-surface); font-size: 10px; line-height: 1.35; }
+.north-ai-meta span.warning { color: #9a6200; border-color: rgba(241, 165, 47, .22); }
+.north-ai-meta span.unavailable { color: var(--north-ai-danger); border-color: rgba(199, 81, 89, .2); }
+.north-ai-limitations { max-width: 92%; color: #9a6200; font-size: 11px; line-height: 1.55; }
+
+.north-ai-composer-wrap { padding: 12px 16px max(16px, env(safe-area-inset-bottom)); border-top: 1px solid var(--north-ai-line); background: rgba(255, 255, 255, .97); }
+.north-ai-composer { display: grid; grid-template-columns: minmax(0, 1fr) 44px; gap: 8px; padding: 6px; border: 1px solid var(--north-ai-line-strong); border-radius: 2px; background: var(--north-ai-surface); box-shadow: inset 0 1px 2px rgba(0, 0, 0, .025); }
+.north-ai-input { width: 100%; min-width: 0; min-height: 42px; max-height: 112px; resize: none; border: 0; padding: 10px 9px; color: var(--north-ai-text); background: transparent; font: inherit; font-size: 14px; line-height: 1.5; outline: 0; }
+.north-ai-input::placeholder { color: #9a9ea3; }
+.north-ai-send { width: 44px; height: 44px; align-self: end; border: 0; border-radius: 2px; color: #ffffff; background: var(--north-ai-primary); cursor: pointer; font-size: 19px; transition: transform .18s ease, background .18s ease, opacity .18s ease; }
+.north-ai-send:hover { transform: translateY(-1px); background: var(--north-ai-primary-hover); }
+.north-ai-send:active { transform: scale(.97); }
+.north-ai-send:disabled { cursor: not-allowed; opacity: .38; transform: none; }
+.north-ai-disclaimer { margin: 8px 2px 0; color: var(--north-ai-muted); font-size: 10px; line-height: 1.45; text-align: center; }
+
+@media (max-width: 640px) {
+  .north-ai-launcher { right: 12px; bottom: 14px; min-height: 52px; padding: 5px; border-radius: 2px; }
+  .north-ai-launcher-mark { width: 42px; height: 42px; }
+  .north-ai-launcher-copy, .north-ai-launcher-dot { display: none; }
+  .north-ai-panel { width: 100vw; border-left: 0; }
+  .north-ai-header { padding: max(13px, env(safe-area-inset-top)) 14px 12px; }
+  .north-ai-brand-mark { width: 44px; height: 44px; }
+  .north-ai-title h2 { font-size: 16px; }
+  .north-ai-readonly { display: none; }
+  .north-ai-conversation { padding: 15px 14px 20px; }
+  .north-ai-welcome { padding: 16px; }
+  .north-ai-welcome h3 { font-size: 18px; }
+  .north-ai-bubble { max-width: 92%; }
+  .north-ai-composer-wrap { padding-left: 12px; padding-right: 12px; }
+}

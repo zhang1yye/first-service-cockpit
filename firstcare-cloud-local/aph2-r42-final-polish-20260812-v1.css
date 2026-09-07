@@ -1,0 +1,199 @@
+/* R42：frontend-skill 全量排查最终收口。仅调整壳层、信息密度和渐进展开。 */
+
+body[data-r42-release] {
+  --r42-red: #cf001b;
+  --r42-text: #343c47;
+  --r42-muted: #66717e;
+  --r42-line: #dfe3e8;
+  --r42-soft: #f6f7f9;
+}
+
+.aph-r42-expand {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 12px;
+  border: 1px solid var(--r42-line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--r42-text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.aph-r42-expand:focus-visible {
+  outline: 2px solid var(--r42-red);
+  outline-offset: 2px;
+}
+
+@media (min-width: 641px) {
+  /* 首页首屏回到紧凑经营节奏，不再保留一整段无内容留白。 */
+  body[data-r42-route="home"] main#main-content .aph-home-reflow {
+    padding-top: 36px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  /* 自定义移动导航占据 50–102px；受影响路由正文从其下方开始。 */
+  body[data-r42-release][data-r42-route="projects"] main#main-content,
+  body[data-r42-release][data-r42-route="import"] main#main-content,
+  body[data-r42-release][data-r42-route="ai-alerts"] main#main-content,
+  body[data-r42-release][data-r42-route="ai-report"] main#main-content,
+  body[data-r42-release][data-r42-route="review"] main#main-content,
+  body[data-r42-release][data-r42-route="daily"] main#main-content,
+  body[data-r42-release][data-r42-route="payment"] main#main-content {
+    padding-top: 64px !important;
+  }
+
+  /* 项目概览由卡片阵列改为可扫读的标签、数字、说明三段式列表。 */
+  body[data-r42-route="projects"] .aph-project-kpis {
+    display: block !important;
+    border-top: 1px solid var(--r42-line);
+  }
+
+  body[data-r42-route="projects"] .aph-project-kpis article {
+    min-height: 0 !important;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "label value"
+      "note note"
+      "link link";
+    align-items: baseline;
+    gap: 3px 12px;
+    padding: 8px 2px !important;
+    border: 0 !important;
+    border-bottom: 1px solid var(--r42-line) !important;
+    background: transparent !important;
+  }
+
+  body[data-r42-route="projects"] .aph-project-kpis article > span {
+    grid-area: label;
+    color: var(--r42-text) !important;
+    font-size: 13px !important;
+    font-weight: 600;
+  }
+
+  body[data-r42-route="projects"] .aph-project-kpis article > strong {
+    grid-area: value;
+    margin: 0 !important;
+    color: var(--r42-text) !important;
+    font-size: 18px !important;
+    text-align: right;
+  }
+
+  body[data-r42-route="projects"] .aph-project-kpis article > small {
+    grid-area: note;
+    font-size: 11px !important;
+  }
+
+  body[data-r42-route="projects"] .aph-project-kpis [data-r6-mapping-link] {
+    grid-area: link;
+    min-height: 28px;
+    margin-top: 2px;
+  }
+
+  /* 下一步操作使用扁平动作列表，避免卡片套卡片。 */
+  body[data-r42-route="command"] .aph-r24-command-actions {
+    min-height: 0 !important;
+    padding: 16px 0 0 !important;
+    border: 0 !important;
+    border-top: 1px solid var(--r42-line) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    gap: 0 !important;
+  }
+
+  body[data-r42-route="command"] .aph-r24-command-actions > :first-child {
+    padding: 0 2px 10px;
+  }
+
+  body[data-r42-route="command"] .aph-r24-command-actions > a {
+    min-height: 58px;
+    margin: 0 !important;
+    padding: 10px 2px !important;
+    border: 0 !important;
+    border-top: 1px solid var(--r42-line) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
+  /* AI 门禁保留一份事实状态，移除卡片套卡片和重复徽章。 */
+  body[data-r42-route="ai-alerts"] .aph-real-data-scope,
+  body[data-r42-route="ai-report"] .aph-real-data-scope {
+    gap: 7px !important;
+    padding: 12px 13px !important;
+    border: 0 !important;
+    border-left: 3px solid var(--r42-red) !important;
+    background: var(--r42-soft) !important;
+  }
+
+  body[data-r42-route="ai-alerts"] .aph-real-data-scope .aph-truth-gate,
+  body[data-r42-route="ai-report"] .aph-real-data-scope .aph-truth-gate {
+    width: 100%;
+    gap: 0;
+    margin: 0;
+    padding: 0 0 8px;
+    border: 0;
+    border-bottom: 1px solid var(--r42-line);
+    background: transparent;
+    box-shadow: none;
+  }
+
+  body[data-r42-route="ai-alerts"] .aph-real-data-scope .aph-truth-gate > span,
+  body[data-r42-route="ai-report"] .aph-real-data-scope .aph-truth-gate > span {
+    display: none;
+  }
+
+  body[data-r42-route="ai-alerts"] .aph-r34-truth-summary,
+  body[data-r42-route="ai-report"] .aph-r34-truth-summary {
+    padding: 11px 13px;
+    border: 0;
+    border-left: 3px solid #c77a00;
+    background: #fffaf0;
+  }
+
+  /* 后台业务域使用两列明确触控区；辅助说明独占一行。 */
+  body[data-r42-route="admin"] .aph-r42-admin-tabs {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px !important;
+    padding: 14px !important;
+    overflow: visible !important;
+    margin-top: 46px !important;
+  }
+
+  body[data-r42-route="admin"] .aph-r42-admin-tabs > button {
+    width: 100%;
+    min-height: 44px;
+    height: auto !important;
+    padding: 8px 10px !important;
+    border: 1px solid var(--r42-line);
+    white-space: normal;
+  }
+
+  body[data-r42-route="admin"] .aph-r42-admin-tabs > span {
+    grid-column: 1 / -1;
+    margin: 2px 0 0 !important;
+    text-align: left;
+    white-space: normal;
+  }
+
+  body[data-r42-route="admin"] .aph-r42-admin-toggle {
+    margin: 2px 0 14px;
+  }
+
+  body[data-r42-route="admin"] .table-scroll > .aph-admin-safety-toolbar {
+    position: static !important;
+    margin: 0 0 10px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-r42-release] *,
+  body[data-r42-release] *::before,
+  body[data-r42-release] *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}

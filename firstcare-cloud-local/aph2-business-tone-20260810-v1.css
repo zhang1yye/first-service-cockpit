@@ -1,0 +1,368 @@
+/*
+ * 第一服务华北驾驶舱业务化视觉收敛。
+ * 保留 APH 结构、路由和数据，只去除宣传页式横幅、漂浮卡片与 AI 产品化装饰。
+ */
+
+:root {
+  --aph-business-red: #cf1d25;
+  --aph-business-red-dark: #ad1820;
+  --aph-business-ink: #343a40;
+  --aph-business-muted: #707780;
+  --aph-business-line: #dfe3e7;
+  --aph-business-surface: #ffffff;
+  --aph-business-subtle: #f6f7f8;
+}
+
+/* 首页改为信息条，不使用渐变、超大年份或口号式英文。 */
+body.aph2-theme .aph-business-banner {
+  min-height: 124px !important;
+  height: 124px !important;
+  margin-bottom: 10px !important;
+  padding: 0 28px !important;
+  grid-template-columns: 176px minmax(0, 1fr) auto !important;
+  gap: 24px !important;
+  background: var(--aph-business-red) !important;
+  border-left: 4px solid var(--aph-business-red-dark) !important;
+  box-shadow: none !important;
+}
+body.aph2-theme .aph-business-banner::before,
+body.aph2-theme .aph-business-banner::after {
+  content: none !important;
+  display: none !important;
+}
+body.aph2-theme .aph-banner-brand {
+  align-items: center !important;
+}
+body.aph2-theme .aph-banner-brand img {
+  display: block;
+  width: auto;
+  max-width: 142px;
+  max-height: 68px;
+  object-fit: contain;
+}
+body.aph2-theme .aph-banner-copy {
+  justify-self: start !important;
+  text-align: left !important;
+}
+body.aph2-theme .aph-banner-copy p,
+body.aph2-theme .aph-banner-copy h2 {
+  display: none !important;
+}
+body.aph2-theme .aph-banner-copy h1 {
+  margin: 0 !important;
+  color: #ffffff !important;
+  font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 650 !important;
+  line-height: 1.2 !important;
+  letter-spacing: .02em !important;
+  text-shadow: none !important;
+}
+body.aph2-theme .aph-business-banner time {
+  align-self: center !important;
+  padding: 0 0 0 20px !important;
+  border: 0 !important;
+  border-left: 1px solid rgba(255, 255, 255, .42) !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: .02em !important;
+  white-space: nowrap;
+}
+body.aph2-theme .aph-business-banner time::before {
+  content: "数据日期 ";
+  color: rgba(255, 255, 255, .72);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 指标使用 APH 式平面信息层级，取消发光、圆角和漂浮阴影。 */
+body.aph2-theme main .card-soft,
+body.aph2-theme main article {
+  border-color: var(--aph-business-line) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+body.aph2-theme main .card-link:hover,
+body.aph2-theme main .card-soft:hover {
+  border-color: #c4cbd2 !important;
+  background: #fbfbfc !important;
+  box-shadow: none !important;
+}
+body.aph2-theme main .card-top-glow::before,
+body.aph2-theme main .card-top-glow::after {
+  display: none !important;
+}
+body.aph2-theme .aph-home-kpi-grid,
+body.aph2-theme .aph-home-region-grid,
+body.aph2-theme .aph-home-ranking-grid {
+  gap: 10px !important;
+}
+body.aph2-theme .aph-home-kpi-grid .card-soft,
+body.aph2-theme .aph-home-region-grid .card-soft,
+body.aph2-theme .aph-home-ranking-grid .card-soft {
+  background: var(--aph-business-surface) !important;
+}
+body.aph2-theme .aph-home-kpi-grid .card-link {
+  min-height: 82px !important;
+}
+body.aph2-theme .aph-home-kpi-grid [class*="rounded-full"] {
+  border-radius: 2px !important;
+}
+body.aph2-theme .aph-home-kpi-grid [class*="shadow"],
+body.aph2-theme .aph-home-region-grid [class*="shadow"],
+body.aph2-theme .aph-home-ranking-grid [class*="shadow"] {
+  box-shadow: none !important;
+}
+body.aph2-theme .aph-home-ranking-grid .rounded-md {
+  border-radius: 0 !important;
+}
+
+/* 顶栏数据状态只保留可核验信息，减少多色和营销式字距。 */
+body.aph2-theme header.sticky.top-0 .aph-header-status.r7-source-header-active {
+  color: transparent !important;
+}
+.r7-header-freshness {
+  justify-content: flex-start !important;
+  color: #d8dde3 !important;
+  font-size: 11px !important;
+}
+.r7-header-freshness-title {
+  color: #aeb6bf !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+}
+.r7-header-freshness > i {
+  display: none !important;
+}
+.r7-header-freshness article {
+  gap: 5px !important;
+  padding: 0 11px !important;
+  border-left-color: #2a323a !important;
+}
+.r7-header-freshness article:last-child {
+  border-right: 0 !important;
+}
+.r7-header-freshness strong {
+  color: #e9edf1 !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+}
+.r7-header-freshness span,
+.r7-header-freshness article[data-status="unavailable"] span {
+  color: #aeb6bf !important;
+  font-size: 10px !important;
+}
+.r7-header-freshness time {
+  color: #e9edf1 !important;
+  font-size: 11px !important;
+  letter-spacing: .01em !important;
+}
+
+/* AI 功能保留，但入口和问答面板改为普通经营工具，不再像独立 AI 产品。 */
+#north-ai-assistant .north-ai-launcher {
+  right: 18px !important;
+  bottom: 18px !important;
+  width: auto !important;
+  min-height: 34px !important;
+  padding: 0 12px !important;
+  gap: 0 !important;
+  border: 1px solid #cdd3d9 !important;
+  border-radius: 0 !important;
+  background: rgba(255, 255, 255, .98) !important;
+  box-shadow: 0 2px 5px rgba(29, 35, 41, .10) !important;
+  transform: none !important;
+  transition: border-color .16s ease, background .16s ease !important;
+}
+#north-ai-assistant .north-ai-launcher:hover,
+#north-ai-assistant .north-ai-launcher:focus-visible {
+  width: auto !important;
+  gap: 0 !important;
+  border-color: #9aa3ad !important;
+  background: #f7f8f9 !important;
+  box-shadow: 0 2px 5px rgba(29, 35, 41, .10) !important;
+}
+#north-ai-assistant .north-ai-launcher-mark,
+#north-ai-assistant .north-ai-launcher-dot {
+  display: none !important;
+}
+#north-ai-assistant .north-ai-launcher-copy {
+  display: block !important;
+  flex: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  text-align: left !important;
+  transition: none !important;
+}
+#north-ai-assistant .north-ai-launcher-copy strong {
+  color: var(--aph-business-ink) !important;
+  font-size: 12px !important;
+  font-weight: 650 !important;
+  line-height: 32px !important;
+}
+#north-ai-assistant .north-ai-launcher-copy span {
+  display: none !important;
+}
+#north-ai-assistant .north-ai-overlay {
+  align-items: flex-start !important;
+  justify-content: flex-end !important;
+  padding: 56px 24px 24px !important;
+  background: rgba(18, 23, 29, .18) !important;
+}
+#north-ai-assistant .north-ai-panel {
+  width: min(460px, calc(100vw - 48px)) !important;
+  height: calc(100dvh - 80px) !important;
+  border: 1px solid #cfd5db !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
+  box-shadow: 0 10px 24px rgba(26, 33, 40, .16) !important;
+  transform: translateX(18px) !important;
+}
+#north-ai-assistant .north-ai-overlay.is-open .north-ai-panel {
+  transform: translateX(0) !important;
+}
+#north-ai-assistant .north-ai-header {
+  min-height: 50px !important;
+  padding: 0 14px !important;
+  border-bottom: 1px solid #dfe3e7 !important;
+  background: #101820 !important;
+}
+#north-ai-assistant .north-ai-header::before {
+  content: "经营问答";
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 50px;
+}
+#north-ai-assistant .north-ai-close {
+  top: 4px !important;
+  right: 8px !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 0 !important;
+  color: #dce1e6 !important;
+  font-size: 26px !important;
+}
+#north-ai-assistant .north-ai-close:hover {
+  color: #ffffff !important;
+  background: #29323b !important;
+}
+#north-ai-assistant .north-ai-conversation {
+  padding: 20px !important;
+}
+#north-ai-assistant .north-ai-welcome {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 16px !important;
+  border: 1px solid #dfe3e7 !important;
+  border-left: 3px solid var(--aph-business-red) !important;
+  border-radius: 0 !important;
+  background: var(--aph-business-subtle) !important;
+  text-align: left !important;
+}
+#north-ai-assistant .north-ai-aph-mark {
+  display: none !important;
+}
+#north-ai-assistant .north-ai-welcome h3 {
+  color: var(--aph-business-ink) !important;
+  font-size: 18px !important;
+  font-weight: 650 !important;
+}
+#north-ai-assistant .north-ai-welcome p {
+  margin: 8px 0 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #59616a !important;
+  font-size: 13px !important;
+  line-height: 1.65 !important;
+}
+#north-ai-assistant .north-ai-context-status {
+  justify-content: flex-start !important;
+  margin-top: 10px !important;
+}
+#north-ai-assistant .north-ai-status,
+#north-ai-assistant .north-ai-chip,
+#north-ai-assistant .north-ai-bubble,
+#north-ai-assistant .north-ai-meta span {
+  border-radius: 0 !important;
+}
+#north-ai-assistant .north-ai-suggestions {
+  width: 100% !important;
+  grid-template-columns: 1fr !important;
+  margin: 12px 0 0 !important;
+}
+#north-ai-assistant .north-ai-chip {
+  padding: 10px 11px !important;
+  box-shadow: none !important;
+}
+#north-ai-assistant .north-ai-composer-wrap {
+  padding: 12px 20px 16px !important;
+  border-top: 1px solid #dfe3e7 !important;
+  background: #ffffff !important;
+}
+#north-ai-assistant .north-ai-composer {
+  width: 100% !important;
+  padding: 4px 5px 4px 12px !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+#north-ai-assistant .north-ai-send {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 0 !important;
+}
+
+@media (max-width: 640px) {
+  body.aph2-theme .aph-business-banner {
+    min-height: 88px !important;
+    height: 88px !important;
+    padding: 0 14px !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    gap: 12px !important;
+  }
+  body.aph2-theme .aph-banner-brand {
+    display: none !important;
+  }
+  body.aph2-theme .aph-banner-copy h1 {
+    font-size: 21px !important;
+  }
+  body.aph2-theme .aph-business-banner time {
+    padding-left: 10px !important;
+    font-size: 11px !important;
+  }
+  body.aph2-theme .aph-business-banner time::before {
+    display: none;
+  }
+  .r7-header-freshness {
+    display: none !important;
+  }
+  #north-ai-assistant .north-ai-launcher {
+    right: 10px !important;
+    bottom: max(10px, env(safe-area-inset-bottom)) !important;
+    min-height: 32px !important;
+    padding: 0 10px !important;
+  }
+  #north-ai-assistant .north-ai-launcher-copy {
+    display: block !important;
+  }
+  #north-ai-assistant .north-ai-launcher-copy strong {
+    line-height: 30px !important;
+  }
+  #north-ai-assistant .north-ai-overlay {
+    padding: 0 !important;
+  }
+  #north-ai-assistant .north-ai-panel {
+    width: 100vw !important;
+    height: 100dvh !important;
+    border: 0 !important;
+  }
+  #north-ai-assistant .north-ai-conversation {
+    padding: 14px !important;
+  }
+  #north-ai-assistant .north-ai-composer-wrap {
+    padding: 12px 14px max(14px, env(safe-area-inset-bottom)) !important;
+  }
+}

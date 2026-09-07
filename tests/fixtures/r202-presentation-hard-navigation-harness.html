@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head><meta charset="UTF-8"><title>R202 汇报硬跳转测试</title></head>
+  <body>
+    <div id="root">
+      <header>
+        <div class="border-l lg:flex"><span title="测试成员">测试成员</span><span class="text-slate-400">成员</span></div>
+      </header>
+    </div>
+    <script>
+      document.addEventListener('click', event => {
+        const anchor = event.target.closest('a[href]')
+        if (!anchor || event.defaultPrevented) return
+        event.preventDefault()
+        history.pushState({}, '', anchor.getAttribute('href'))
+        document.body.innerHTML = '<main><h1>SPA 404</h1></main>'
+      })
+    </script>
+    <script src="/aph2-r202-presentation-entry-20260902-v1.js" defer></script>
+  </body>
+</html>

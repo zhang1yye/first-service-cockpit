@@ -1,0 +1,164 @@
+/* 首页经营卡：统一标题、数值、尾注和状态符号的节奏与基线。 */
+@media (min-width: 1024px) {
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    :is(.r8-home-period, .r8-home-growth, .r8-home-scope) > .card-soft {
+    display: grid !important;
+    grid-template-columns: 36px minmax(0, 1fr) 20px;
+    grid-template-rows: 36px 44px 20px;
+    align-content: space-between;
+    align-items: start;
+    gap: 0 12px !important;
+    padding: 16px 18px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    :is(.r8-home-period, .r8-home-growth, .r8-home-scope) > .card-soft > :first-child {
+    display: contents !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    :is(.r8-home-period, .r8-home-growth, .r8-home-scope) > .card-soft > :first-child > :first-child {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    align-self: start;
+    min-width: 0;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    :is(.r8-home-period, .r8-home-growth, .r8-home-scope) > .card-soft > :first-child > svg {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: start;
+    justify-self: end;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    :is(.r8-home-period, .r8-home-growth, .r8-home-scope) > .card-soft > :nth-child(2) {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    align-self: center;
+    min-height: 44px;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    :is(.r8-home-period, .r8-home-growth, .r8-home-scope) > .card-soft > .text-micro {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    align-self: end;
+    min-height: 20px;
+    margin: 0 !important;
+    font-size: 12px !important;
+    line-height: 20px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    :is(.r8-home-period, .r8-home-growth, .r8-home-scope) .text-sm,
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-budget > :not(.r8-home-duplicate) .text-xs {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    :is(.r8-home-period, .r8-home-growth, .r8-home-scope) .num.text-3xl,
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-budget > :not(.r8-home-duplicate) .num {
+    font-size: 36px !important;
+    line-height: 44px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.035em !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-growth > .card-soft > :nth-child(2) {
+    display: flex;
+    align-items: baseline;
+    gap: 7px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-scope .num > span {
+    font-size: 24px !important;
+    line-height: 32px !important;
+    vertical-align: baseline;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-budget > :not(.r8-home-duplicate) > .card-soft {
+    display: grid !important;
+    grid-template-columns: 36px minmax(0, 1fr) 20px;
+    grid-template-rows: 36px 44px 20px;
+    align-content: space-between;
+    align-items: start;
+    gap: 0 12px !important;
+    padding: 16px 18px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-budget > :not(.r8-home-duplicate) > .card-soft > :first-child {
+    display: contents !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-budget > :not(.r8-home-duplicate) > .card-soft > :first-child > :first-child {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 36px !important;
+    height: 36px !important;
+    align-self: start;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-budget > :not(.r8-home-duplicate) > .card-soft > :first-child > :nth-child(2) {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    display: grid;
+    grid-template-rows: 20px 44px;
+    align-content: start;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-budget > :not(.r8-home-duplicate) > .card-soft > svg {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: start;
+    justify-self: end;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    :is(.r8-home-period, .r8-home-growth, .r8-home-scope)
+    [class*="bg-accent"],
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-budget > :not(.r8-home-duplicate) [class*="bg-accent"] {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    :is(.r8-home-period, .r8-home-growth, .r8-home-scope, .r8-home-budget)
+    .num > svg,
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-growth > .card-soft > :nth-child(2) > svg {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    transform: translateY(1px);
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection > .card-soft {
+    padding: 16px 18px !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection > .card-soft > :first-child {
+    min-height: 36px;
+    align-items: start !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection .text-sm {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+}

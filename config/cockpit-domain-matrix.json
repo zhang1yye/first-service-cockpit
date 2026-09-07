@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "defaultAccess": "authenticated-and-service-center-scoped",
+  "domains": [
+    {
+      "route": "/",
+      "name": "经营驾驶舱",
+      "apis": ["/api/summary", "/api/operating-capabilities", "/api/ai/service-centers"],
+      "sources": ["APH回款", "绿仔正式收缴批次"],
+      "writePolicy": "read-only",
+      "status": "partial-real-data"
+    },
+    {
+      "route": "/command",
+      "name": "经营工作台",
+      "apis": ["/api/ai/service-centers", "/api/operating-capabilities", "/api/command/data-reliability"],
+      "sources": ["APH回款", "绿仔正式收缴批次", "数据发布与质量状态"],
+      "writePolicy": "read-only",
+      "status": "partial-real-data"
+    },
+    {
+      "route": "/payment",
+      "name": "回款额执行评估",
+      "apis": ["/api/payments"],
+      "sources": ["APH回款"],
+      "writePolicy": "production-read-only",
+      "status": "accepted-protected"
+    },
+    {
+      "route": "/daily",
+      "name": "每日回款明细",
+      "apis": ["/api/daily", "/api/daily/dates"],
+      "sources": ["APH回款日快照"],
+      "writePolicy": "read-only",
+      "status": "accepted-protected"
+    },
+    {
+      "route": "/collection",
+      "name": "收缴率明细",
+      "apis": ["/api/collections"],
+      "sources": ["绿仔正式收缴批次"],
+      "writePolicy": "production-read-only",
+      "status": "accepted-protected"
+    },
+    {
+      "route": "/projects",
+      "name": "项目目录",
+      "apis": ["/api/projects", "/api/projects/summary", "/api/project-profiles", "/api/data-quality/project-gate"],
+      "sources": ["权威在管项目目录"],
+      "writePolicy": "admin-controlled-publication",
+      "status": "directory-only-no-project-operating-facts"
+    },
+    {
+      "route": "/arrears",
+      "name": "欠费经营分析",
+      "apis": ["/api/arrears/readiness", "/api/arrears/projects", "/api/arrears/overview", "/api/arrears/batches"],
+      "sources": ["受控欠费台账", "加密归档", "权限内服务中心目录"],
+      "writePolicy": "admin-controlled-workflow",
+      "status": "independent-workbench"
+    },
+    {
+      "route": "/ai-alerts",
+      "name": "AI预警中心",
+      "apis": ["/api/ai/service-centers", "/api/operating-capabilities"],
+      "sources": ["APH回款", "绿仔正式收缴批次", "服务中心确定性规则"],
+      "writePolicy": "read-only",
+      "status": "service-center-only-project-alerts-blocked"
+    },
+    {
+      "route": "/ai-report",
+      "name": "AI经营月报",
+      "apis": ["/api/ai/service-centers", "/api/ai/assistant/context", "/api/ai/assistant/ask"],
+      "sources": ["APH回款", "绿仔正式收缴批次", "已批准经营知识"],
+      "writePolicy": "read-only-query",
+      "status": "service-center-payment-collection-only"
+    },
+    {
+      "route": "/review",
+      "name": "研发小组审核系统",
+      "apis": ["/api/integrations/review", "/api/integrations/review/sso"],
+      "sources": ["独立审核系统"],
+      "writePolicy": "independent-rbac-and-sso",
+      "status": "external-integration"
+    },
+    {
+      "route": "/admin",
+      "name": "系统管理",
+      "apis": ["/api/admin", "/api/data-sources", "/api/governance", "/api/users", "/api/trends"],
+      "sources": ["全部正式数据源", "操作日志", "发布回执", "权威成员范围"],
+      "writePolicy": "admin-only-audited",
+      "status": "functional-compiled-source-only"
+    },
+    {
+      "route": "/tasks",
+      "name": "任务闭环",
+      "apis": ["/api/tasks"],
+      "sources": ["历史任务表只读封存"],
+      "writePolicy": "removed",
+      "status": "retired-410"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+/* R80：当前生产站点的已复现布局与路由收口；不改业务数据和已验收页面。 */
+
+@media (max-width: 640px) {
+  /* 首页只保留固定顶栏和移动导航的一次避让。 */
+  body.aph2-theme.aph-mobile-nav-ready[data-r42-route="home"]:not(.aph-admin-page) main#main-content {
+    padding-top: 64px !important;
+  }
+
+  body[data-r42-route="home"] main#main-content .aph-home-reflow {
+    padding-top: 0 !important;
+  }
+
+  /* 后台页签位于 50px 顶栏 + 52px 移动导航之后，并继续在滚动时吸顶。 */
+  body.aph-mobile-nav-ready:has(.r65-admin) .r65-tabs {
+    top: 52px !important;
+    margin-top: 52px !important;
+  }
+
+  /* AI 服务中心摘要收紧为两行结构，完整依据仍由原有 details 展开。 */
+  [data-r56-ai-center-app] .r56-center-conclusion {
+    display: -webkit-box;
+    grid-column: 1 / 2 !important;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+  [data-r56-ai-center-app] .r56-center-disclosure {
+    grid-column: 2 !important;
+    justify-self: end !important;
+  }
+
+  [data-r56-ai-center-app] .r56-center-row[hidden] {
+    display: none !important;
+  }
+
+  .aph-r80-ai-pager {
+    width: 100%;
+    min-height: 44px;
+    margin-top: 12px;
+    border: 1px solid #d7dbe0;
+    border-radius: 4px;
+    background: #fff;
+    color: #343c47;
+    font: 600 13px/1.4 "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  }
+
+  .aph-r80-ai-pager:focus-visible {
+    outline: 2px solid #cf001b;
+    outline-offset: 2px;
+  }
+
+  /* 项目表仅固定片区列，不改表宽和业务字段。 */
+  body[data-r42-route="projects"] .aph-project-table-wrap table :is(th, td):first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: #fff;
+    box-shadow: 1px 0 0 #e3e6ea;
+  }
+
+  body[data-r42-route="projects"] .aph-project-table-wrap table th:first-child {
+    z-index: 3;
+    background: #f7f8fa;
+  }
+}

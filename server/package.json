@@ -1,0 +1,43 @@
+{
+  "name": "first-service-cockpit-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "import-finereport": "tsx scripts/import-finereport.ts",
+    "import-cashflow": "python3 scripts/import-cashflow.py",
+    "import-aph": "tsx scripts/import-aph.ts",
+    "import-lvzai-api": "python3 scripts/import-lvzai-api.py",
+    "sync-lvzai-arrears": "tsx scripts/sync-lvzai-arrears.ts",
+    "discover-lvzai-arrears-scope": "tsx scripts/discover-lvzai-arrears-scope.ts",
+    "sync-wecom-ledger": "tsx scripts/sync-wecom-ledger.ts",
+    "sync-qxm-evidence": "tsx scripts/sync-qxm-evidence.ts",
+    "import-project-master": "python3 scripts/project_master_import.py"
+  },
+  "dependencies": {
+    "@e965/xlsx": "^0.20.3",
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^11.7.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/multer": "^2.1.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  },
+  "overrides": {
+    "body-parser": "1.20.6",
+    "esbuild": "0.28.1"
+  }
+}

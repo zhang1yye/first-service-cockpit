@@ -1,0 +1,27 @@
+[Unit]
+Description=First Service Cockpit daily collection reconciliation
+After=network-online.target chrome-headless.service first-service-cockpit.service
+Wants=network-online.target
+Requires=chrome-headless.service first-service-cockpit.service
+
+[Service]
+Type=oneshot
+User=cockpit-reconciliation
+Group=ubuntu
+DynamicUser=yes
+RuntimeDirectory=first-service-cockpit-reconciliation-daily
+RuntimeDirectoryMode=0750
+StateDirectory=first-service-cockpit-reconciliation
+StateDirectoryMode=0750
+ProtectProc=invisible
+WorkingDirectory=/home/ubuntu/cockpit
+EnvironmentFile=/home/ubuntu/.hermes/.env
+EnvironmentFile=/etc/first-service/cockpit-daily-reconciliation.env
+UnsetEnvironment=JWT_SECRET
+Environment=NO_PROXY=127.0.0.1,localhost
+Environment=no_proxy=127.0.0.1,localhost
+Environment=COCKPIT_ROOT=/home/ubuntu/cockpit
+Environment=TZ=Asia/Shanghai
+ExecStart=/home/ubuntu/cockpit/scripts/run-daily-reconciliation.sh
+# Six candidates x (70s navigation + 120s report wait) plus startup and publish overhead.
+TimeoutStartSec=30min

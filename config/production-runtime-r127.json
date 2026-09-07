@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "release": "cockpit-r208-five-books-north-china-snapshot-20260903-v1",
+  "capturedAt": "2026-09-03T10:14:30+08:00",
+  "hostAlias": "cloud-hermes",
+  "backend": {
+    "workingDirectory": "/home/ubuntu/cockpit",
+    "service": "first-service-cockpit.service",
+    "node": "v20.20.2",
+    "distIndexSha256": "43bcbb186e1b95746e465d56fc74962f141f448245fba2f06272551ca11b545c",
+    "packageSha256": "23239dc55ee0eca2bb34e8db5548219bb0e7eed3f701b4993dfa32e57ec779b7",
+    "packageLockSha256": "c9cfab11ed36a51e327d5bd4c2d346d23239062ddbad3d96c258c1f429839f39",
+    "tsconfigSha256": "5878a734e11e20292a028acfd690e2f6dda56415513c6171e684ecaef2b32fc0",
+    "historicalGitHead": "c8b0dc8f5872d342bcedf3d85f3f9af71ccba21f"
+  },
+  "frontend": {
+    "root": "/var/www/cockpit",
+    "indexSha256": "d84921d01cf10689d36e03078e93099385d6392892ddec262977eef79793df7c",
+    "overlayPayload": "production-overlays/cockpit-r208-five-books-north-china-snapshot-20260903-v1/payload",
+    "nginxConfig": "/etc/nginx/conf.d/review-system.conf"
+  },
+  "excludedState": [
+    "cockpit.db*",
+    "data/",
+    "imports/",
+    "logs/",
+    "runtime/",
+    "generated-reports/",
+    ".env*",
+    "node_modules/",
+    "dist/"
+  ]
+}

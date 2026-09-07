@@ -1,0 +1,59 @@
+/* R48：首页红底横幅、桌面首行空白与年度居中修复。 */
+
+body[data-r42-route="home"] .aph-business-banner {
+  border-color: #bd101c !important;
+  background: #d71920 !important;
+  box-shadow: 0 8px 22px rgba(145, 0, 18, .14) !important;
+}
+
+body[data-r42-route="home"] .aph-business-banner::before {
+  color: rgba(255, 255, 255, .2) !important;
+  text-shadow: none !important;
+}
+
+body[data-r42-route="home"] .aph-business-banner :where(p, h2, time) {
+  color: #ffffff !important;
+}
+
+body[data-r42-route="home"] .aph-business-banner .aph-banner-copy h1 {
+  color: #fff3d2 !important;
+  text-shadow: 0 2px 0 rgba(113, 0, 14, .34) !important;
+}
+
+@media (min-width: 641px) {
+  /* 标题组和 2026 共用横幅几何中心，不再因左右不对称偏移。 */
+  body[data-r42-route="home"] .aph-home-visual .aph-banner-copy {
+    left: 156px !important;
+    right: 156px !important;
+  }
+
+  body[data-r42-route="home"] .aph-business-banner::before {
+    top: 62px !important;
+    bottom: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* 右侧核心指标将首行撑到 218px，横幅同高即消除 68px 行内空白。 */
+  body[data-r42-route="home"] .aph-home-reflow > .aph-home-visual {
+    min-height: 218px !important;
+    height: 218px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body[data-r42-route="home"] .aph-business-banner .aph-banner-copy {
+    justify-self: stretch !important;
+    text-align: center !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-r42-route="home"] .aph-business-banner,
+  body[data-r42-route="home"] .aph-business-banner * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

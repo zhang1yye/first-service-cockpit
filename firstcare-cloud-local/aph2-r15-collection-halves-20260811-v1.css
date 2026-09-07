@@ -1,0 +1,15 @@
+/* 收缴率卡：正文左右两区严格各占一半，便于先看结果、再读金额。 */
+@media (min-width: 1024px) {
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection-body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 0 !important;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-rate-ring {
+    justify-self: center;
+  }
+
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout] .r8-home-collection-details {
+    padding-left: 18px;
+  }
+}

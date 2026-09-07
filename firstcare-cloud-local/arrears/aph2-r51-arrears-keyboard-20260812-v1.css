@@ -1,0 +1,26 @@
+/* R51：欠费工作台键盘焦点与移动端结果标题。 */
+
+.table-wrap[tabindex]:focus-visible {
+  outline: 2px solid #e60012;
+  outline-offset: 2px;
+}
+
+#closeResults {
+  flex: 0 0 auto;
+  min-width: 64px;
+  white-space: nowrap;
+}
+
+@media (max-width: 680px) {
+  .result-panel .panel-title {
+    align-items: flex-start;
+  }
+
+  .result-panel .panel-title > div {
+    min-width: 0;
+  }
+
+  .result-panel .panel-title h2 {
+    overflow-wrap: anywhere;
+  }
+}

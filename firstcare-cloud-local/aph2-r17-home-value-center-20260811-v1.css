@@ -1,0 +1,28 @@
+/* 首页六宫格：保留收缴率复合卡，统一其余五张卡的核心数据中轴。 */
+@media (min-width: 1024px) {
+  /* 年度完成率、累计差额：标题与箭头保持原位，仅居中数值行。 */
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    .r8-home-budget > :not(.r8-home-duplicate) > .card-soft
+    > :first-child > :nth-child(2) > :nth-child(2) {
+    display: flex !important;
+    width: 100%;
+    min-width: 0;
+    align-items: baseline;
+    justify-content: center;
+    justify-self: stretch;
+    text-align: center;
+  }
+
+  /* 同期执行、增幅、经营分组：核心数据在整张卡的内容轴线上居中。 */
+  body.aph2-theme .aph-home-reflow[data-r8-home-layout]
+    :is(.r8-home-period, .r8-home-growth, .r8-home-scope)
+    > .card-soft > :nth-child(2) {
+    display: flex !important;
+    width: 100%;
+    min-width: 0;
+    align-items: baseline;
+    justify-content: center;
+    justify-self: stretch;
+    text-align: center;
+  }
+}

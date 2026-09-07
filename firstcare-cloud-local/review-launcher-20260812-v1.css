@@ -1,0 +1,18 @@
+:root{color-scheme:light;font-family:Inter,"PingFang SC","Microsoft YaHei",sans-serif;background:#f4f5f7;color:#15171a}
+*{box-sizing:border-box}
+body{min-height:100svh;margin:0;display:grid;place-items:center;background:linear-gradient(135deg,#fff 0 55%,#eef0f3 100%)}
+.review-launcher{width:min(560px,calc(100% - 40px));border-top:4px solid #db0011;padding:40px 0}
+.review-launcher__eyebrow{margin:0 0 12px;color:#6b7077;font-size:12px;font-weight:700;letter-spacing:.13em}
+h1{margin:0;color:#111317;font-size:clamp(30px,6vw,48px);line-height:1.08;letter-spacing:-.035em}
+#review-launcher-status{min-height:28px;margin:20px 0 0;color:#555b63;font-size:16px;line-height:1.7}
+.review-launcher__progress{height:2px;margin-top:28px;overflow:hidden;background:#d9dde2}
+.review-launcher__progress span{display:block;width:42%;height:100%;background:#db0011;animation:review-launcher-progress 1.1s ease-in-out infinite alternate}
+[data-review-launcher-state="failed"] .review-launcher__progress span{width:100%;animation:none}
+.review-launcher__actions{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
+.review-launcher__actions[hidden]{display:none}
+.review-launcher__actions a,.review-launcher__actions button{min-height:44px;border:1px solid #b5bac1;border-radius:2px;padding:11px 18px;background:#fff;color:#24282d;font:inherit;font-weight:600;text-decoration:none;cursor:pointer}
+.review-launcher__actions button{border-color:#db0011;background:#db0011;color:#fff}
+.review-launcher__actions :focus-visible{outline:3px solid #111317;outline-offset:3px}
+@keyframes review-launcher-progress{from{transform:translateX(-15%)}to{transform:translateX(155%)}}
+@media(prefers-reduced-motion:reduce){.review-launcher__progress span{animation:none;width:100%}}
+@media(max-width:520px){.review-launcher{width:calc(100% - 32px);padding:28px 0}.review-launcher__actions{display:grid}.review-launcher__actions[hidden]{display:none}.review-launcher__actions a,.review-launcher__actions button{text-align:center}}

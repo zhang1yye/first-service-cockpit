@@ -1,0 +1,13 @@
+/* R72：避让桌面侧栏，并修正旧表格增强层对回款最后一列的移动标签。 */
+@media (min-width: 721px) {
+  body:has(.r65-admin) .r65-admin {
+    width: calc(100% - 72px);
+    margin-left: 72px;
+  }
+}
+
+@media (max-width: 720px) {
+  .r65-admin .r65-table[aria-label="正式回款额"] tbody td:last-child::before {
+    content: "收缴率" !important;
+  }
+}
